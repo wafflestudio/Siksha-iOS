@@ -9,6 +9,7 @@
 import Foundation
 
 class Preference {
+    
     static let PREF_KEY_JSON: String = "json_date"
     static let PREF_KEY_VET_DATA: String = "vet_data_date"
     static let PREF_KEY_ORIGINAL_SEQUENCE: String = "restaurant_original_sequence"
@@ -45,4 +46,5 @@ class Preference {
             }
         }
     }
+    
 }

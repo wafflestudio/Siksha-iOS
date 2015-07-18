@@ -9,6 +9,7 @@
 import Foundation
 
 class JsonDownload {
+    
     let SERVER_URL: String = "http://siksha.kr:3280/menus/view";
     let REDIRECT_SERVER_URL: String = "http://kanggyu94.fun25.co.kr:13204/menus/view";
     
@@ -119,4 +120,5 @@ class JsonDownload {
         // Success to write json on internal storage
         return true;
     }
+    
 }

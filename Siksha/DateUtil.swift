@@ -9,6 +9,7 @@
 import Foundation
 
 extension NSDate {
+    
     func getHour() -> Int {
         let components = NSCalendar.currentCalendar().components(.CalendarUnitHour, fromDate: self)
         let hour = components.hour
@@ -69,9 +70,11 @@ extension NSDate {
         
         return formatter.stringFromDate(self.dateByAddingTimeInterval(24 * 60 * 60))
     }
+    
 }
 
 class DateUtil {
+    
     static func isVetDataUpdateTime() -> Bool {
         let date = NSDate()
         let weekday = date.getWeekday()
@@ -79,4 +82,5 @@ class DateUtil {
         
         return weekday == 2 && (hour >= 10 && hour < 21)
     }
+    
 }

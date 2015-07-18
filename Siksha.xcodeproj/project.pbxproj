@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		552825D31B5A276400B3F978 /* BreakfastTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552825D21B5A276400B3F978 /* BreakfastTableViewController.swift */; };
+		552825D51B5A277800B3F978 /* LunchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552825D41B5A277800B3F978 /* LunchTableViewController.swift */; };
+		552825D71B5A278800B3F978 /* DinnerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552825D61B5A278800B3F978 /* DinnerTableViewController.swift */; };
+		552825D91B5A290000B3F978 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552825D81B5A290000B3F978 /* PageViewController.swift */; };
+		552825DD1B5A2F5500B3F978 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552825DC1B5A2F5500B3F978 /* TableViewController.swift */; };
+		552825DF1B5A380100B3F978 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552825DE1B5A380100B3F978 /* TableViewCell.swift */; };
 		55C9B6C51B411C22001F3086 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C9B6C41B411C22001F3086 /* AppDelegate.swift */; };
-		55C9B6C71B411C22001F3086 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C9B6C61B411C22001F3086 /* ViewController.swift */; };
 		55C9B6CA1B411C22001F3086 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55C9B6C81B411C22001F3086 /* Main.storyboard */; };
 		55C9B6CC1B411C22001F3086 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55C9B6CB1B411C22001F3086 /* Images.xcassets */; };
 		55C9B6CF1B411C22001F3086 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55C9B6CD1B411C22001F3086 /* LaunchScreen.xib */; };
@@ -29,10 +34,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		552825C71B5A1A8B00B3F978 /* Arita-Dotum-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arita-Dotum-Medium.otf"; sourceTree = "<group>"; };
+		552825C81B5A1A8B00B3F978 /* BM-Hanna.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BM-Hanna.ttf"; sourceTree = "<group>"; };
+		552825C91B5A1A8B00B3F978 /* BM-Jua.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BM-Jua.ttf"; sourceTree = "<group>"; };
+		552825D21B5A276400B3F978 /* BreakfastTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BreakfastTableViewController.swift; path = ../BreakfastTableViewController.swift; sourceTree = "<group>"; };
+		552825D41B5A277800B3F978 /* LunchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LunchTableViewController.swift; sourceTree = "<group>"; };
+		552825D61B5A278800B3F978 /* DinnerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DinnerTableViewController.swift; sourceTree = "<group>"; };
+		552825D81B5A290000B3F978 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		552825DC1B5A2F5500B3F978 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		552825DE1B5A380100B3F978 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		55C9B6BF1B411C22001F3086 /* Siksha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Siksha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C9B6C31B411C22001F3086 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55C9B6C41B411C22001F3086 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		55C9B6C61B411C22001F3086 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		55C9B6C91B411C22001F3086 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55C9B6CB1B411C22001F3086 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		55C9B6CE1B411C22001F3086 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -84,11 +97,19 @@
 			isa = PBXGroup;
 			children = (
 				55C9B6C41B411C22001F3086 /* AppDelegate.swift */,
-				55C9B6C61B411C22001F3086 /* ViewController.swift */,
+				552825DC1B5A2F5500B3F978 /* TableViewController.swift */,
+				552825DE1B5A380100B3F978 /* TableViewCell.swift */,
+				552825D21B5A276400B3F978 /* BreakfastTableViewController.swift */,
+				552825D41B5A277800B3F978 /* LunchTableViewController.swift */,
+				552825D61B5A278800B3F978 /* DinnerTableViewController.swift */,
+				552825D81B5A290000B3F978 /* PageViewController.swift */,
 				55C9B6E61B41B1E1001F3086 /* JsonDownload.swift */,
 				55C9B6EA1B41BFD1001F3086 /* DateUtil.swift */,
 				55C9B6E81B41B2E9001F3086 /* Preference.swift */,
 				55C9B6C81B411C22001F3086 /* Main.storyboard */,
+				552825C71B5A1A8B00B3F978 /* Arita-Dotum-Medium.otf */,
+				552825C81B5A1A8B00B3F978 /* BM-Hanna.ttf */,
+				552825C91B5A1A8B00B3F978 /* BM-Jua.ttf */,
 				55C9B6CB1B411C22001F3086 /* Images.xcassets */,
 				55C9B6CD1B411C22001F3086 /* LaunchScreen.xib */,
 				55C9B6C21B411C22001F3086 /* Supporting Files */,
@@ -221,11 +242,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55C9B6C71B411C22001F3086 /* ViewController.swift in Sources */,
+				552825D51B5A277800B3F978 /* LunchTableViewController.swift in Sources */,
+				552825D71B5A278800B3F978 /* DinnerTableViewController.swift in Sources */,
+				552825DD1B5A2F5500B3F978 /* TableViewController.swift in Sources */,
 				55C9B6EB1B41BFD1001F3086 /* DateUtil.swift in Sources */,
 				55C9B6E71B41B1E1001F3086 /* JsonDownload.swift in Sources */,
+				552825DF1B5A380100B3F978 /* TableViewCell.swift in Sources */,
 				55C9B6E91B41B2E9001F3086 /* Preference.swift in Sources */,
+				552825D91B5A290000B3F978 /* PageViewController.swift in Sources */,
 				55C9B6C51B411C22001F3086 /* AppDelegate.swift in Sources */,
+				552825D31B5A276400B3F978 /* BreakfastTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +449,7 @@
 				55C9B6E01B411C22001F3086 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		55C9B6E11B411C22001F3086 /* Build configuration list for PBXNativeTarget "SikshaTests" */ = {
 			isa = XCConfigurationList;
@@ -431,6 +458,7 @@
 				55C9B6E31B411C22001F3086 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

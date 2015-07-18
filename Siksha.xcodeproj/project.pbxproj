@@ -1,0 +1,438 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		55C9B6C51B411C22001F3086 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C9B6C41B411C22001F3086 /* AppDelegate.swift */; };
+		55C9B6C71B411C22001F3086 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C9B6C61B411C22001F3086 /* ViewController.swift */; };
+		55C9B6CA1B411C22001F3086 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55C9B6C81B411C22001F3086 /* Main.storyboard */; };
+		55C9B6CC1B411C22001F3086 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55C9B6CB1B411C22001F3086 /* Images.xcassets */; };
+		55C9B6CF1B411C22001F3086 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55C9B6CD1B411C22001F3086 /* LaunchScreen.xib */; };
+		55C9B6DB1B411C22001F3086 /* SikshaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C9B6DA1B411C22001F3086 /* SikshaTests.swift */; };
+		55C9B6E71B41B1E1001F3086 /* JsonDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C9B6E61B41B1E1001F3086 /* JsonDownload.swift */; };
+		55C9B6E91B41B2E9001F3086 /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C9B6E81B41B2E9001F3086 /* Preference.swift */; };
+		55C9B6EB1B41BFD1001F3086 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C9B6EA1B41BFD1001F3086 /* DateUtil.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		55C9B6D51B411C22001F3086 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55C9B6B71B411C22001F3086 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55C9B6BE1B411C22001F3086;
+			remoteInfo = Siksha;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		55C9B6BF1B411C22001F3086 /* Siksha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Siksha.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55C9B6C31B411C22001F3086 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55C9B6C41B411C22001F3086 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		55C9B6C61B411C22001F3086 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		55C9B6C91B411C22001F3086 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		55C9B6CB1B411C22001F3086 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		55C9B6CE1B411C22001F3086 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		55C9B6D41B411C22001F3086 /* SikshaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SikshaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55C9B6D91B411C22001F3086 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55C9B6DA1B411C22001F3086 /* SikshaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SikshaTests.swift; sourceTree = "<group>"; };
+		55C9B6E61B41B1E1001F3086 /* JsonDownload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonDownload.swift; sourceTree = "<group>"; };
+		55C9B6E81B41B2E9001F3086 /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
+		55C9B6EA1B41BFD1001F3086 /* DateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		55C9B6BC1B411C22001F3086 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55C9B6D11B411C22001F3086 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		55C9B6B61B411C22001F3086 = {
+			isa = PBXGroup;
+			children = (
+				55C9B6C11B411C22001F3086 /* Siksha */,
+				55C9B6D71B411C22001F3086 /* SikshaTests */,
+				55C9B6C01B411C22001F3086 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		55C9B6C01B411C22001F3086 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55C9B6BF1B411C22001F3086 /* Siksha.app */,
+				55C9B6D41B411C22001F3086 /* SikshaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		55C9B6C11B411C22001F3086 /* Siksha */ = {
+			isa = PBXGroup;
+			children = (
+				55C9B6C41B411C22001F3086 /* AppDelegate.swift */,
+				55C9B6C61B411C22001F3086 /* ViewController.swift */,
+				55C9B6E61B41B1E1001F3086 /* JsonDownload.swift */,
+				55C9B6EA1B41BFD1001F3086 /* DateUtil.swift */,
+				55C9B6E81B41B2E9001F3086 /* Preference.swift */,
+				55C9B6C81B411C22001F3086 /* Main.storyboard */,
+				55C9B6CB1B411C22001F3086 /* Images.xcassets */,
+				55C9B6CD1B411C22001F3086 /* LaunchScreen.xib */,
+				55C9B6C21B411C22001F3086 /* Supporting Files */,
+			);
+			path = Siksha;
+			sourceTree = "<group>";
+		};
+		55C9B6C21B411C22001F3086 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				55C9B6C31B411C22001F3086 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		55C9B6D71B411C22001F3086 /* SikshaTests */ = {
+			isa = PBXGroup;
+			children = (
+				55C9B6DA1B411C22001F3086 /* SikshaTests.swift */,
+				55C9B6D81B411C22001F3086 /* Supporting Files */,
+			);
+			path = SikshaTests;
+			sourceTree = "<group>";
+		};
+		55C9B6D81B411C22001F3086 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				55C9B6D91B411C22001F3086 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		55C9B6BE1B411C22001F3086 /* Siksha */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55C9B6DE1B411C22001F3086 /* Build configuration list for PBXNativeTarget "Siksha" */;
+			buildPhases = (
+				55C9B6BB1B411C22001F3086 /* Sources */,
+				55C9B6BC1B411C22001F3086 /* Frameworks */,
+				55C9B6BD1B411C22001F3086 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Siksha;
+			productName = Siksha;
+			productReference = 55C9B6BF1B411C22001F3086 /* Siksha.app */;
+			productType = "com.apple.product-type.application";
+		};
+		55C9B6D31B411C22001F3086 /* SikshaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55C9B6E11B411C22001F3086 /* Build configuration list for PBXNativeTarget "SikshaTests" */;
+			buildPhases = (
+				55C9B6D01B411C22001F3086 /* Sources */,
+				55C9B6D11B411C22001F3086 /* Frameworks */,
+				55C9B6D21B411C22001F3086 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55C9B6D61B411C22001F3086 /* PBXTargetDependency */,
+			);
+			name = SikshaTests;
+			productName = SikshaTests;
+			productReference = 55C9B6D41B411C22001F3086 /* SikshaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		55C9B6B71B411C22001F3086 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = WaffleStudio;
+				TargetAttributes = {
+					55C9B6BE1B411C22001F3086 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					55C9B6D31B411C22001F3086 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 55C9B6BE1B411C22001F3086;
+					};
+				};
+			};
+			buildConfigurationList = 55C9B6BA1B411C22001F3086 /* Build configuration list for PBXProject "Siksha" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 55C9B6B61B411C22001F3086;
+			productRefGroup = 55C9B6C01B411C22001F3086 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				55C9B6BE1B411C22001F3086 /* Siksha */,
+				55C9B6D31B411C22001F3086 /* SikshaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		55C9B6BD1B411C22001F3086 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55C9B6CA1B411C22001F3086 /* Main.storyboard in Resources */,
+				55C9B6CF1B411C22001F3086 /* LaunchScreen.xib in Resources */,
+				55C9B6CC1B411C22001F3086 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55C9B6D21B411C22001F3086 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		55C9B6BB1B411C22001F3086 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55C9B6C71B411C22001F3086 /* ViewController.swift in Sources */,
+				55C9B6EB1B41BFD1001F3086 /* DateUtil.swift in Sources */,
+				55C9B6E71B41B1E1001F3086 /* JsonDownload.swift in Sources */,
+				55C9B6E91B41B2E9001F3086 /* Preference.swift in Sources */,
+				55C9B6C51B411C22001F3086 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55C9B6D01B411C22001F3086 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55C9B6DB1B411C22001F3086 /* SikshaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		55C9B6D61B411C22001F3086 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55C9B6BE1B411C22001F3086 /* Siksha */;
+			targetProxy = 55C9B6D51B411C22001F3086 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		55C9B6C81B411C22001F3086 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55C9B6C91B411C22001F3086 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		55C9B6CD1B411C22001F3086 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55C9B6CE1B411C22001F3086 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		55C9B6DC1B411C22001F3086 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		55C9B6DD1B411C22001F3086 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		55C9B6DF1B411C22001F3086 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Siksha/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		55C9B6E01B411C22001F3086 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Siksha/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		55C9B6E21B411C22001F3086 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SikshaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Siksha.app/Siksha";
+			};
+			name = Debug;
+		};
+		55C9B6E31B411C22001F3086 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SikshaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Siksha.app/Siksha";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		55C9B6BA1B411C22001F3086 /* Build configuration list for PBXProject "Siksha" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55C9B6DC1B411C22001F3086 /* Debug */,
+				55C9B6DD1B411C22001F3086 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55C9B6DE1B411C22001F3086 /* Build configuration list for PBXNativeTarget "Siksha" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55C9B6DF1B411C22001F3086 /* Debug */,
+				55C9B6E01B411C22001F3086 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		55C9B6E11B411C22001F3086 /* Build configuration list for PBXNativeTarget "SikshaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55C9B6E21B411C22001F3086 /* Debug */,
+				55C9B6E31B411C22001F3086 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 55C9B6B71B411C22001F3086 /* Project object */;
+}

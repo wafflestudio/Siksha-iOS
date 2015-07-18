@@ -4,6 +4,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="BM-Hanna.ttf">
+            <string>BMHANNA</string>
+        </mutableArray>
         <mutableArray key="BM-Jua.ttf">
             <string>BMJUA</string>
             <string>BMJUA</string>
@@ -11,10 +14,10 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--식단-->
+        <!--식샤-->
         <scene sceneID="9Nc-Bl-pFl">
             <objects>
-                <viewController id="G9a-2R-ZfL" customClass="PageViewController" customModule="Siksha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="G9a-2R-ZfL" customClass="ViewController" customModule="Siksha" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nf8-ei-Tm2"/>
                         <viewControllerLayoutGuide type="bottom" id="vkY-UX-aug"/>
@@ -24,19 +27,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="JD4-jf-two">
-                                <rect key="frame" x="168" y="20" width="39" height="37"/>
+                                <rect key="frame" x="168" y="84" width="39" height="37"/>
                                 <color key="pageIndicatorTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="currentPageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </pageControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KgO-e9-dMh">
+                                <rect key="frame" x="112" y="72" width="150" height="21"/>
+                                <fontDescription key="fontDescription" name="BMHANNA" family="BM HANNA_TTF" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="식단" id="mWb-pB-uFR"/>
+                    <navigationItem key="navigationItem" title="식샤" id="h0I-Kd-ljU"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="KgO-e9-dMh" id="6c2-RJ-AcF"/>
+                        <outlet property="pageControl" destination="JD4-jf-two" id="38h-L0-8Fb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5oW-M8-gAR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="386.5" y="159.5"/>
+            <point key="canvasLocation" x="817.5" y="159.5"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="S3h-IC-hKo">
@@ -47,7 +60,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Taw-tC-kBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="813.5" y="159.5"/>
+            <point key="canvasLocation" x="1243.5" y="159.5"/>
         </scene>
         <!--Breakfast Table View Controller-->
         <scene sceneID="5tm-ur-KGR">
@@ -66,7 +79,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2V-Tk-zZ2">
                                             <rect key="frame" x="8" y="11" width="65" height="21"/>
                                             <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -85,7 +98,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWg-kB-VZ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1243.5" y="-593.5"/>
+            <point key="canvasLocation" x="1669.5" y="-583.5"/>
         </scene>
         <!--Lunch Table View Controller-->
         <scene sceneID="r6Z-9g-U91">
@@ -101,10 +114,10 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o0H-js-hSp" id="2As-bJ-a7T">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0px-dT-KDE">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0px-dT-KDE">
                                             <rect key="frame" x="8" y="11" width="65" height="21"/>
                                             <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -123,7 +136,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="idz-f4-peK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1243.5" y="159.5"/>
+            <point key="canvasLocation" x="1669.5" y="159.5"/>
         </scene>
         <!--Dinner Table View Controller-->
         <scene sceneID="CoU-Lo-hFu">
@@ -139,10 +152,10 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VXX-Ts-coy" id="1kJ-80-CeE">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oza-yQ-eRG">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oza-yQ-eRG">
                                             <rect key="frame" x="8" y="11" width="65" height="21"/>
                                             <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -161,7 +174,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OO4-xf-8J1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1243.5" y="908.5"/>
+            <point key="canvasLocation" x="1669.5" y="907.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BNc-uu-nqh">
@@ -175,12 +188,31 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="G9a-2R-ZfL" kind="relationship" relationship="viewControllers" id="VQL-SP-rI7"/>
+                        <segue destination="7y3-6z-tl2" kind="relationship" relationship="viewControllers" id="VQL-SP-rI7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iQ3-11-6ss" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-46.5" y="159.5"/>
+        </scene>
+        <!--식단-->
+        <scene sceneID="gJo-4m-yAX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7y3-6z-tl2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="식단" id="mWb-pB-uFR"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GNd-ND-JYa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="G9a-2R-ZfL" kind="relationship" relationship="rootViewController" id="4iV-Cf-OjN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gwa-zR-v89" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="386.5" y="159.5"/>
         </scene>
     </scenes>
 </document>

@@ -10,25 +10,22 @@ import Foundation
 
 extension NSDate {
     
-    func getHour() -> Int {
-        let components = NSCalendar.currentCalendar().components(.CalendarUnitHour, fromDate: self)
-        let hour = components.hour
+    func getMonth() -> Int {
+        let components = NSCalendar.currentCalendar().components(.CalendarUnitMonth, fromDate: self)
         
-        return hour
+        return components.month
     }
     
-    func getMinute() -> Int {
-        let components = NSCalendar.currentCalendar().components(.CalendarUnitMinute, fromDate: self)
-        let minute = components.minute
+    func getDay() -> Int {
+        let components = NSCalendar.currentCalendar().components(.CalendarUnitDay, fromDate: self)
         
-        return minute
+        return components.day
     }
     
     func getWeekday() -> Int {
         let components = NSCalendar.currentCalendar().components(.CalendarUnitWeekday, fromDate: self)
-        let weekday = components.weekday
         
-        return weekday
+        return components.weekday
     }
     
     func getDayOfWeek() -> String {
@@ -57,6 +54,35 @@ extension NSDate {
         return dayOfWeek
     }
     
+    func getTimeSlot() -> String {
+        var timeSlot: String
+        let hour: Int = getHour()
+        
+        if (hour <= 9 || hour >= 21) {
+            timeSlot = "아침"
+        }
+        else if (hour >= 10 && hour <= 14) {
+            timeSlot = "점심"
+        }
+        else {
+            timeSlot = "저녁"
+        }
+
+        return timeSlot
+    }
+    
+    func getHour() -> Int {
+        let components = NSCalendar.currentCalendar().components(.CalendarUnitHour, fromDate: self)
+        
+        return components.hour
+    }
+    
+    func getMinute() -> Int {
+        let components = NSCalendar.currentCalendar().components(.CalendarUnitMinute, fromDate: self)
+        
+        return components.minute
+    }
+    
     func getTodayDate() -> String {
         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
@@ -74,6 +100,16 @@ extension NSDate {
 }
 
 class DateUtil {
+    
+    static func getDateLabelString() -> String {
+        let date = NSDate()
+        let month: Int = date.getMonth()
+        let day: Int = date.getDay()
+        let dayOfWeek: String = date.getDayOfWeek()
+        let timeSlot: String = date.getTimeSlot()
+        
+        return "\(month)/\(day) (\(dayOfWeek)) \(timeSlot)"
+    }
     
     static func isVetDataUpdateTime() -> Bool {
         let date = NSDate()

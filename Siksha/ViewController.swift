@@ -1,5 +1,5 @@
 //
-//  PageViewController.swift
+//  ViewController.swift
 //  Siksha
 //
 //  Created by 강규 on 2015. 7. 18..
@@ -8,14 +8,17 @@
 
 import UIKit
 
-class PageViewController: UIViewController, UIPageViewControllerDataSource {
+class ViewController: UIViewController, UIPageViewControllerDataSource {
+    
+    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var dateLabel: UILabel!
     
     var pageCount = 3 // breakfast, lunch, dinner
     
     private func getPageItemController(index: Int) -> TableViewController? {
         var pageItemController: TableViewController?
         
-        switch (index) {
+        switch index {
         case 0:
             pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("BreakfastTableViewController") as! BreakfastTableViewController
             pageItemController!.pageIndex = index
@@ -45,18 +48,20 @@ class PageViewController: UIViewController, UIPageViewControllerDataSource {
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         let pageItemController = viewController as! TableViewController
-            
+        
         if pageItemController.pageIndex < pageCount - 1 {
             return getPageItemController(pageItemController.pageIndex + 1)
         }
         
         return nil
     }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+
+        dateLabel.text = DateUtil.getDateLabelString()
         
         let pageViewController = self.storyboard!.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
         pageViewController.dataSource = self
@@ -64,8 +69,10 @@ class PageViewController: UIViewController, UIPageViewControllerDataSource {
         let startingViewController = getPageItemController(0)!
         let viewControllers: NSArray = [startingViewController]
         pageViewController.setViewControllers(viewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
-        
+    
         addChildViewController(pageViewController)
+        let screenBounds: CGRect = UIScreen.mainScreen().bounds
+        pageViewController.view.frame = CGRect(x: 0, y: 125, width: screenBounds.width, height: screenBounds.height - 175)
         self.view.addSubview(pageViewController.view)
         pageViewController.didMoveToParentViewController(self)
     }

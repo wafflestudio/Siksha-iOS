@@ -7,42 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		550936661B656F6700651C76 /* TableViewEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936651B656F6700651C76 /* TableViewEmptyCell.swift */; };
 		550936891B656F7B00651C76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936671B656F7B00651C76 /* AppDelegate.swift */; };
-		5509368A1B656F7B00651C76 /* Arita-Dotum-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 550936681B656F7B00651C76 /* Arita-Dotum-Medium.otf */; };
 		5509368B1B656F7B00651C76 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5509366A1B656F7B00651C76 /* LaunchScreen.xib */; };
 		5509368C1B656F7B00651C76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5509366C1B656F7B00651C76 /* Main.storyboard */; };
-		5509368D1B656F7B00651C76 /* BM-Hanna.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5509366E1B656F7B00651C76 /* BM-Hanna.ttf */; };
-		5509368E1B656F7B00651C76 /* BM-Jua.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5509366F1B656F7B00651C76 /* BM-Jua.ttf */; };
-		5509368F1B656F7B00651C76 /* BookmarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936701B656F7B00651C76 /* BookmarkTableViewCell.swift */; };
-		550936901B656F7B00651C76 /* BookmarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936711B656F7B00651C76 /* BookmarkTableViewController.swift */; };
-		550936911B656F7B00651C76 /* BookmarkTableViewEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936721B656F7B00651C76 /* BookmarkTableViewEmptyCell.swift */; };
-		550936921B656F7B00651C76 /* BookmarkTableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936731B656F7B00651C76 /* BookmarkTableViewHeaderCell.swift */; };
-		550936931B656F7B00651C76 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936741B656F7B00651C76 /* BookmarkViewController.swift */; };
-		550936941B656F7B00651C76 /* BreakfastBookmarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936751B656F7B00651C76 /* BreakfastBookmarkTableViewController.swift */; };
-		550936951B656F7B00651C76 /* BreakfastTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936761B656F7B00651C76 /* BreakfastTableViewController.swift */; };
 		550936961B656F7B00651C76 /* MenuDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936771B656F7B00651C76 /* MenuDictionary.swift */; };
 		550936971B656F7B00651C76 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936781B656F7B00651C76 /* Calendar.swift */; };
-		550936981B656F7B00651C76 /* DinnerBookmarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936791B656F7B00651C76 /* DinnerBookmarkTableViewController.swift */; };
-		550936991B656F7B00651C76 /* DinnerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509367A1B656F7B00651C76 /* DinnerTableViewController.swift */; };
 		5509369A1B656F7B00651C76 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5509367B1B656F7B00651C76 /* Images.xcassets */; };
 		5509369D1B656F7B00651C76 /* JSONDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509367E1B656F7B00651C76 /* JSONDownloader.swift */; };
 		5509369E1B656F7B00651C76 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509367F1B656F7B00651C76 /* JSONParser.swift */; };
-		550936A01B656F7B00651C76 /* LunchBookmarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936811B656F7B00651C76 /* LunchBookmarkTableViewController.swift */; };
-		550936A11B656F7B00651C76 /* LunchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936821B656F7B00651C76 /* LunchTableViewController.swift */; };
 		550936A21B656F7B00651C76 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936831B656F7B00651C76 /* Menu.swift */; };
 		550936A31B656F7B00651C76 /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936841B656F7B00651C76 /* Preference.swift */; };
-		550936A41B656F7B00651C76 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936851B656F7B00651C76 /* TableViewCell.swift */; };
-		550936A51B656F7B00651C76 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936861B656F7B00651C76 /* TableViewController.swift */; };
-		550936A61B656F7B00651C76 /* TableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936871B656F7B00651C76 /* TableViewHeaderCell.swift */; };
-		550936A71B656F7B00651C76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936881B656F7B00651C76 /* ViewController.swift */; };
 		550936AD1B65F7FC00651C76 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936AC1B65F7FC00651C76 /* AboutViewController.swift */; };
 		55C9B6DB1B411C22001F3086 /* SikshaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C9B6DA1B411C22001F3086 /* SikshaTests.swift */; };
 		55E9C3EB1B65FB7900A8DDBA /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C3EA1B65FB7900A8DDBA /* XMLParser.swift */; };
-		55E9C3ED1B65FCBF00A8DDBA /* data.xml in Resources */ = {isa = PBXBuildFile; fileRef = 55E9C3EC1B65FCBF00A8DDBA /* data.xml */; };
 		55E9C3F71B6784B400A8DDBA /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C3F61B6784B400A8DDBA /* SettingTableViewController.swift */; };
 		55E9C3F91B67855400A8DDBA /* VersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C3F81B67855400A8DDBA /* VersionViewController.swift */; };
 		55E9C3FB1B67855F00A8DDBA /* DeveloperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C3FA1B67855F00A8DDBA /* DeveloperViewController.swift */; };
+		55E9C40C1B67D03200A8DDBA /* BreakfastTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C4041B67D03200A8DDBA /* BreakfastTableViewController.swift */; };
+		55E9C40D1B67D03200A8DDBA /* DinnerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C4051B67D03200A8DDBA /* DinnerTableViewController.swift */; };
+		55E9C40E1B67D03200A8DDBA /* LunchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C4061B67D03200A8DDBA /* LunchTableViewController.swift */; };
+		55E9C40F1B67D03200A8DDBA /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C4071B67D03200A8DDBA /* TableViewCell.swift */; };
+		55E9C4101B67D03200A8DDBA /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C4081B67D03200A8DDBA /* TableViewController.swift */; };
+		55E9C4111B67D03200A8DDBA /* TableViewEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C4091B67D03200A8DDBA /* TableViewEmptyCell.swift */; };
+		55E9C4121B67D03200A8DDBA /* TableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C40A1B67D03200A8DDBA /* TableViewHeaderCell.swift */; };
+		55E9C4131B67D03200A8DDBA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C40B1B67D03200A8DDBA /* ViewController.swift */; };
+		55E9C41C1B67D04100A8DDBA /* BookmarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C4141B67D04100A8DDBA /* BookmarkTableViewCell.swift */; };
+		55E9C41D1B67D04100A8DDBA /* BookmarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C4151B67D04100A8DDBA /* BookmarkTableViewController.swift */; };
+		55E9C41E1B67D04100A8DDBA /* BookmarkTableViewEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C4161B67D04100A8DDBA /* BookmarkTableViewEmptyCell.swift */; };
+		55E9C41F1B67D04100A8DDBA /* BookmarkTableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C4171B67D04100A8DDBA /* BookmarkTableViewHeaderCell.swift */; };
+		55E9C4201B67D04100A8DDBA /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C4181B67D04100A8DDBA /* BookmarkViewController.swift */; };
+		55E9C4211B67D04100A8DDBA /* BreakfastBookmarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C4191B67D04100A8DDBA /* BreakfastBookmarkTableViewController.swift */; };
+		55E9C4221B67D04100A8DDBA /* DinnerBookmarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C41A1B67D04100A8DDBA /* DinnerBookmarkTableViewController.swift */; };
+		55E9C4231B67D04100A8DDBA /* LunchBookmarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C41B1B67D04100A8DDBA /* LunchBookmarkTableViewController.swift */; };
+		55E9C4281B67D19700A8DDBA /* data.xml in Resources */ = {isa = PBXBuildFile; fileRef = 55E9C4271B67D19700A8DDBA /* data.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,36 +53,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		550936651B656F6700651C76 /* TableViewEmptyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewEmptyCell.swift; sourceTree = "<group>"; };
 		550936671B656F7B00651C76 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		550936681B656F7B00651C76 /* Arita-Dotum-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arita-Dotum-Medium.otf"; sourceTree = "<group>"; };
 		5509366B1B656F7B00651C76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		5509366D1B656F7B00651C76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
-		5509366E1B656F7B00651C76 /* BM-Hanna.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BM-Hanna.ttf"; sourceTree = "<group>"; };
-		5509366F1B656F7B00651C76 /* BM-Jua.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BM-Jua.ttf"; sourceTree = "<group>"; };
-		550936701B656F7B00651C76 /* BookmarkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkTableViewCell.swift; sourceTree = "<group>"; };
-		550936711B656F7B00651C76 /* BookmarkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkTableViewController.swift; sourceTree = "<group>"; };
-		550936721B656F7B00651C76 /* BookmarkTableViewEmptyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkTableViewEmptyCell.swift; sourceTree = "<group>"; };
-		550936731B656F7B00651C76 /* BookmarkTableViewHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkTableViewHeaderCell.swift; sourceTree = "<group>"; };
-		550936741B656F7B00651C76 /* BookmarkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
-		550936751B656F7B00651C76 /* BreakfastBookmarkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakfastBookmarkTableViewController.swift; sourceTree = "<group>"; };
-		550936761B656F7B00651C76 /* BreakfastTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakfastTableViewController.swift; sourceTree = "<group>"; };
 		550936771B656F7B00651C76 /* MenuDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDictionary.swift; sourceTree = "<group>"; };
 		550936781B656F7B00651C76 /* Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
-		550936791B656F7B00651C76 /* DinnerBookmarkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DinnerBookmarkTableViewController.swift; sourceTree = "<group>"; };
-		5509367A1B656F7B00651C76 /* DinnerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DinnerTableViewController.swift; sourceTree = "<group>"; };
 		5509367B1B656F7B00651C76 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5509367C1B656F7B00651C76 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5509367E1B656F7B00651C76 /* JSONDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDownloader.swift; sourceTree = "<group>"; };
 		5509367F1B656F7B00651C76 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
-		550936811B656F7B00651C76 /* LunchBookmarkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LunchBookmarkTableViewController.swift; sourceTree = "<group>"; };
-		550936821B656F7B00651C76 /* LunchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LunchTableViewController.swift; sourceTree = "<group>"; };
 		550936831B656F7B00651C76 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		550936841B656F7B00651C76 /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
-		550936851B656F7B00651C76 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		550936861B656F7B00651C76 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		550936871B656F7B00651C76 /* TableViewHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewHeaderCell.swift; sourceTree = "<group>"; };
-		550936881B656F7B00651C76 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		550936AB1B6571F300651C76 /* Siksha-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Siksha-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		550936AC1B65F7FC00651C76 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = Siksha/AboutViewController.swift; sourceTree = SOURCE_ROOT; };
 		55C9B6BF1B411C22001F3086 /* Siksha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Siksha.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,10 +71,29 @@
 		55C9B6D91B411C22001F3086 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55C9B6DA1B411C22001F3086 /* SikshaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SikshaTests.swift; sourceTree = "<group>"; };
 		55E9C3EA1B65FB7900A8DDBA /* XMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
-		55E9C3EC1B65FCBF00A8DDBA /* data.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = data.xml; sourceTree = "<group>"; };
 		55E9C3F61B6784B400A8DDBA /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		55E9C3F81B67855400A8DDBA /* VersionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionViewController.swift; sourceTree = "<group>"; };
 		55E9C3FA1B67855F00A8DDBA /* DeveloperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperViewController.swift; sourceTree = "<group>"; };
+		55E9C4041B67D03200A8DDBA /* BreakfastTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BreakfastTableViewController.swift; path = TableViewController/BreakfastTableViewController.swift; sourceTree = "<group>"; };
+		55E9C4051B67D03200A8DDBA /* DinnerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DinnerTableViewController.swift; path = TableViewController/DinnerTableViewController.swift; sourceTree = "<group>"; };
+		55E9C4061B67D03200A8DDBA /* LunchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LunchTableViewController.swift; path = TableViewController/LunchTableViewController.swift; sourceTree = "<group>"; };
+		55E9C4071B67D03200A8DDBA /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = TableViewController/TableViewCell.swift; sourceTree = "<group>"; };
+		55E9C4081B67D03200A8DDBA /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = TableViewController/TableViewController.swift; sourceTree = "<group>"; };
+		55E9C4091B67D03200A8DDBA /* TableViewEmptyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewEmptyCell.swift; path = TableViewController/TableViewEmptyCell.swift; sourceTree = "<group>"; };
+		55E9C40A1B67D03200A8DDBA /* TableViewHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewHeaderCell.swift; path = TableViewController/TableViewHeaderCell.swift; sourceTree = "<group>"; };
+		55E9C40B1B67D03200A8DDBA /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = TableViewController/ViewController.swift; sourceTree = "<group>"; };
+		55E9C4141B67D04100A8DDBA /* BookmarkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookmarkTableViewCell.swift; path = BookmarkTableViewController/BookmarkTableViewCell.swift; sourceTree = "<group>"; };
+		55E9C4151B67D04100A8DDBA /* BookmarkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookmarkTableViewController.swift; path = BookmarkTableViewController/BookmarkTableViewController.swift; sourceTree = "<group>"; };
+		55E9C4161B67D04100A8DDBA /* BookmarkTableViewEmptyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookmarkTableViewEmptyCell.swift; path = BookmarkTableViewController/BookmarkTableViewEmptyCell.swift; sourceTree = "<group>"; };
+		55E9C4171B67D04100A8DDBA /* BookmarkTableViewHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookmarkTableViewHeaderCell.swift; path = BookmarkTableViewController/BookmarkTableViewHeaderCell.swift; sourceTree = "<group>"; };
+		55E9C4181B67D04100A8DDBA /* BookmarkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookmarkViewController.swift; path = BookmarkTableViewController/BookmarkViewController.swift; sourceTree = "<group>"; };
+		55E9C4191B67D04100A8DDBA /* BreakfastBookmarkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BreakfastBookmarkTableViewController.swift; path = BookmarkTableViewController/BreakfastBookmarkTableViewController.swift; sourceTree = "<group>"; };
+		55E9C41A1B67D04100A8DDBA /* DinnerBookmarkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DinnerBookmarkTableViewController.swift; path = BookmarkTableViewController/DinnerBookmarkTableViewController.swift; sourceTree = "<group>"; };
+		55E9C41B1B67D04100A8DDBA /* LunchBookmarkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LunchBookmarkTableViewController.swift; path = BookmarkTableViewController/LunchBookmarkTableViewController.swift; sourceTree = "<group>"; };
+		55E9C4271B67D19700A8DDBA /* data.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = data.xml; path = Resources/data.xml; sourceTree = "<group>"; };
+		55E9C4291B67D1BC00A8DDBA /* Arita-Dotum-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Arita-Dotum-Medium.otf"; path = "Resources/Fonts/Arita-Dotum-Medium.otf"; sourceTree = "<group>"; };
+		55E9C42A1B67D1BC00A8DDBA /* BM-Hanna.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "BM-Hanna.ttf"; path = "Resources/Fonts/BM-Hanna.ttf"; sourceTree = "<group>"; };
+		55E9C42B1B67D1BC00A8DDBA /* BM-Jua.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "BM-Jua.ttf"; path = "Resources/Fonts/BM-Jua.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,14 +195,14 @@
 		55E9C4001B67C01500A8DDBA /* TableViewController */ = {
 			isa = PBXGroup;
 			children = (
-				550936881B656F7B00651C76 /* ViewController.swift */,
-				550936861B656F7B00651C76 /* TableViewController.swift */,
-				550936761B656F7B00651C76 /* BreakfastTableViewController.swift */,
-				550936821B656F7B00651C76 /* LunchTableViewController.swift */,
-				5509367A1B656F7B00651C76 /* DinnerTableViewController.swift */,
-				550936871B656F7B00651C76 /* TableViewHeaderCell.swift */,
-				550936651B656F6700651C76 /* TableViewEmptyCell.swift */,
-				550936851B656F7B00651C76 /* TableViewCell.swift */,
+				55E9C4041B67D03200A8DDBA /* BreakfastTableViewController.swift */,
+				55E9C4051B67D03200A8DDBA /* DinnerTableViewController.swift */,
+				55E9C4061B67D03200A8DDBA /* LunchTableViewController.swift */,
+				55E9C4071B67D03200A8DDBA /* TableViewCell.swift */,
+				55E9C4081B67D03200A8DDBA /* TableViewController.swift */,
+				55E9C4091B67D03200A8DDBA /* TableViewEmptyCell.swift */,
+				55E9C40A1B67D03200A8DDBA /* TableViewHeaderCell.swift */,
+				55E9C40B1B67D03200A8DDBA /* ViewController.swift */,
 			);
 			name = TableViewController;
 			sourceTree = "<group>";
@@ -213,14 +210,14 @@
 		55E9C4011B67C08300A8DDBA /* BookmarkTableViewController */ = {
 			isa = PBXGroup;
 			children = (
-				550936741B656F7B00651C76 /* BookmarkViewController.swift */,
-				550936711B656F7B00651C76 /* BookmarkTableViewController.swift */,
-				550936751B656F7B00651C76 /* BreakfastBookmarkTableViewController.swift */,
-				550936811B656F7B00651C76 /* LunchBookmarkTableViewController.swift */,
-				550936791B656F7B00651C76 /* DinnerBookmarkTableViewController.swift */,
-				550936731B656F7B00651C76 /* BookmarkTableViewHeaderCell.swift */,
-				550936721B656F7B00651C76 /* BookmarkTableViewEmptyCell.swift */,
-				550936701B656F7B00651C76 /* BookmarkTableViewCell.swift */,
+				55E9C4141B67D04100A8DDBA /* BookmarkTableViewCell.swift */,
+				55E9C4151B67D04100A8DDBA /* BookmarkTableViewController.swift */,
+				55E9C4161B67D04100A8DDBA /* BookmarkTableViewEmptyCell.swift */,
+				55E9C4171B67D04100A8DDBA /* BookmarkTableViewHeaderCell.swift */,
+				55E9C4181B67D04100A8DDBA /* BookmarkViewController.swift */,
+				55E9C4191B67D04100A8DDBA /* BreakfastBookmarkTableViewController.swift */,
+				55E9C41A1B67D04100A8DDBA /* DinnerBookmarkTableViewController.swift */,
+				55E9C41B1B67D04100A8DDBA /* LunchBookmarkTableViewController.swift */,
 			);
 			name = BookmarkTableViewController;
 			sourceTree = "<group>";
@@ -228,8 +225,8 @@
 		55E9C4021B67C75B00A8DDBA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				55E9C4271B67D19700A8DDBA /* data.xml */,
 				55E9C4031B67C77100A8DDBA /* Fonts */,
-				55E9C3EC1B65FCBF00A8DDBA /* data.xml */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -237,9 +234,9 @@
 		55E9C4031B67C77100A8DDBA /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				5509366F1B656F7B00651C76 /* BM-Jua.ttf */,
-				5509366E1B656F7B00651C76 /* BM-Hanna.ttf */,
-				550936681B656F7B00651C76 /* Arita-Dotum-Medium.otf */,
+				55E9C4291B67D1BC00A8DDBA /* Arita-Dotum-Medium.otf */,
+				55E9C42A1B67D1BC00A8DDBA /* BM-Hanna.ttf */,
+				55E9C42B1B67D1BC00A8DDBA /* BM-Jua.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -325,12 +322,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5509368C1B656F7B00651C76 /* Main.storyboard in Resources */,
-				55E9C3ED1B65FCBF00A8DDBA /* data.xml in Resources */,
+				55E9C4281B67D19700A8DDBA /* data.xml in Resources */,
 				5509368B1B656F7B00651C76 /* LaunchScreen.xib in Resources */,
-				5509368D1B656F7B00651C76 /* BM-Hanna.ttf in Resources */,
 				5509369A1B656F7B00651C76 /* Images.xcassets in Resources */,
-				5509368A1B656F7B00651C76 /* Arita-Dotum-Medium.otf in Resources */,
-				5509368E1B656F7B00651C76 /* BM-Jua.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,34 +342,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55E9C4231B67D04100A8DDBA /* LunchBookmarkTableViewController.swift in Sources */,
 				55E9C3F71B6784B400A8DDBA /* SettingTableViewController.swift in Sources */,
-				550936A71B656F7B00651C76 /* ViewController.swift in Sources */,
-				550936A51B656F7B00651C76 /* TableViewController.swift in Sources */,
+				55E9C40F1B67D03200A8DDBA /* TableViewCell.swift in Sources */,
+				55E9C41E1B67D04100A8DDBA /* BookmarkTableViewEmptyCell.swift in Sources */,
+				55E9C4101B67D03200A8DDBA /* TableViewController.swift in Sources */,
 				550936891B656F7B00651C76 /* AppDelegate.swift in Sources */,
 				550936971B656F7B00651C76 /* Calendar.swift in Sources */,
 				550936A21B656F7B00651C76 /* Menu.swift in Sources */,
+				55E9C40C1B67D03200A8DDBA /* BreakfastTableViewController.swift in Sources */,
 				5509369E1B656F7B00651C76 /* JSONParser.swift in Sources */,
 				550936AD1B65F7FC00651C76 /* AboutViewController.swift in Sources */,
-				550936A11B656F7B00651C76 /* LunchTableViewController.swift in Sources */,
-				550936A01B656F7B00651C76 /* LunchBookmarkTableViewController.swift in Sources */,
-				550936A61B656F7B00651C76 /* TableViewHeaderCell.swift in Sources */,
+				55E9C41F1B67D04100A8DDBA /* BookmarkTableViewHeaderCell.swift in Sources */,
+				55E9C4121B67D03200A8DDBA /* TableViewHeaderCell.swift in Sources */,
+				55E9C4131B67D03200A8DDBA /* ViewController.swift in Sources */,
+				55E9C41C1B67D04100A8DDBA /* BookmarkTableViewCell.swift in Sources */,
 				550936A31B656F7B00651C76 /* Preference.swift in Sources */,
-				550936991B656F7B00651C76 /* DinnerTableViewController.swift in Sources */,
 				55E9C3FB1B67855F00A8DDBA /* DeveloperViewController.swift in Sources */,
-				550936661B656F6700651C76 /* TableViewEmptyCell.swift in Sources */,
-				550936951B656F7B00651C76 /* BreakfastTableViewController.swift in Sources */,
-				550936911B656F7B00651C76 /* BookmarkTableViewEmptyCell.swift in Sources */,
+				55E9C4221B67D04100A8DDBA /* DinnerBookmarkTableViewController.swift in Sources */,
+				55E9C40D1B67D03200A8DDBA /* DinnerTableViewController.swift in Sources */,
 				55E9C3F91B67855400A8DDBA /* VersionViewController.swift in Sources */,
-				550936931B656F7B00651C76 /* BookmarkViewController.swift in Sources */,
-				5509368F1B656F7B00651C76 /* BookmarkTableViewCell.swift in Sources */,
-				550936981B656F7B00651C76 /* DinnerBookmarkTableViewController.swift in Sources */,
-				550936941B656F7B00651C76 /* BreakfastBookmarkTableViewController.swift in Sources */,
-				550936A41B656F7B00651C76 /* TableViewCell.swift in Sources */,
-				550936921B656F7B00651C76 /* BookmarkTableViewHeaderCell.swift in Sources */,
-				550936901B656F7B00651C76 /* BookmarkTableViewController.swift in Sources */,
+				55E9C4111B67D03200A8DDBA /* TableViewEmptyCell.swift in Sources */,
 				5509369D1B656F7B00651C76 /* JSONDownloader.swift in Sources */,
+				55E9C40E1B67D03200A8DDBA /* LunchTableViewController.swift in Sources */,
+				55E9C4211B67D04100A8DDBA /* BreakfastBookmarkTableViewController.swift in Sources */,
+				55E9C41D1B67D04100A8DDBA /* BookmarkTableViewController.swift in Sources */,
 				550936961B656F7B00651C76 /* MenuDictionary.swift in Sources */,
 				55E9C3EB1B65FB7900A8DDBA /* XMLParser.swift in Sources */,
+				55E9C4201B67D04100A8DDBA /* BookmarkViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

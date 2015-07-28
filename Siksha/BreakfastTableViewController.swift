@@ -27,25 +27,65 @@ class BreakfastTableViewController: TableViewController {
 
     // MARK: - Table view data source
 
+    /*
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 1
+        return 0
     }
+    */
 
+    /*
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return restaurants.count
+        return 0
     }
-
+    */
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell: TableViewCell = tableView.dequeueReusableCellWithIdentifier("BreakfastTableViewCell", forIndexPath: indexPath) as! TableViewCell
+        if dataArray[indexPath.section].isEmpty {
+            var cell: TableViewEmptyCell = tableView.dequeueReusableCellWithIdentifier("BreakfastTableViewEmptyCell", forIndexPath: indexPath) as! TableViewEmptyCell
+            
+            // Configure the cell...
+            cell.emptyMessageLabel!.text = "메뉴가 없습니다."
+            
+            return cell
+        }
+        else {
+            var cell: TableViewCell = tableView.dequeueReusableCellWithIdentifier("BreakfastTableViewCell", forIndexPath: indexPath) as! TableViewCell
+            
+            // Configure the cell...
+            cell.nameLabel!.text = dataArray[indexPath.section].menus[indexPath.row]["name"] as? String
+            cell.priceLabel!.text = dataArray[indexPath.section].menus[indexPath.row]["price"] as? String
+            
+            return cell
+        }
+    }
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        var headerCell = tableView.dequeueReusableCellWithIdentifier("BreakfastTableViewHeaderCell") as! TableViewHeaderCell
         
-        // Configure the cell...
-        cell.textLabel!.text = restaurants[indexPath.row]
+        headerCell.nameLabel!.text = restaurants[section]
+        headerCell.bookmarkButton!.tag = section
+        headerCell.aboutButton!.tag = section
         
-        return cell
+        if isBookmarked(restaurants[section]) {
+            headerCell.bookmarkButton!.setImage(UIImage(named: "ic_star_filled"), forState: .Normal)
+        }
+        else {
+            headerCell.bookmarkButton!.setImage(UIImage(named: "ic_star"), forState: .Normal)
+        }
+        
+        return headerCell
+    }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50.0
+    }
+    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 30.0
     }
 
     /*

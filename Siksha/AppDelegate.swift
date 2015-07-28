@@ -11,10 +11,24 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    let DOWNLOAD_NOTIFICATION_KEY = "download_notification"
+    let todayTimeStamp: String = NSDate().getTodayTimeStamp()
+    
+    var JSONData: NSArray?
+    
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // 초기 JSON 메뉴 다운로드에 관한 Download Receiver를 설정한다.
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDownloadFinished", name: DOWNLOAD_NOTIFICATION_KEY, object: nil)
+        
+        checkLocalJSONStatus()
+        
+        // 운영 시간, 위치 등의 정보가 담긴 data.xml을 파싱하여 객체에 저장한다.
+        XMLParser.sharedInstance.parseXMLFile("data")
+        
         return true
     }
 
@@ -38,6 +52,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    private func checkLocalJSONStatus() {
+        if JSONDownloader.isJSONUpdated(todayTimeStamp) {
+            println("JSON is already updated.")
+            
+            if !JSONDownloader.isVetDataUpdated(todayTimeStamp) && Calendar.isVetDataUpdateTime() {
+                JSONDownloader().startDownloadService()
+            }
+            else {
+                onDownloadFinished()
+            }
+        }
+        else {
+            println("JSON is not updated!")
+            
+            JSONDownloader().startDownloadService()
+        }
+    }
+    
+    func onDownloadFinished() {
+        JSONData = JSONParser.getLocalJSON()
+        MenuDictionary.sharedInstance.initialize(JSONData)
+        
+        // 즐겨찾기 목록 유무에 따라서 시작 탭을 나눈다.
+        setInitialTab()
+    }
+    
+    private func setInitialTab() {
+        var rootViewController = self.window!.rootViewController as! UITabBarController
+        
+        if Preference.load(Preference.PREF_KEY_BOOKMARK) as! String == "" {
+            rootViewController.selectedIndex = 1 // 식단 탭
+        }
+        else {
+            rootViewController.selectedIndex = 0 // 즐겨찾기 탭
+        }
     }
 
 }

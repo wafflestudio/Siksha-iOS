@@ -1,15 +1,15 @@
 //
-//  TableViewController.swift
+//  BookmarkTableViewController.swift
 //  Siksha
 //
-//  Created by 강규 on 2015. 7. 18..
+//  Created by 강규 on 2015. 7. 23..
 //  Copyright (c) 2015년 WaffleStudio. All rights reserved.
 //
 
 import UIKit
 
-class TableViewController: UITableViewController {
-    
+class BookmarkTableViewController: UITableViewController {
+
     let restaurants: [String] = ["학생회관 식당", "농생대 3식당", "919동 기숙사 식당", "자하연 식당", "302동 식당",
         "솔밭 간이 식당", "동원관 식당", "감골 식당", "사범대 4식당", "두레미담",
         "301동 식당", "예술계복합연구동 식당", "공대 간이 식당", "상아회관 식당", "220동 식당",
@@ -19,7 +19,7 @@ class TableViewController: UITableViewController {
     
     var dictionary: [String: Menu] = [:]
     var dataArray = [Menu]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,67 +28,53 @@ class TableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    
-        for restaurant in restaurants {
-            dataArray.append(dictionary[restaurant]!)
-        }
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        self.tableView.reloadData()
     }
 
+    override func viewDidAppear(animated: Bool) {
+        dataArray = [Menu]()
+        
+        for restaurant in restaurants {
+            if isBookmarked(restaurant) {
+                dataArray.append(dictionary[restaurant]!)
+            }
+        }
+        
+        self.tableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction func aboutButtonClicked(sender: AnyObject) {
         let aboutButton = sender as! UIButton
         self.performSegueWithIdentifier("ShowInformations", sender: aboutButton)
     }
     
     @IBAction func bookmarkButtonClicked(sender: AnyObject) {
-        let bookmarkButton = sender as! UIButton
-        let rowIndex = sender.tag
         var recordedBookmarks = Preference.load(Preference.PREF_KEY_BOOKMARK) as! String
+        let bookmarks = recordedBookmarks.componentsSeparatedByString("/")
+        let rowIndex = sender.tag
         
-        /* 북마크 되어있으면 텅빈 별로 바꾸고, 되어있지 않으면 꽉찬 별로 바꾼다. */
-        if isBookmarked(restaurants[rowIndex]) {
-            let star = UIImage(named: "ic_star")
-            bookmarkButton.setImage(star, forState: .Normal)
-        }
-        else {
-            let starFilled = UIImage(named: "ic_star_filled")
-            bookmarkButton.setImage(starFilled, forState: .Normal)
-        }
+        var newBookmarkString: String = ""
         
-        /* 북마크 정보를 Preference에 기록한다. */
-        if recordedBookmarks == "" {
-            Preference.save(restaurants[rowIndex], key: Preference.PREF_KEY_BOOKMARK)
-        }
-        else if !isBookmarked(restaurants[rowIndex]) {
-            Preference.save("\(recordedBookmarks)/\(restaurants[rowIndex])", key: Preference.PREF_KEY_BOOKMARK)
-        }
-        else {
-            var newBookmarkString: String = ""
-            let bookmarks = recordedBookmarks.componentsSeparatedByString("/")
-                
-            for bookmark in bookmarks {
-                if bookmark != restaurants[rowIndex] {
-                    if newBookmarkString == "" {
-                        newBookmarkString = bookmark
-                    }
-                    else {
-                        newBookmarkString = "\(newBookmarkString)/\(bookmark)"
-                    }
+        for bookmark in bookmarks {
+            println(dataArray[rowIndex].restaurant)
+            if bookmark != dataArray[rowIndex].restaurant {
+                if newBookmarkString == "" {
+                    newBookmarkString = bookmark
+                }
+                else {
+                    newBookmarkString = "\(newBookmarkString)/\(bookmark)"
                 }
             }
-                
-            Preference.save(newBookmarkString, key: Preference.PREF_KEY_BOOKMARK)
         }
         
-        println("Current bookmark string : \(Preference.load(Preference.PREF_KEY_BOOKMARK))")
+        Preference.save(newBookmarkString, key: Preference.PREF_KEY_BOOKMARK)
+        println("Current bookmarks : \(Preference.load(Preference.PREF_KEY_BOOKMARK))")
+        
+        self.viewDidAppear(false)
     }
     
     func isBookmarked(name: String) -> Bool {
@@ -102,13 +88,14 @@ class TableViewController: UITableViewController {
         
         return false
     }
-    
+
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return restaurants.count
+        
+        return dataArray.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -127,14 +114,6 @@ class TableViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50.0
-    }
-    
-    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 30.0
-    }
-
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
@@ -186,15 +165,16 @@ class TableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-
+    
         if segue.identifier == "ShowInformations" {
             let aboutViewController = segue.destinationViewController as! AboutViewController
             
-            let rowIndex = sender!.tag
-            aboutViewController.restaurantName = dataArray[rowIndex].restaurant
-            aboutViewController.operatingHour = (XMLParser.sharedInstance.informations["operating_hours"]!)[rowIndex].stringByReplacingOccurrencesOfString("\\n", withString: "\n")
-            aboutViewController.location = (XMLParser.sharedInstance.informations["locations"]!)[rowIndex].stringByReplacingOccurrencesOfString("\\n", withString: "\n")
+            let rowIndex = find(XMLParser.sharedInstance.informations["restaurants"]!, dataArray[sender!.tag].restaurant)
+            aboutViewController.restaurantName = (XMLParser.sharedInstance.informations["restaurants"]!)[rowIndex!]
+            aboutViewController.operatingHour = (XMLParser.sharedInstance.informations["operating_hours"]!)[rowIndex!].stringByReplacingOccurrencesOfString("\\n", withString: "\n")
+            aboutViewController.location = (XMLParser.sharedInstance.informations["locations"]!)[rowIndex!].stringByReplacingOccurrencesOfString("\\n", withString: "\n")
         }
+
     }
 
 }

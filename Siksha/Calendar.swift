@@ -1,5 +1,5 @@
 //
-//  DateUtil.swift
+//  Calendar.swift
 //  Siksha
 //
 //  Created by 강규 on 2015. 6. 30..
@@ -83,14 +83,14 @@ extension NSDate {
         return components.minute
     }
     
-    func getTodayDate() -> String {
+    func getTodayTimeStamp() -> String {
         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         
         return formatter.stringFromDate(self)
     }
     
-    func getTomorrowDate() -> String {
+    func getTomorrowTimeStamp() -> String {
         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         
@@ -99,16 +99,38 @@ extension NSDate {
     
 }
 
-class DateUtil {
+class Calendar {
     
-    static func getDateLabelString() -> String {
+    static func getDateLabelString(index: Int) -> String {
         let date = NSDate()
         let month: Int = date.getMonth()
         let day: Int = date.getDay()
         let dayOfWeek: String = date.getDayOfWeek()
+        
+        if index == 0 {
+            return "\(month)/\(day) (\(dayOfWeek)) 아침"
+        }
+        else if index == 1 {
+            return "\(month)/\(day) (\(dayOfWeek)) 점심"
+        }
+        else {
+            return "\(month)/\(day) (\(dayOfWeek)) 저녁"
+        }
+    }
+    
+    static func getInitialPageIndex() -> Int {
+        let date = NSDate()
         let timeSlot: String = date.getTimeSlot()
         
-        return "\(month)/\(day) (\(dayOfWeek)) \(timeSlot)"
+        if timeSlot == "아침" {
+            return 0
+        }
+        else if timeSlot == "점심" {
+            return 1
+        }
+        else {
+            return 2
+        }
     }
     
     static func isVetDataUpdateTime() -> Bool {

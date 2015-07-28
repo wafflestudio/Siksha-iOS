@@ -1,35 +1,35 @@
 //
-//  ViewController.swift
+//  BookmarkViewController.swift
 //  Siksha
 //
-//  Created by 강규 on 2015. 7. 18..
+//  Created by 강규 on 2015. 7. 22..
 //  Copyright (c) 2015년 WaffleStudio. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
-    
-    @IBOutlet weak var pageControl: UIPageControl!
+class BookmarkViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var pageControl: UIPageControl!
     
-    let pageCount: Int = 3
+    let pageCount: Int = 3 // breakfast, lunch, dinner
     var currentPageIndex: Int = 0
     
-    private func viewControllerAtIndex(index: Int) -> TableViewController? {
-        var pageItemController: TableViewController?
+    private func viewControllerAtIndex(index: Int) -> BookmarkTableViewController? {
+        var pageItemController: BookmarkTableViewController?
         
         switch index {
         case 0:
-            pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("BreakfastTableViewController") as! BreakfastTableViewController
+            pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("BreakfastBookmarkTableViewController") as! BreakfastBookmarkTableViewController
             pageItemController!.dictionary = MenuDictionary.sharedInstance.breakfastMenuDictionary
             pageItemController!.pageIndex = index
         case 1:
-            pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("LunchTableViewController") as! LunchTableViewController
+            pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("LunchBookmarkTableViewController") as! LunchBookmarkTableViewController
             pageItemController!.dictionary = MenuDictionary.sharedInstance.lunchMenuDictionary
             pageItemController!.pageIndex = index
         case 2:
-            pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("DinnerTableViewController") as! DinnerTableViewController
+            pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("DinnerBookmarkTableViewController") as! DinnerBookmarkTableViewController
             pageItemController!.dictionary = MenuDictionary.sharedInstance.dinnerMenuDictionary
             pageItemController!.pageIndex = index
         default:
@@ -39,9 +39,9 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
         
         return pageItemController
     }
-    
+
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        let beforeViewController = viewController as! TableViewController
+        let beforeViewController = viewController as! BookmarkTableViewController
         var index: Int = beforeViewController.pageIndex
         
         if index == 0 {
@@ -54,7 +54,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        let afterViewController = viewController as! TableViewController
+        let afterViewController = viewController as! BookmarkTableViewController
         var index: Int = afterViewController.pageIndex
         
         index = index + 1
@@ -68,7 +68,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
     
     func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject], transitionCompleted completed: Bool) {
         if completed {
-            currentPageIndex = (pageViewController.viewControllers[0] as! TableViewController).pageIndex
+            currentPageIndex = (pageViewController.viewControllers[0] as! BookmarkTableViewController).pageIndex
             pageControl.currentPage = currentPageIndex
             dateLabel.text = Calendar.getDateLabelString(currentPageIndex)
         }
@@ -96,12 +96,12 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
         pageControl.currentPage = currentPageIndex
         dateLabel.text = Calendar.getDateLabelString(currentPageIndex)
     }
-        
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-
+        
         setPageViewController()
         setInitialPage()
     }
@@ -110,7 +110,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     /*
     // MARK: - Navigation
 

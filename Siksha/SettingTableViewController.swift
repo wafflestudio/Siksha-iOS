@@ -1,15 +1,15 @@
 //
-//  LunchTableViewController.swift
+//  SettingTableViewController.swift
 //  Siksha
 //
-//  Created by 강규 on 2015. 7. 18..
+//  Created by 강규 on 2015. 7. 28..
 //  Copyright (c) 2015년 WaffleStudio. All rights reserved.
 //
 
 import UIKit
 
-class LunchTableViewController: TableViewController {
-    
+class SettingTableViewController: UITableViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,7 +34,7 @@ class LunchTableViewController: TableViewController {
         return 0
     }
     */
-    
+
     /*
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
@@ -43,42 +43,15 @@ class LunchTableViewController: TableViewController {
     }
     */
 
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if dataArray[indexPath.section].isEmpty {
-            var cell: TableViewEmptyCell = tableView.dequeueReusableCellWithIdentifier("LunchTableViewEmptyCell", forIndexPath: indexPath) as! TableViewEmptyCell
-            
-            // Configure the cell...
-            cell.emptyMessageLabel!.text = "메뉴가 없습니다."
-            
-            return cell
-        }
-        else {
-            var cell: TableViewCell = tableView.dequeueReusableCellWithIdentifier("LunchTableViewCell", forIndexPath: indexPath) as! TableViewCell
-            
-            // Configure the cell...
-            cell.nameLabel!.text = dataArray[indexPath.section].menus[indexPath.row]["name"] as? String
-            cell.priceLabel!.text = dataArray[indexPath.section].menus[indexPath.row]["price"] as? String
-            
-            return cell
-        }
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+
+        // Configure the cell...
+
+        return cell
     }
-    
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        var headerCell = tableView.dequeueReusableCellWithIdentifier("LunchTableViewHeaderCell") as! TableViewHeaderCell
-        
-        headerCell.nameLabel!.text = restaurants[section]
-        headerCell.bookmarkButton!.tag = section
-        headerCell.aboutButton!.tag = section
-        
-        if isBookmarked(restaurants[section]) {
-            headerCell.bookmarkButton!.setImage(UIImage(named: "ic_star_filled"), forState: .Normal)
-        }
-        else {
-            headerCell.bookmarkButton!.setImage(UIImage(named: "ic_star"), forState: .Normal)
-        }
-        
-        return headerCell
-    }
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -115,14 +88,21 @@ class LunchTableViewController: TableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+    
+        if segue.identifier == "ShowVersion" {
+            let versionViewController = segue.destinationViewController as! VersionViewController
+            
+            versionViewController.currentVersion = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
+        }
+        else if segue.identifier == "ShowDeveloper" {
+            
+        }
     }
-    */
 
 }

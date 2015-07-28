@@ -30,7 +30,7 @@ class Preference {
     
     static func load(key: String) -> AnyObject {
         if preferences.objectForKey(key) == nil {
-            return preferences.objectForKey(key)!
+            return ""
         }
         else {
             let object: AnyObject? = preferences.objectForKey(key)

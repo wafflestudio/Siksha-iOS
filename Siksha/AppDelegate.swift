@@ -81,7 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func setInitialTab() {
-        var rootViewController = self.window!.rootViewController as! UITabBarController
+        var rootViewController = self.window!.rootViewController as! TabBarController
         
         if Preference.load(Preference.PREF_KEY_BOOKMARK) as! String == "" {
             rootViewController.selectedIndex = 1 // 식단 탭

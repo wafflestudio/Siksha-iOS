@@ -512,7 +512,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="BNc-uu-nqh">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="u9z-uW-3ht" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="u9z-uW-3ht" customClass="TabBarController" customModule="Siksha" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

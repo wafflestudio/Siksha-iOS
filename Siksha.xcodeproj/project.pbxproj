@@ -40,6 +40,10 @@
 		55E9C4221B67D04100A8DDBA /* DinnerBookmarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C41A1B67D04100A8DDBA /* DinnerBookmarkTableViewController.swift */; };
 		55E9C4231B67D04100A8DDBA /* LunchBookmarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C41B1B67D04100A8DDBA /* LunchBookmarkTableViewController.swift */; };
 		55E9C4281B67D19700A8DDBA /* data.xml in Resources */ = {isa = PBXBuildFile; fileRef = 55E9C4271B67D19700A8DDBA /* data.xml */; };
+		55E9C42D1B67D3CA00A8DDBA /* Arita-Dotum-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 55E9C4291B67D1BC00A8DDBA /* Arita-Dotum-Medium.otf */; };
+		55E9C42E1B67D3CA00A8DDBA /* BM-Hanna.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55E9C42A1B67D1BC00A8DDBA /* BM-Hanna.ttf */; };
+		55E9C42F1B67D3CA00A8DDBA /* BM-Jua.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55E9C42B1B67D1BC00A8DDBA /* BM-Jua.ttf */; };
+		55E9C4311B67D4E900A8DDBA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C4301B67D4E900A8DDBA /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +68,6 @@
 		5509367F1B656F7B00651C76 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		550936831B656F7B00651C76 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		550936841B656F7B00651C76 /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
-		550936AB1B6571F300651C76 /* Siksha-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Siksha-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		550936AC1B65F7FC00651C76 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = Siksha/AboutViewController.swift; sourceTree = SOURCE_ROOT; };
 		55C9B6BF1B411C22001F3086 /* Siksha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Siksha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C9B6D41B411C22001F3086 /* SikshaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SikshaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +97,8 @@
 		55E9C4291B67D1BC00A8DDBA /* Arita-Dotum-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Arita-Dotum-Medium.otf"; path = "Resources/Fonts/Arita-Dotum-Medium.otf"; sourceTree = "<group>"; };
 		55E9C42A1B67D1BC00A8DDBA /* BM-Hanna.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "BM-Hanna.ttf"; path = "Resources/Fonts/BM-Hanna.ttf"; sourceTree = "<group>"; };
 		55E9C42B1B67D1BC00A8DDBA /* BM-Jua.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "BM-Jua.ttf"; path = "Resources/Fonts/BM-Jua.ttf"; sourceTree = "<group>"; };
+		55E9C42C1B67D2E500A8DDBA /* Siksha-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Siksha-Bridging-Header.h"; sourceTree = "<group>"; };
+		55E9C4301B67D4E900A8DDBA /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,12 +157,13 @@
 		55C9B6C11B411C22001F3086 /* Siksha */ = {
 			isa = PBXGroup;
 			children = (
-				550936AB1B6571F300651C76 /* Siksha-Bridging-Header.h */,
+				55E9C42C1B67D2E500A8DDBA /* Siksha-Bridging-Header.h */,
 				550936671B656F7B00651C76 /* AppDelegate.swift */,
 				55E9C4021B67C75B00A8DDBA /* Resources */,
 				55E9C4011B67C08300A8DDBA /* BookmarkTableViewController */,
 				55E9C4001B67C01500A8DDBA /* TableViewController */,
 				550936691B656F7B00651C76 /* Base.lproj */,
+				55E9C4301B67D4E900A8DDBA /* TabBarController.swift */,
 				550936AC1B65F7FC00651C76 /* AboutViewController.swift */,
 				55E9C3F61B6784B400A8DDBA /* SettingTableViewController.swift */,
 				55E9C3F81B67855400A8DDBA /* VersionViewController.swift */,
@@ -321,6 +327,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55E9C42D1B67D3CA00A8DDBA /* Arita-Dotum-Medium.otf in Resources */,
+				55E9C42E1B67D3CA00A8DDBA /* BM-Hanna.ttf in Resources */,
+				55E9C42F1B67D3CA00A8DDBA /* BM-Jua.ttf in Resources */,
 				5509368C1B656F7B00651C76 /* Main.storyboard in Resources */,
 				55E9C4281B67D19700A8DDBA /* data.xml in Resources */,
 				5509368B1B656F7B00651C76 /* LaunchScreen.xib in Resources */,
@@ -365,6 +374,7 @@
 				55E9C4111B67D03200A8DDBA /* TableViewEmptyCell.swift in Sources */,
 				5509369D1B656F7B00651C76 /* JSONDownloader.swift in Sources */,
 				55E9C40E1B67D03200A8DDBA /* LunchTableViewController.swift in Sources */,
+				55E9C4311B67D4E900A8DDBA /* TabBarController.swift in Sources */,
 				55E9C4211B67D04100A8DDBA /* BreakfastBookmarkTableViewController.swift in Sources */,
 				55E9C41D1B67D04100A8DDBA /* BookmarkTableViewController.swift in Sources */,
 				550936961B656F7B00651C76 /* MenuDictionary.swift in Sources */,

@@ -60,7 +60,6 @@ class BookmarkTableViewController: UITableViewController {
         var newBookmarkString: String = ""
         
         for bookmark in bookmarks {
-            println(dataArray[rowIndex].restaurant)
             if bookmark != dataArray[rowIndex].restaurant {
                 if newBookmarkString == "" {
                     newBookmarkString = bookmark
@@ -72,9 +71,17 @@ class BookmarkTableViewController: UITableViewController {
         }
         
         Preference.save(newBookmarkString, key: Preference.PREF_KEY_BOOKMARK)
-        println("Current bookmarks : \(Preference.load(Preference.PREF_KEY_BOOKMARK))")
+        println("Current bookmark string : \(Preference.load(Preference.PREF_KEY_BOOKMARK))")
         
         self.viewDidAppear(false)
+        
+        if Preference.load(Preference.PREF_KEY_BOOKMARK) as! String == "" {
+            var alertController = UIAlertController(title: "즐겨찾는 식당이 없습니다!", message: "OK를 누르면 식단 탭으로 이동합니다.", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { Void in
+                self.tabBarController!.selectedIndex = 1 })
+            alertController.addAction(defaultAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
     }
     
     func isBookmarked(name: String) -> Bool {

@@ -79,14 +79,6 @@ class BreakfastTableViewController: TableViewController {
         
         return headerCell
     }
-    
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50.0
-    }
-    
-    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 30.0
-    }
 
     /*
     // Override to support conditional editing of the table view.

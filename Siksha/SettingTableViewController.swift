@@ -18,6 +18,11 @@ class SettingTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        let logoView = UIImageView(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
+        logoView.contentMode = .ScaleAspectFit
+        logoView.image = UIImage(named: "ic_launcher")
+        self.navigationItem.titleView = logoView
     }
 
     override func didReceiveMemoryWarning() {

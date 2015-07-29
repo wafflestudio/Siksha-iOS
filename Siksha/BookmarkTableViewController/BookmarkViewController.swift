@@ -75,6 +75,12 @@ class BookmarkViewController: UIViewController, UIPageViewControllerDataSource, 
     }
     
     private func setPageViewController() {
+        // 시간(아침, 점심, 저녁)에 맞는 페이지 인덱스를 구한다.
+        currentPageIndex = Calendar.getInitialPageIndex()
+        
+        pageControl.currentPage = currentPageIndex
+        dateLabel.text = Calendar.getDateLabelString(currentPageIndex)
+        
         let pageViewController = self.storyboard!.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
         let viewControllers: [AnyObject] = [viewControllerAtIndex(currentPageIndex)!]
         let screenBounds: CGRect = UIScreen.mainScreen().bounds
@@ -89,21 +95,18 @@ class BookmarkViewController: UIViewController, UIPageViewControllerDataSource, 
         self.view.addSubview(pageViewController.view)
         pageViewController.didMoveToParentViewController(self)
     }
-    
-    private func setInitialPage() {
-        // 시간(아침, 점심, 저녁)에 맞는 페이지 인덱스를 구한다.
-        currentPageIndex = Calendar.getInitialPageIndex()
-        pageControl.currentPage = currentPageIndex
-        dateLabel.text = Calendar.getDateLabelString(currentPageIndex)
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
+        let logoView = UIImageView(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
+        logoView.contentMode = .ScaleAspectFit
+        logoView.image = UIImage(named: "ic_launcher")
+        self.navigationItem.titleView = logoView
+        
         setPageViewController()
-        setInitialPage()
     }
 
     override func didReceiveMemoryWarning() {

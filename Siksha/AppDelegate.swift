@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
+
         // 초기 JSON 메뉴 다운로드에 관한 Download Receiver를 설정한다.
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDownloadFinished", name: DOWNLOAD_NOTIFICATION_KEY, object: nil)
         

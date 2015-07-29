@@ -14,6 +14,10 @@ class VersionViewController: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var statusImageView: UIImageView!
     
+    let pastelPink = UIColor(red: 1.00, green: 0.82, blue: 0.83, alpha: 1.0)
+    let checkImage = UIImage(named: "ic_check")
+    let updateImage = UIImage(named: "ic_update")
+    
     var currentVersion: String = ""
     var latestVersion: String = ""
     
@@ -22,25 +26,26 @@ class VersionViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        let pastelPink: UIColor = UIColor(red: 0.998, green: 0.872, blue: 0.851, alpha: 1)
+        currentVersionLabel.text = "현재 버전 : \(currentVersion)"
         messageLabel.layer.cornerRadius = 10
-        messageLabel.layer.backgroundColor = pastelPink.CGColor
+        messageLabel.layer.backgroundColor = UIColor.whiteColor().CGColor
+        messageLabel.layer.borderColor = pastelPink.CGColor
+        messageLabel.layer.borderWidth = 2
         statusImageView.layer.cornerRadius = 10
         statusImageView.layer.backgroundColor = pastelPink.CGColor
-        currentVersionLabel.text = "현재 버전 : \(currentVersion)"
         
         if currentVersion == "1.0" {
             messageLabel.text = "최신 버전을 이용하고 있습니다."
-            statusImageView.image = UIImage(named: "ic_check")
+            statusImageView.image = checkImage
         }
-        // 버전 비교 기능 만들기
+        
+        /* 다음 버전부터 사용될 버전 비교 기능 만들기 */
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

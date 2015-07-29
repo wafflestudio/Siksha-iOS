@@ -20,6 +20,8 @@ class BookmarkTableViewController: UITableViewController {
     var dictionary: [String: Menu] = [:]
     var dataArray = [Menu]()
     
+    let alertController = UIAlertController(title: "즐겨찾는 식당이 없습니다!", message: "OK를 누르면 식단 탭으로 이동합니다.", preferredStyle: .Alert)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +30,10 @@ class BookmarkTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { Void in
+            self.tabBarController!.selectedIndex = 1 }))
+        alertController.view.tintColor = UIColor(red: 0.99, green: 0.65, blue: 0.66, alpha: 1.0)
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -76,10 +82,6 @@ class BookmarkTableViewController: UITableViewController {
         self.viewDidAppear(false)
         
         if Preference.load(Preference.PREF_KEY_BOOKMARK) as! String == "" {
-            var alertController = UIAlertController(title: "즐겨찾는 식당이 없습니다!", message: "OK를 누르면 식단 탭으로 이동합니다.", preferredStyle: .Alert)
-            let defaultAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { Void in
-                self.tabBarController!.selectedIndex = 1 })
-            alertController.addAction(defaultAction)
             self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
@@ -119,6 +121,14 @@ class BookmarkTableViewController: UITableViewController {
             menu.isEmpty = false
             return menu.menus.count
         }
+    }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40.0
+    }
+    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 30.0
     }
     
     /*

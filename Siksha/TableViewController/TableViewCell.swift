@@ -13,7 +13,7 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
-    let pastelPink = UIColor(red: 0.998, green: 0.872, blue: 0.851, alpha: 1)
+    let pastelPink = UIColor(red: 1.00, green: 0.82, blue: 0.83, alpha: 1.0)
     
     override func awakeFromNib() {
         super.awakeFromNib()

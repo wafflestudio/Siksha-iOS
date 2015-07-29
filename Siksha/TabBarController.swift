@@ -10,12 +10,17 @@ import UIKit
 
 class TabBarController: UITabBarController, UITabBarControllerDelegate {
 
+    var alertController: UIAlertController = UIAlertController(title: "즐겨찾는 식당이 없습니다!", message: "별 모양 아이콘을 눌러 즐겨찾는 식당을 추가해보세요.", preferredStyle: .Alert)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
 
         self.delegate = self
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        alertController.view.tintColor = UIColor(red: 0.99, green: 0.65, blue: 0.66, alpha: 1.0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,10 +32,6 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         if tabBarController.selectedIndex == 0 {
             if Preference.load(Preference.PREF_KEY_BOOKMARK) as! String == "" {
                 tabBarController.selectedIndex = 1 // 식단 탭
-                
-                var alertController = UIAlertController(title: "즐겨찾는 식당이 없습니다!", message: "별 모양 아이콘을 눌러 즐겨찾는 식당을 추가해보세요.", preferredStyle: .Alert)
-                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                alertController.addAction(defaultAction)
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
             

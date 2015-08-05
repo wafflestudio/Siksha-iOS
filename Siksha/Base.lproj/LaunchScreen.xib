@@ -20,14 +20,14 @@
                     <rect key="frame" x="100" y="152" width="175" height="100"/>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.99346065521240234" green="0.69075524806976318" blue="0.54173785448074341" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.95686274509803926" green="0.53725490196078429" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <point key="canvasLocation" x="547.5" y="454.5"/>
         </view>
     </objects>
     <resources>
-        <image name="ic_launcher_bowl" width="315" height="278"/>
+        <image name="ic_launcher_bowl" width="96" height="85"/>
         <image name="image_launcher_developer" width="175" height="30"/>
         <image name="image_launcher_title" width="175" height="90"/>
     </resources>

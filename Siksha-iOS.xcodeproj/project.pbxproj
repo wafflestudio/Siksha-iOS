@@ -44,6 +44,10 @@
 		55E9C42E1B67D3CA00A8DDBA /* BM-Hanna.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55E9C42A1B67D1BC00A8DDBA /* BM-Hanna.ttf */; };
 		55E9C42F1B67D3CA00A8DDBA /* BM-Jua.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55E9C42B1B67D1BC00A8DDBA /* BM-Jua.ttf */; };
 		55E9C4311B67D4E900A8DDBA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C4301B67D4E900A8DDBA /* TabBarController.swift */; };
+		55E9C4391B71F2CE00A8DDBA /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E9C4381B71F2CE00A8DDBA /* NotificationCenter.framework */; };
+		55E9C43E1B71F2CE00A8DDBA /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C43D1B71F2CE00A8DDBA /* TodayViewController.swift */; };
+		55E9C4401B71F2CE00A8DDBA /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55E9C43F1B71F2CE00A8DDBA /* MainInterface.storyboard */; };
+		55E9C4431B71F2CE00A8DDBA /* Siksha-Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 55E9C4361B71F2CE00A8DDBA /* Siksha-Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +58,28 @@
 			remoteGlobalIDString = 55C9B6BE1B411C22001F3086;
 			remoteInfo = Siksha;
 		};
+		55E9C4411B71F2CE00A8DDBA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55C9B6B71B411C22001F3086 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55E9C4351B71F2CE00A8DDBA;
+			remoteInfo = "Siksha-Widget";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		55E9C4471B71F2CF00A8DDBA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				55E9C4431B71F2CE00A8DDBA /* Siksha-Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		550936671B656F7B00651C76 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +94,7 @@
 		550936831B656F7B00651C76 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		550936841B656F7B00651C76 /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
 		550936AC1B65F7FC00651C76 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = Siksha/AboutViewController.swift; sourceTree = SOURCE_ROOT; };
+		555297811B720A9B00F6B80B /* Siksha.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Siksha.entitlements; sourceTree = "<group>"; };
 		55C9B6BF1B411C22001F3086 /* Siksha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Siksha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C9B6D41B411C22001F3086 /* SikshaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SikshaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C9B6D91B411C22001F3086 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,6 +125,11 @@
 		55E9C42B1B67D1BC00A8DDBA /* BM-Jua.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "BM-Jua.ttf"; path = "Resources/Fonts/BM-Jua.ttf"; sourceTree = "<group>"; };
 		55E9C42C1B67D2E500A8DDBA /* Siksha-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Siksha-Bridging-Header.h"; sourceTree = "<group>"; };
 		55E9C4301B67D4E900A8DDBA /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		55E9C4361B71F2CE00A8DDBA /* Siksha-Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Siksha-Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55E9C4381B71F2CE00A8DDBA /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		55E9C43C1B71F2CE00A8DDBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55E9C43D1B71F2CE00A8DDBA /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		55E9C43F1B71F2CE00A8DDBA /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +144,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55E9C4331B71F2CE00A8DDBA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55E9C4391B71F2CE00A8DDBA /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +180,8 @@
 			children = (
 				55C9B6C11B411C22001F3086 /* Siksha */,
 				55C9B6D71B411C22001F3086 /* SikshaTests */,
+				55E9C43A1B71F2CE00A8DDBA /* Siksha-Widget */,
+				55E9C4371B71F2CE00A8DDBA /* Frameworks */,
 				55C9B6C01B411C22001F3086 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -150,6 +191,7 @@
 			children = (
 				55C9B6BF1B411C22001F3086 /* Siksha.app */,
 				55C9B6D41B411C22001F3086 /* SikshaTests.xctest */,
+				55E9C4361B71F2CE00A8DDBA /* Siksha-Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,6 +199,7 @@
 		55C9B6C11B411C22001F3086 /* Siksha */ = {
 			isa = PBXGroup;
 			children = (
+				555297811B720A9B00F6B80B /* Siksha.entitlements */,
 				55E9C42C1B67D2E500A8DDBA /* Siksha-Bridging-Header.h */,
 				550936671B656F7B00651C76 /* AppDelegate.swift */,
 				55E9C4021B67C75B00A8DDBA /* Resources */,
@@ -247,6 +290,32 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		55E9C4371B71F2CE00A8DDBA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55E9C4381B71F2CE00A8DDBA /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		55E9C43A1B71F2CE00A8DDBA /* Siksha-Widget */ = {
+			isa = PBXGroup;
+			children = (
+				55E9C43D1B71F2CE00A8DDBA /* TodayViewController.swift */,
+				55E9C43F1B71F2CE00A8DDBA /* MainInterface.storyboard */,
+				55E9C43B1B71F2CE00A8DDBA /* Supporting Files */,
+			);
+			path = "Siksha-Widget";
+			sourceTree = "<group>";
+		};
+		55E9C43B1B71F2CE00A8DDBA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				55E9C43C1B71F2CE00A8DDBA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -257,10 +326,12 @@
 				55C9B6BB1B411C22001F3086 /* Sources */,
 				55C9B6BC1B411C22001F3086 /* Frameworks */,
 				55C9B6BD1B411C22001F3086 /* Resources */,
+				55E9C4471B71F2CF00A8DDBA /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				55E9C4421B71F2CE00A8DDBA /* PBXTargetDependency */,
 			);
 			name = Siksha;
 			productName = Siksha;
@@ -285,6 +356,23 @@
 			productReference = 55C9B6D41B411C22001F3086 /* SikshaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		55E9C4351B71F2CE00A8DDBA /* Siksha-Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55E9C4441B71F2CF00A8DDBA /* Build configuration list for PBXNativeTarget "Siksha-Widget" */;
+			buildPhases = (
+				55E9C4321B71F2CE00A8DDBA /* Sources */,
+				55E9C4331B71F2CE00A8DDBA /* Frameworks */,
+				55E9C4341B71F2CE00A8DDBA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Siksha-Widget";
+			productName = "Siksha-Widget";
+			productReference = 55E9C4361B71F2CE00A8DDBA /* Siksha-Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -296,14 +384,24 @@
 				TargetAttributes = {
 					55C9B6BE1B411C22001F3086 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 587SS7X3DQ;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					55C9B6D31B411C22001F3086 = {
 						CreatedOnToolsVersion = 6.3.2;
 						TestTargetID = 55C9B6BE1B411C22001F3086;
 					};
+					55E9C4351B71F2CE00A8DDBA = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 587SS7X3DQ;
+					};
 				};
 			};
-			buildConfigurationList = 55C9B6BA1B411C22001F3086 /* Build configuration list for PBXProject "Siksha" */;
+			buildConfigurationList = 55C9B6BA1B411C22001F3086 /* Build configuration list for PBXProject "Siksha-iOS" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -318,6 +416,7 @@
 			targets = (
 				55C9B6BE1B411C22001F3086 /* Siksha */,
 				55C9B6D31B411C22001F3086 /* SikshaTests */,
+				55E9C4351B71F2CE00A8DDBA /* Siksha-Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -341,6 +440,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55E9C4341B71F2CE00A8DDBA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55E9C4401B71F2CE00A8DDBA /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +498,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		55E9C4321B71F2CE00A8DDBA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55E9C43E1B71F2CE00A8DDBA /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -398,6 +513,11 @@
 			isa = PBXTargetDependency;
 			target = 55C9B6BE1B411C22001F3086 /* Siksha */;
 			targetProxy = 55C9B6D51B411C22001F3086 /* PBXContainerItemProxy */;
+		};
+		55E9C4421B71F2CE00A8DDBA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55E9C4351B71F2CE00A8DDBA /* Siksha-Widget */;
+			targetProxy = 55E9C4411B71F2CE00A8DDBA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -509,7 +629,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Siksha/Siksha.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Siksha/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Siksha/Siksha-Bridging-Header.h";
@@ -522,7 +645,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Siksha/Siksha.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Siksha/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Siksha/Siksha-Bridging-Header.h";
@@ -563,10 +689,40 @@
 			};
 			name = Release;
 		};
+		55E9C4451B71F2CF00A8DDBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Siksha-Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		55E9C4461B71F2CF00A8DDBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Siksha-Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		55C9B6BA1B411C22001F3086 /* Build configuration list for PBXProject "Siksha" */ = {
+		55C9B6BA1B411C22001F3086 /* Build configuration list for PBXProject "Siksha-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				55C9B6DC1B411C22001F3086 /* Debug */,
@@ -589,6 +745,15 @@
 			buildConfigurations = (
 				55C9B6E21B411C22001F3086 /* Debug */,
 				55C9B6E31B411C22001F3086 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55E9C4441B71F2CF00A8DDBA /* Build configuration list for PBXNativeTarget "Siksha-Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55E9C4451B71F2CF00A8DDBA /* Debug */,
+				55E9C4461B71F2CF00A8DDBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

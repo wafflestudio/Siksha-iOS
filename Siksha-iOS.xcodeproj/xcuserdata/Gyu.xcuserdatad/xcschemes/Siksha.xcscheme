@@ -17,7 +17,7 @@
                BlueprintIdentifier = "55C9B6BE1B411C22001F3086"
                BuildableName = "Siksha.app"
                BlueprintName = "Siksha"
-               ReferencedContainer = "container:Siksha.xcodeproj">
+               ReferencedContainer = "container:Siksha-iOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,7 +31,7 @@
                BlueprintIdentifier = "55C9B6D31B411C22001F3086"
                BuildableName = "SikshaTests.xctest"
                BlueprintName = "SikshaTests"
-               ReferencedContainer = "container:Siksha.xcodeproj">
+               ReferencedContainer = "container:Siksha-iOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -49,7 +49,7 @@
                BlueprintIdentifier = "55C9B6D31B411C22001F3086"
                BuildableName = "SikshaTests.xctest"
                BlueprintName = "SikshaTests"
-               ReferencedContainer = "container:Siksha.xcodeproj">
+               ReferencedContainer = "container:Siksha-iOS.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -59,7 +59,7 @@
             BlueprintIdentifier = "55C9B6BE1B411C22001F3086"
             BuildableName = "Siksha.app"
             BlueprintName = "Siksha"
-            ReferencedContainer = "container:Siksha.xcodeproj">
+            ReferencedContainer = "container:Siksha-iOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -79,7 +79,7 @@
             BlueprintIdentifier = "55C9B6BE1B411C22001F3086"
             BuildableName = "Siksha.app"
             BlueprintName = "Siksha"
-            ReferencedContainer = "container:Siksha.xcodeproj">
+            ReferencedContainer = "container:Siksha-iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -98,7 +98,7 @@
             BlueprintIdentifier = "55C9B6BE1B411C22001F3086"
             BuildableName = "Siksha.app"
             BlueprintName = "Siksha"
-            ReferencedContainer = "container:Siksha.xcodeproj">
+            ReferencedContainer = "container:Siksha-iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

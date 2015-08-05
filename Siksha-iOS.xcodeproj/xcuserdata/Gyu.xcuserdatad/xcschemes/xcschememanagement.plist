@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Siksha-Widget.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Siksha.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>55C9B6D31B411C22001F3086</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>55E9C4351B71F2CE00A8DDBA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

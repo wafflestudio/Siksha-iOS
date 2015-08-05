@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Siksha.xcodeproj">
+      location = "self:/Users/Gyu/Documents/Siksha-iOS/Siksha-iOS.xcodeproj">
    </FileRef>
 </Workspace>

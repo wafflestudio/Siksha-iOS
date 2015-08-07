@@ -70,7 +70,7 @@ class BookmarkViewController: UIViewController, UIPageViewControllerDataSource, 
         if completed {
             currentPageIndex = (pageViewController.viewControllers[0] as! BookmarkTableViewController).pageIndex
             pageControl.currentPage = currentPageIndex
-            dateLabel.text = Calendar.getDateLabelString(currentPageIndex)
+            dateLabel.text = Calendar.getDateLabelTimestamp(currentPageIndex)
         }
     }
     
@@ -79,7 +79,7 @@ class BookmarkViewController: UIViewController, UIPageViewControllerDataSource, 
         currentPageIndex = Calendar.getInitialPageIndex()
         
         pageControl.currentPage = currentPageIndex
-        dateLabel.text = Calendar.getDateLabelString(currentPageIndex)
+        dateLabel.text = Calendar.getDateLabelTimestamp(currentPageIndex)
         
         let pageViewController = self.storyboard!.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
         let viewControllers: [AnyObject] = [viewControllerAtIndex(currentPageIndex)!]
@@ -113,7 +113,7 @@ class BookmarkViewController: UIViewController, UIPageViewControllerDataSource, 
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     /*
     // MARK: - Navigation
 

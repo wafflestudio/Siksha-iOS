@@ -83,14 +83,14 @@ extension NSDate {
         return components.minute
     }
     
-    func getTodayTimeStamp() -> String {
+    func getTodayTimestamp() -> String {
         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         
         return formatter.stringFromDate(self)
     }
     
-    func getTomorrowTimeStamp() -> String {
+    func getTomorrowTimestamp() -> String {
         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         
@@ -101,7 +101,7 @@ extension NSDate {
 
 class Calendar {
     
-    static func getDateLabelString(index: Int) -> String {
+    static func getDateLabelTimestamp(index: Int) -> String {
         let date = NSDate()
         let month: Int = date.getMonth()
         let day: Int = date.getDay()
@@ -116,6 +116,16 @@ class Calendar {
         else {
             return "\(month)/\(day) (\(dayOfWeek)) 저녁"
         }
+    }
+    
+    static func getRefreshTimestamp() -> String {
+        let date = NSDate()
+        let month: Int = date.getMonth()
+        let day: Int = date.getDay()
+        let hour: Int = date.getHour()
+        let minute: Int = date.getMinute()
+        
+        return "\(month)월 \(day)일 \(hour):\(minute)"
     }
     
     static func getInitialPageIndex() -> Int {

@@ -27,6 +27,9 @@
             <string>Arita-dotum-Medium_OTF</string>
             <string>Arita-dotum-Medium_OTF</string>
             <string>Arita-dotum-Medium_OTF</string>
+            <string>Arita-dotum-Medium_OTF</string>
+            <string>Arita-dotum-Medium_OTF</string>
+            <string>Arita-dotum-Medium_OTF</string>
         </mutableArray>
         <mutableArray key="BM-Hanna.ttf">
             <string>BMHANNA</string>
@@ -50,13 +53,18 @@
             <string>BMJUA</string>
             <string>BMJUA</string>
             <string>BMJUA</string>
+            <string>BMJUA</string>
+            <string>BMJUA</string>
+            <string>BMJUA</string>
+            <string>BMJUA</string>
+            <string>BMJUA</string>
         </mutableArray>
     </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="9Nc-Bl-pFl">
             <objects>
-                <viewController id="G9a-2R-ZfL" customClass="ViewController" customModule="Siksha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="G9a-2R-ZfL" customClass="ViewController" customModule="Siksha" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nf8-ei-Tm2"/>
                         <viewControllerLayoutGuide type="bottom" id="vkY-UX-aug"/>
@@ -95,7 +103,7 @@
         <!--Bookmark View Controller-->
         <scene sceneID="fta-aT-A6p">
             <objects>
-                <viewController id="kbP-uU-409" customClass="BookmarkViewController" customModule="Siksha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BookmarkViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kbP-uU-409" customClass="BookmarkViewController" customModule="Siksha" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rOE-Bn-G6a"/>
                         <viewControllerLayoutGuide type="bottom" id="qXa-Py-XPB"/>
@@ -147,20 +155,20 @@
         <scene sceneID="5tm-ur-KGR">
             <objects>
                 <tableViewController storyboardIdentifier="BreakfastTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YUl-tO-rIP" customClass="BreakfastTableViewController" customModule="Siksha" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="30" sectionHeaderHeight="10" sectionFooterHeight="10" id="1CB-hv-VHu">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="30" sectionHeaderHeight="10" sectionFooterHeight="10" id="1CB-hv-VHu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.98823529409999999" green="0.90196078430000004" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BreakfastTableViewHeaderCell" rowHeight="40" id="9L2-Y2-lRV" customClass="TableViewHeaderCell" customModule="Siksha" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BreakfastTableViewHeaderCell" rowHeight="50" id="9L2-Y2-lRV" customClass="TableViewHeaderCell" customModule="Siksha" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9L2-Y2-lRV" id="Y97-lq-nkR">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRJ-Zc-p9K">
-                                            <rect key="frame" x="300" y="8" width="24" height="24"/>
-                                            <state key="normal" title="Button" image="ic_star">
+                                            <rect key="frame" x="289" y="7" width="36" height="36"/>
+                                            <state key="normal" image="ic_star">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -168,8 +176,8 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vU-gA-nfn">
-                                            <rect key="frame" x="335" y="8" width="24" height="24"/>
-                                            <state key="normal" title="Button" image="ic_about">
+                                            <rect key="frame" x="331" y="7" width="36" height="36"/>
+                                            <state key="normal" image="ic_about">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -177,7 +185,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qea-dV-aWT">
-                                            <rect key="frame" x="15" y="9" width="150" height="21"/>
+                                            <rect key="frame" x="15" y="14" width="150" height="21"/>
                                             <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -251,26 +259,26 @@
         <scene sceneID="r6Z-9g-U91">
             <objects>
                 <tableViewController storyboardIdentifier="LunchTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uQG-g6-arE" customClass="LunchTableViewController" customModule="Siksha" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="30" sectionHeaderHeight="10" sectionFooterHeight="10" id="Rh4-sr-LNc">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="30" sectionHeaderHeight="10" sectionFooterHeight="10" id="Rh4-sr-LNc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.98823529409999999" green="0.90196078430000004" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LunchTableViewHeaderCell" rowHeight="40" id="4rq-pL-Q3Z" customClass="TableViewHeaderCell" customModule="Siksha" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LunchTableViewHeaderCell" rowHeight="50" id="4rq-pL-Q3Z" customClass="TableViewHeaderCell" customModule="Siksha" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4rq-pL-Q3Z" id="wDj-mX-14F">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taG-kr-ASG">
-                                            <rect key="frame" x="15" y="9" width="150" height="21"/>
+                                            <rect key="frame" x="15" y="14" width="150" height="21"/>
                                             <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WoI-aT-0EZ">
-                                            <rect key="frame" x="300" y="8" width="24" height="24"/>
-                                            <state key="normal" title="Button" image="ic_star">
+                                            <rect key="frame" x="289" y="7" width="36" height="36"/>
+                                            <state key="normal" image="ic_star">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -278,8 +286,8 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43b-Xl-frV">
-                                            <rect key="frame" x="335" y="8" width="24" height="24"/>
-                                            <state key="normal" title="Button" image="ic_about">
+                                            <rect key="frame" x="331" y="7" width="36" height="36"/>
+                                            <state key="normal" image="ic_about">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -353,26 +361,26 @@
         <scene sceneID="CoU-Lo-hFu">
             <objects>
                 <tableViewController storyboardIdentifier="DinnerTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fWF-Lc-ion" customClass="DinnerTableViewController" customModule="Siksha" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="30" sectionHeaderHeight="10" sectionFooterHeight="10" id="2Ek-6S-ghz">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="30" sectionHeaderHeight="10" sectionFooterHeight="10" id="2Ek-6S-ghz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.98823529409999999" green="0.90196078430000004" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DinnerTableViewHeaderCell" rowHeight="40" id="JmZ-B6-e99" customClass="TableViewHeaderCell" customModule="Siksha" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DinnerTableViewHeaderCell" rowHeight="50" id="JmZ-B6-e99" customClass="TableViewHeaderCell" customModule="Siksha" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JmZ-B6-e99" id="tgf-RL-HPS">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47q-gO-dnO">
-                                            <rect key="frame" x="15" y="9" width="150" height="21"/>
+                                            <rect key="frame" x="15" y="14" width="150" height="21"/>
                                             <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwi-Mk-GM1">
-                                            <rect key="frame" x="335" y="8" width="24" height="24"/>
-                                            <state key="normal" title="Button" image="ic_about">
+                                            <rect key="frame" x="331" y="7" width="36" height="36"/>
+                                            <state key="normal" image="ic_about">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -380,8 +388,8 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPh-Fj-fGg">
-                                            <rect key="frame" x="300" y="8" width="24" height="24"/>
-                                            <state key="normal" title="Button" image="ic_star">
+                                            <rect key="frame" x="289" y="7" width="36" height="36"/>
+                                            <state key="normal" image="ic_star">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -454,7 +462,7 @@
         <!--About View Controller-->
         <scene sceneID="puT-h4-Gwz">
             <objects>
-                <viewController id="Kls-lc-CQY" customClass="AboutViewController" customModule="Siksha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Kls-lc-CQY" customClass="AboutViewController" customModule="Siksha" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tYu-mY-ymb"/>
                         <viewControllerLayoutGuide type="bottom" id="oQX-kV-WvB"/>
@@ -475,7 +483,7 @@
                                 <color key="textColor" red="0.95686274510000002" green="0.53725490200000003" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ljb-0W-CAq">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ljb-0W-CAq">
                                 <rect key="frame" x="67" y="314" width="240" height="125"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -491,7 +499,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YxE-nJ-xTd">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YxE-nJ-xTd">
                                 <rect key="frame" x="67" y="495" width="240" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -517,8 +525,9 @@
         <!--Tab Bar Controller-->
         <scene sceneID="BNc-uu-nqh">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="u9z-uW-3ht" customClass="TabBarController" customModule="Siksha" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="u9z-uW-3ht" customClass="TabBarController" customModule="Siksha" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="B8H-cX-Nyk"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="oac-U5-P04">
@@ -533,7 +542,7 @@
                     <connections>
                         <segue destination="jof-U4-LEi" kind="relationship" relationship="viewControllers" id="ksZ-Jf-h4G"/>
                         <segue destination="7y3-6z-tl2" kind="relationship" relationship="viewControllers" id="VQL-SP-rI7"/>
-                        <segue destination="Iuy-nn-OGn" kind="relationship" relationship="viewControllers" id="fgK-vI-Rjs"/>
+                        <segue destination="Iuy-nn-OGn" kind="relationship" relationship="viewControllers" id="jIS-Cr-MdE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iQ3-11-6ss" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -543,7 +552,7 @@
         <!--식단-->
         <scene sceneID="gJo-4m-yAX">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7y3-6z-tl2" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MenuTab" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7y3-6z-tl2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="식단" image="ic_meal" id="mWb-pB-uFR">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="ic_meal"/>
@@ -560,6 +569,9 @@
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="IZ2-1J-MG3">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="G9a-2R-ZfL" kind="relationship" relationship="rootViewController" id="4iV-Cf-OjN"/>
                     </connections>
@@ -571,7 +583,7 @@
         <!--Setting Table View Controller-->
         <scene sceneID="l9J-RQ-Q2M">
             <objects>
-                <tableViewController id="dNo-5n-dFH" customClass="SettingTableViewController" customModule="Siksha" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SettingTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dNo-5n-dFH" customClass="SettingTableViewController" customModule="Siksha" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="D70-11-KGL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -590,18 +602,48 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Message" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVC-bg-Ntc">
+                                                    <rect key="frame" x="139" y="11" width="203" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Arita-dotum-Medium_OTF" family="Arita-dotum(OTF)" pointSize="15"/>
+                                                    <color key="textColor" red="0.99259531499999998" green="0.65028995280000002" blue="0.65924155709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="ErT-aC-TgX" kind="show" identifier="ShowVersion" id="0aB-me-q70"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SettingTableViewCell" id="giU-TP-8dV">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingTableViewCell" id="GXQ-QS-0zT">
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="giU-TP-8dV" id="Mc0-97-a1s">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GXQ-QS-0zT" id="mnR-1X-Yau">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="만든 사람들" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0A-HA-myv">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="식단 새로고침" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ua-d4-tjl">
+                                                    <rect key="frame" x="15" y="11" width="115" height="21"/>
+                                                    <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timestamp" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAr-yU-JDh">
+                                                    <rect key="frame" x="157" y="11" width="203" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Arita-dotum-Medium_OTF" family="Arita-dotum(OTF)" pointSize="15"/>
+                                                    <color key="textColor" red="0.99259531499999998" green="0.65028995280000002" blue="0.65924155709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="즐겨찾기" id="eIz-Tb-YDI">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SettingTableViewCell" id="KZD-Wp-UrU">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KZD-Wp-UrU" id="tvj-kR-3tC">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="식당 순서 변경" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X59-uw-dNe">
                                                     <rect key="frame" x="15" y="11" width="150" height="21"/>
                                                     <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -610,7 +652,68 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="XOO-hN-Ysi" kind="show" identifier="ShowDeveloper" id="9Rz-WM-QWB"/>
+                                            <segue destination="kap-wk-Zpk" kind="show" identifier="ModifyBookmarkSequence" id="wp6-6J-nFx"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="식단" id="LGI-l3-w2R">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingTableViewCell" id="LEL-3x-fqs">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LEL-3x-fqs" id="Qye-iw-kz7">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="메뉴 없는 식당 안 보기" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kO-n0-ANg">
+                                                    <rect key="frame" x="15" y="11" width="150" height="21"/>
+                                                    <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MH2-vj-70U">
+                                                    <rect key="frame" x="318" y="6" width="51" height="31"/>
+                                                    <color key="onTintColor" red="0.99259531499999998" green="0.65028995280000002" blue="0.65924155709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="emptyMenuVisibilitySwitched:" destination="dNo-5n-dFH" eventType="valueChanged" id="wN4-pR-Kzu"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SettingTableViewCell" id="G5M-tn-UXQ">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G5M-tn-UXQ" id="2N0-NE-eQm">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="식당 순서 변경" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKn-o6-J3W">
+                                                    <rect key="frame" x="15" y="11" width="150" height="21"/>
+                                                    <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="kap-wk-Zpk" kind="show" identifier="ModifySequence" id="ocq-hY-WWg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="FNm-q2-qYY">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SettingTableViewCell" id="xha-Ig-Db1">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xha-Ig-Db1" id="SMg-1Z-Ef7">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="만든 사람들" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jz3-sS-Ykm">
+                                                    <rect key="frame" x="15" y="11" width="150" height="21"/>
+                                                    <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="XOO-hN-Ysi" kind="show" identifier="ShowDeveloper" id="Ok5-YG-0yH"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -625,6 +728,11 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="ila-yd-orj"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="emptyMenuVisibilitySwitch" destination="MH2-vj-70U" id="7IM-pA-i7g"/>
+                        <outlet property="refreshTimestamp" destination="LAr-yU-JDh" id="86W-C5-RTd"/>
+                        <outlet property="versionMessageLabel" destination="wVC-bg-Ntc" id="4rx-93-2S7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qi3-x0-ZHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -633,7 +741,7 @@
         <!--버전 정보-->
         <scene sceneID="H3o-T2-Hs7">
             <objects>
-                <viewController id="ErT-aC-TgX" customClass="VersionViewController" customModule="Siksha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VersionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ErT-aC-TgX" customClass="VersionViewController" customModule="Siksha" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lJ7-y6-qLq"/>
                         <viewControllerLayoutGuide type="bottom" id="gg6-Rv-MzC"/>
@@ -657,15 +765,20 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XzY-aJ-CtW">
-                                <rect key="frame" x="66" y="387" width="285" height="25"/>
-                                <fontDescription key="fontDescription" name="Arita-dotum-Medium_OTF" family="Arita-dotum(OTF)" pointSize="14"/>
-                                <color key="textColor" red="0.99259531499999998" green="0.65028995280000002" blue="0.65924155709999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P4c-JO-r6s">
                                 <rect key="frame" x="31" y="387" width="25" height="25"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zg-dN-xgJ">
+                                <rect key="frame" x="64" y="385" width="250" height="30"/>
+                                <fontDescription key="fontDescription" name="Arita-dotum-Medium_OTF" family="Arita-dotum(OTF)" pointSize="15"/>
+                                <state key="normal" title="Message">
+                                    <color key="titleColor" red="0.99259531499999998" green="0.65028995280000002" blue="0.65924155709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="messageButtonClicked:" destination="ErT-aC-TgX" eventType="touchUpInside" id="aFK-mE-UJ4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -673,7 +786,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="currentVersionLabel" destination="Wq9-9f-c04" id="eDK-EP-ZfF"/>
-                        <outlet property="messageLabel" destination="XzY-aJ-CtW" id="JmR-dK-ywo"/>
+                        <outlet property="messageButton" destination="7zg-dN-xgJ" id="UFj-zh-xsc"/>
                         <outlet property="statusImageView" destination="P4c-JO-r6s" id="vLK-ed-fMd"/>
                     </connections>
                 </viewController>
@@ -681,10 +794,76 @@
             </objects>
             <point key="canvasLocation" x="1243.5" y="932.5"/>
         </scene>
+        <!--식당 순서 변경-->
+        <scene sceneID="Qh9-UF-Cz3">
+            <objects>
+                <tableViewController storyboardIdentifier="SequenceTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kap-wk-Zpk" customClass="SequenceTableViewController" customModule="Siksha" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="7qo-H3-CfE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SequenceTableViewHeaderCell" rowHeight="40" id="opl-9S-k9g" customClass="SequenceTableViewHeaderCell" customModule="Siksha" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="opl-9S-k9g" id="vQJ-Kd-Y3v">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4k-de-BTr">
+                                            <rect key="frame" x="50" y="11" width="275" height="17"/>
+                                            <fontDescription key="fontDescription" name="Arita-dotum-Medium_OTF" family="Arita-dotum(OTF)" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="messageLabel" destination="N4k-de-BTr" id="8Jh-Fz-UGM"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SequenceTableViewCell" id="WtP-fo-yEn" customClass="SequenceTableViewCell" customModule="Siksha" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WtP-fo-yEn" id="jlv-UI-cLo">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vij-ha-mL4">
+                                            <rect key="frame" x="15" y="11" width="200" height="21"/>
+                                            <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="vij-ha-mL4" id="B2M-t4-zlb"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="kap-wk-Zpk" id="cVO-ZZ-SgM"/>
+                            <outlet property="delegate" destination="kap-wk-Zpk" id="ja2-UZ-qNs"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="식당 순서 변경" id="YI6-c5-a9L">
+                        <barButtonItem key="rightBarButtonItem" title="편집" id="ZKq-F3-LgP">
+                            <color key="tintColor" red="0.99259531499999998" green="0.65028995280000002" blue="0.65924155709999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="editButtonClicked:" destination="kap-wk-Zpk" id="hbO-Au-gYU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="38s-b8-7lL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1669.5" y="932.5"/>
+        </scene>
         <!--만든 사람들-->
         <scene sceneID="r1z-8j-hk2">
             <objects>
-                <viewController id="XOO-hN-Ysi" customClass="DeveloperViewController" customModule="Siksha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DeveloperViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XOO-hN-Ysi" customClass="DeveloperViewController" customModule="Siksha" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NaJ-Vu-3Vy"/>
                         <viewControllerLayoutGuide type="bottom" id="Lcn-FA-kZy"/>
@@ -743,7 +922,7 @@
         <!--즐겨찾기-->
         <scene sceneID="bmJ-e9-9Vc">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jof-U4-LEi" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="BookmarkTab" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jof-U4-LEi" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="즐겨찾기" image="ic_bookmark" id="9O2-6G-l1W">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="ic_bookmark"/>
@@ -771,7 +950,7 @@
         <!--설정-->
         <scene sceneID="LzS-Vg-Gc4">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Iuy-nn-OGn" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SettingTab" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Iuy-nn-OGn" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="설정" image="ic_settings" id="H5G-2W-pkm">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="ic_settings"/>
@@ -789,7 +968,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="dNo-5n-dFH" kind="relationship" relationship="rootViewController" id="s2M-th-aKd"/>
+                        <segue destination="dNo-5n-dFH" kind="relationship" relationship="rootViewController" id="kje-Uf-NTQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y3a-o2-rrQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -800,39 +979,39 @@
         <scene sceneID="vDL-eF-eyh">
             <objects>
                 <tableViewController storyboardIdentifier="BreakfastBookmarkTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0W5-ch-ChE" customClass="BreakfastBookmarkTableViewController" customModule="Siksha" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="30" sectionHeaderHeight="10" sectionFooterHeight="10" id="5z7-4d-VeG">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="30" sectionHeaderHeight="10" sectionFooterHeight="10" id="5z7-4d-VeG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.98823529409999999" green="0.90196078430000004" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BreakfastBookmarkTableViewHeaderCell" rowHeight="40" id="OxY-07-elx" customClass="BookmarkTableViewHeaderCell" customModule="Siksha" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BreakfastBookmarkTableViewHeaderCell" rowHeight="50" id="OxY-07-elx" customClass="BookmarkTableViewHeaderCell" customModule="Siksha" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OxY-07-elx" id="50z-9D-XF7">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbQ-cy-04j">
-                                            <rect key="frame" x="15" y="9" width="150" height="21"/>
+                                            <rect key="frame" x="15" y="14" width="150" height="21"/>
                                             <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BoP-ay-k31">
+                                            <rect key="frame" x="331" y="7" width="36" height="36"/>
+                                            <state key="normal" image="ic_about">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="aboutButtonClicked:" destination="0W5-ch-ChE" eventType="touchUpInside" id="O3T-UB-tce"/>
+                                            </connections>
+                                        </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GtD-0q-GqP">
-                                            <rect key="frame" x="300" y="8" width="24" height="24"/>
+                                            <rect key="frame" x="289" y="7" width="36" height="36"/>
                                             <state key="normal" image="ic_star_filled">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
                                                 <action selector="bookmarkButtonClicked:" destination="0W5-ch-ChE" eventType="touchUpInside" id="XmH-9i-usc"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BoP-ay-k31">
-                                            <rect key="frame" x="335" y="8" width="24" height="24"/>
-                                            <state key="normal" title="Button" image="ic_about">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="aboutButtonClicked:" destination="0W5-ch-ChE" eventType="touchUpInside" id="O3T-UB-tce"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -903,19 +1082,19 @@
         <scene sceneID="F9W-3v-9nZ">
             <objects>
                 <tableViewController storyboardIdentifier="LunchBookmarkTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qd3-ya-Lbf" customClass="LunchBookmarkTableViewController" customModule="Siksha" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="30" sectionHeaderHeight="10" sectionFooterHeight="10" id="4Pq-dQ-Rrn">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="30" sectionHeaderHeight="10" sectionFooterHeight="10" id="4Pq-dQ-Rrn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.98823529409999999" green="0.90196078430000004" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LunchBookmarkTableViewHeaderCell" rowHeight="40" id="6Tp-EG-wEr" customClass="BookmarkTableViewHeaderCell" customModule="Siksha" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LunchBookmarkTableViewHeaderCell" rowHeight="50" id="6Tp-EG-wEr" customClass="BookmarkTableViewHeaderCell" customModule="Siksha" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Tp-EG-wEr" id="2rn-2k-rFZ">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSj-Ix-bvi">
-                                            <rect key="frame" x="300" y="8" width="24" height="24"/>
+                                            <rect key="frame" x="289" y="7" width="36" height="36"/>
                                             <state key="normal" image="ic_star_filled">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -924,8 +1103,8 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0g-iU-XpO">
-                                            <rect key="frame" x="335" y="8" width="24" height="24"/>
-                                            <state key="normal" title="Button" image="ic_about">
+                                            <rect key="frame" x="331" y="7" width="36" height="36"/>
+                                            <state key="normal" image="ic_about">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -933,7 +1112,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5P-xV-uZD">
-                                            <rect key="frame" x="15" y="9" width="150" height="21"/>
+                                            <rect key="frame" x="15" y="14" width="150" height="21"/>
                                             <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -1005,25 +1184,25 @@
         <scene sceneID="bCR-AX-KUc">
             <objects>
                 <tableViewController storyboardIdentifier="DinnerBookmarkTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zOR-yc-Ga9" customClass="DinnerBookmarkTableViewController" customModule="Siksha" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="30" sectionHeaderHeight="10" sectionFooterHeight="10" id="t70-dK-ma0">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="30" sectionHeaderHeight="10" sectionFooterHeight="10" id="t70-dK-ma0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.98823529409999999" green="0.90196078430000004" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DinnerBookmarkTableViewHeaderCell" rowHeight="40" id="EMo-rh-Nwf" customClass="BookmarkTableViewHeaderCell" customModule="Siksha" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DinnerBookmarkTableViewHeaderCell" rowHeight="50" id="EMo-rh-Nwf" customClass="BookmarkTableViewHeaderCell" customModule="Siksha" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EMo-rh-Nwf" id="xgt-kV-Him">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8n-SY-uTP">
-                                            <rect key="frame" x="15" y="9" width="150" height="21"/>
+                                            <rect key="frame" x="15" y="14" width="150" height="21"/>
                                             <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OjT-bf-eO4">
-                                            <rect key="frame" x="300" y="8" width="24" height="24"/>
+                                            <rect key="frame" x="289" y="7" width="36" height="36"/>
                                             <state key="normal" image="ic_star_filled">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -1032,8 +1211,8 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOI-yL-G9Q">
-                                            <rect key="frame" x="335" y="8" width="24" height="24"/>
-                                            <state key="normal" title="Button" image="ic_about">
+                                            <rect key="frame" x="331" y="7" width="36" height="36"/>
+                                            <state key="normal" image="ic_about">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -1116,6 +1295,7 @@
         <image name="logo_waffle" width="320" height="132"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vpG-3p-xiM"/>
+        <segue reference="wp6-6J-nFx"/>
+        <segue reference="JMc-ur-Hnb"/>
     </inferredMetricsTieBreakers>
 </document>

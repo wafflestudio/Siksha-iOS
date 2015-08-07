@@ -10,10 +10,7 @@ import UIKit
 
 class BookmarkTableViewController: UITableViewController {
 
-    let restaurants: [String] = ["학생회관 식당", "농생대 3식당", "919동 기숙사 식당", "자하연 식당", "302동 식당",
-        "솔밭 간이 식당", "동원관 식당", "감골 식당", "사범대 4식당", "두레미담",
-        "301동 식당", "예술계복합연구동 식당", "공대 간이 식당", "상아회관 식당", "220동 식당",
-        "대학원 기숙사 식당", "85동 수의대 식당", "소담마루", "샤반"]
+    var restaurants: [String] = []
     
     var pageIndex = 0
     
@@ -37,12 +34,18 @@ class BookmarkTableViewController: UITableViewController {
     }
 
     override func viewDidAppear(animated: Bool) {
-        dataArray = [Menu]()
+        let bookmarks = Preference.load(Preference.PREF_KEY_BOOKMARK) as! String
         
+        if bookmarks != "" {
+            restaurants = bookmarks.componentsSeparatedByString("/")
+        }
+        else {
+            restaurants = []
+        }
+        
+        dataArray = [Menu]()
         for restaurant in restaurants {
-            if isBookmarked(restaurant) {
-                dataArray.append(dictionary[restaurant]!)
-            }
+            dataArray.append(dictionary[restaurant]!)
         }
         
         self.tableView.reloadData()
@@ -113,18 +116,11 @@ class BookmarkTableViewController: UITableViewController {
         
         var menu: Menu = dataArray[section]
         
-        if menu.menus.count == 0 {
-            menu.isEmpty = true
-            return 1
-        }
-        else {
-            menu.isEmpty = false
-            return menu.menus.count
-        }
+        return menu.menus.count == 0 ? 1 : menu.menus.count
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40.0
+        return 50.0
     }
     
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -161,20 +157,18 @@ class BookmarkTableViewController: UITableViewController {
     }
     */
 
-    /*
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+        let item = dataArray[fromIndexPath.row]
+        dataArray.removeAtIndex(fromIndexPath.row)
+        dataArray.insert(item, atIndex: toIndexPath.row)
     }
-    */
-
-    /*
+    
     // Override to support conditional rearranging of the table view.
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the item to be re-orderable.
         return true
     }
-    */
 
     // MARK: - Navigation
 

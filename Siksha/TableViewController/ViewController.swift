@@ -70,7 +70,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
         if completed {
             currentPageIndex = (pageViewController.viewControllers[0] as! TableViewController).pageIndex
             pageControl.currentPage = currentPageIndex
-            dateLabel.text = Calendar.getDateLabelString(currentPageIndex)
+            dateLabel.text = Calendar.getDateLabelTimestamp(currentPageIndex)
         }
     }
     
@@ -79,7 +79,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
         currentPageIndex = Calendar.getInitialPageIndex()
         
         self.pageControl.currentPage = currentPageIndex
-        self.dateLabel.text = Calendar.getDateLabelString(currentPageIndex)
+        self.dateLabel.text = Calendar.getDateLabelTimestamp(currentPageIndex)
         
         let pageViewController = self.storyboard!.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
         let viewControllers: [AnyObject] = [viewControllerAtIndex(currentPageIndex)!]

@@ -14,7 +14,6 @@ class JSONDownloader {
     let REDIRECT_SERVER_URL: String = "http://kanggyu94.fun25.co.kr:13204"
     
     let ROUTE_MENU_VIEW = "/menus/view"
-    let ROUTE_VERSION = "/version"
     
     let QUERY_TODAY: String = "?date=today"
     let QUERY_TOMORROW: String = "?date=tomorrow"
@@ -24,6 +23,7 @@ class JSONDownloader {
     let OPTION_CACHED_TOMORROW: Int = 2
     
     let DOWNLOAD_NOTIFICATION_KEY = "download_notification"
+    let REFRESH_NOTIFICATION_KEY = "refresh_notification"
     
     static func isJSONUpdated(downloadDate: String) -> Bool {
         let recordedDate = Preference.load(Preference.PREF_KEY_JSON) as! String
@@ -57,10 +57,10 @@ class JSONDownloader {
         let date = NSDate()
         
         if option == OPTION_CACHED_TOMORROW {
-            return date.getTomorrowTimeStamp()
+            return date.getTomorrowTimestamp()
         }
         else {
-            return date.getTodayTimeStamp()
+            return date.getTodayTimestamp()
         }
     }
     
@@ -79,30 +79,6 @@ class JSONDownloader {
 
         return url
     }
-    
-    private func fetchAppLatestVersion() -> NSString? {
-        var request = NSURLRequest(URL: NSURL(string: SERVER_URL + ROUTE_VERSION)!)
-        var response: AutoreleasingUnsafeMutablePointer<NSURLResponse?> = nil
-        var error: NSError?
-
-        var data = NSURLConnection.sendSynchronousRequest(request, returningResponse: response, error: &error)
-        
-        if error != nil {
-            // error handling
-            request = NSURLRequest(URL: NSURL(string: REDIRECT_SERVER_URL + ROUTE_VERSION)!)
-            
-            println("Send request to another server.")
-            error = nil
-            data = NSURLConnection.sendSynchronousRequest(request, returningResponse: response, error: &error)
-            
-            if error != nil {
-                return nil
-            }
-        }
-        
-        return NSString(data: data!, encoding: NSUTF8StringEncoding)!
-    }
-
     
     private func fetchJSON(option: Int) -> NSString? {
         var request = NSURLRequest(URL: getFullURL(option, isAlive: true))
@@ -147,6 +123,9 @@ class JSONDownloader {
     }
     
     private func saveDownloadDateToPreference(downloadDate: String) -> Void {
+        // 설정 탭에서 refresh 기록을 표시하기 위해서 저장
+        Preference.save(Calendar.getRefreshTimestamp(), key: Preference.PREF_KEY_REFRESH_TIMESTAMP)
+        
         Preference.save(downloadDate, key: Preference.PREF_KEY_JSON)
         
         if Calendar.isVetDataUpdateTime() {
@@ -156,6 +135,7 @@ class JSONDownloader {
     
     private func notifyDownloadQuitted() -> Void {
         NSNotificationCenter.defaultCenter().postNotificationName(DOWNLOAD_NOTIFICATION_KEY, object: self)
+        NSNotificationCenter.defaultCenter().postNotificationName(REFRESH_NOTIFICATION_KEY, object: self)
     }
     
     func startDownloadService() -> Void {

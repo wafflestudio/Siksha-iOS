@@ -1,14 +1,17 @@
 //
-//  LunchTableViewController.swift
-//  Siksha
+//  SequenceTableViewController.swift
+//  Siksha-iOS
 //
-//  Created by 강규 on 2015. 7. 18..
+//  Created by 강규 on 2015. 8. 7..
 //  Copyright (c) 2015년 WaffleStudio. All rights reserved.
 //
 
 import UIKit
 
-class LunchTableViewController: TableViewController {
+class SequenceTableViewController: UITableViewController {
+    
+    var segueType: Int = -1 // 0 : Bookmark sequence, 1 : Normal sequence
+    var array: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,64 +23,91 @@ class LunchTableViewController: TableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    override func viewDidAppear(animated: Bool) {
+        if segueType == 0 {
+            array = (Preference.load(Preference.PREF_KEY_BOOKMARK) as! String).componentsSeparatedByString("/")
+        }
+        else {
+            array = (Preference.load(Preference.PREF_KEY_SEQUENCE) as! String).componentsSeparatedByString("/")
+        }
+        
+        self.tableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func editButtonClicked(sender: AnyObject) {
+        self.editing = !self.editing
+        
+        if self.editing {
+            self.navigationItem.rightBarButtonItem!.title = "확인"
+        }
+        else {
+            self.navigationItem.rightBarButtonItem!.title = "편집"
+            
+            var sequenceString = ""
+            for item in array {
+                if sequenceString == "" {
+                    sequenceString = item
+                }
+                else {
+                    sequenceString = "\(sequenceString)/\(item)"
+                }
+            }
+            
+            if segueType == 0 {
+                Preference.save(sequenceString, key: Preference.PREF_KEY_BOOKMARK)
+            }
+            else {
+                Preference.save(sequenceString, key: Preference.PREF_KEY_SEQUENCE)
+            }
+        }
+        
+        self.tableView.reloadData()
+    }
+    
     // MARK: - Table view data source
 
-    /*
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
-    */
-    
-    /*
+
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return array.count
     }
-    */
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if dataArray[indexPath.section].isEmpty {
-            var cell: TableViewEmptyCell = tableView.dequeueReusableCellWithIdentifier("LunchTableViewEmptyCell", forIndexPath: indexPath) as! TableViewEmptyCell
-            
-            // Configure the cell...
-            cell.emptyMessageLabel!.text = "메뉴가 없습니다."
-            
-            return cell
-        }
-        else {
-            var cell: TableViewCell = tableView.dequeueReusableCellWithIdentifier("LunchTableViewCell", forIndexPath: indexPath) as! TableViewCell
-            
-            // Configure the cell...
-            cell.nameLabel!.text = dataArray[indexPath.section].menus[indexPath.row]["name"] as? String
-            cell.priceLabel!.text = dataArray[indexPath.section].menus[indexPath.row]["price"] as? String
-            
-            return cell
-        }
+        let cell = tableView.dequeueReusableCellWithIdentifier("SequenceTableViewCell", forIndexPath: indexPath) as! SequenceTableViewCell
+        
+        // Configure the cell...
+
+        cell.nameLabel.text = array[indexPath.row]
+        
+        return cell
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        var headerCell = tableView.dequeueReusableCellWithIdentifier("LunchTableViewHeaderCell") as! TableViewHeaderCell
+        var headerCell = tableView.dequeueReusableCellWithIdentifier("SequenceTableViewHeaderCell") as! SequenceTableViewHeaderCell
         
-        headerCell.nameLabel!.text = dataArray[section].restaurant
-        headerCell.bookmarkButton!.tag = section
-        headerCell.aboutButton!.tag = section
-        
-        if isBookmarked(dataArray[section].restaurant) {
-            headerCell.bookmarkButton!.setImage(UIImage(named: "ic_star_filled"), forState: .Normal)
+        if self.editing {
+            headerCell.messageLabel.text = "확인 버튼을 눌러 순서를 저장하세요."
         }
         else {
-            headerCell.bookmarkButton!.setImage(UIImage(named: "ic_star"), forState: .Normal)
+            headerCell.messageLabel.text = "편집 버튼을 눌러 순서를 바꿔보세요."
         }
-        
+
         return headerCell
+    }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40.0
     }
 
     /*
@@ -100,20 +130,26 @@ class LunchTableViewController: TableViewController {
     }
     */
 
-    /*
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+        let item: String = array[fromIndexPath.row]
+        array.removeAtIndex(fromIndexPath.row)
+        array.insert(item, atIndex: toIndexPath.row)
     }
-    */
-
-    /*
+    
     // Override to support conditional rearranging of the table view.
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the item to be re-orderable.
         return true
     }
-    */
+    
+    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+        return UITableViewCellEditingStyle.None
+    }
+    
+    override func tableView(tableView: UITableView, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false
+    }
 
     /*
     // MARK: - Navigation

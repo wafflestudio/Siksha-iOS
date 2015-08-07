@@ -11,35 +11,38 @@ import UIKit
 class VersionViewController: UIViewController {
 
     @IBOutlet weak var currentVersionLabel: UILabel!
-    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var messageButton: UIButton!
     @IBOutlet weak var statusImageView: UIImageView!
     
     let pastelPink = UIColor(red: 1.00, green: 0.82, blue: 0.83, alpha: 1.0)
     let checkImage = UIImage(named: "ic_check")
     let updateImage = UIImage(named: "ic_update")
     
-    var currentVersion: String = ""
-    var latestVersion: String = ""
+    var currentAppVersion: String = ""
+    var latestAppVersion: String = ""
+    var isLatest: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        currentVersionLabel.text = "현재 버전 : \(currentVersion)"
-        messageLabel.layer.cornerRadius = 10
-        messageLabel.layer.backgroundColor = UIColor.whiteColor().CGColor
-        messageLabel.layer.borderColor = pastelPink.CGColor
-        messageLabel.layer.borderWidth = 2
+        currentVersionLabel.text = "현재 버전 : \(currentAppVersion)"
+        messageButton.layer.cornerRadius = 10
+        messageButton.layer.backgroundColor = UIColor.whiteColor().CGColor
+        messageButton.layer.borderColor = pastelPink.CGColor
+        messageButton.layer.borderWidth = 2
         statusImageView.layer.cornerRadius = 10
         statusImageView.layer.backgroundColor = pastelPink.CGColor
         
-        if currentVersion == "1.0" {
-            messageLabel.text = "최신 버전을 이용하고 있습니다."
+        if isLatest {
+            messageButton.setTitle("최신 버전을 이용하고 있습니다.", forState: .Normal)
             statusImageView.image = checkImage
         }
-        
-        /* 다음 버전부터 사용될 버전 비교 기능 만들기 */
+        else {
+            messageButton.setTitle("업데이트를 하려면 터치하세요.", forState: .Normal)
+            statusImageView.image = updateImage
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +50,12 @@ class VersionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func messageButtonClicked(sender: AnyObject) {
+        if !isLatest {
+            // After version 1.1
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

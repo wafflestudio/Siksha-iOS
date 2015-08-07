@@ -66,11 +66,11 @@ class BreakfastTableViewController: TableViewController {
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         var headerCell = tableView.dequeueReusableCellWithIdentifier("BreakfastTableViewHeaderCell") as! TableViewHeaderCell
         
-        headerCell.nameLabel!.text = restaurants[section]
+        headerCell.nameLabel!.text = dataArray[section].restaurant
         headerCell.bookmarkButton!.tag = section
         headerCell.aboutButton!.tag = section
         
-        if isBookmarked(restaurants[section]) {
+        if isBookmarked(dataArray[section].restaurant) {
             headerCell.bookmarkButton!.setImage(UIImage(named: "ic_star_filled"), forState: .Normal)
         }
         else {
@@ -103,15 +103,15 @@ class BreakfastTableViewController: TableViewController {
     /*
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    
     }
     */
-
+    
     /*
     // Override to support conditional rearranging of the table view.
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
+    // Return NO if you do not want the item to be re-orderable.
+    return true
     }
     */
 

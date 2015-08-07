@@ -12,9 +12,13 @@ class Preference {
     
     static let PREF_KEY_JSON: String = "json_date"
     static let PREF_KEY_VET_DATA: String = "vet_data_date"
-    static let PREF_KEY_ORIGINAL_SEQUENCE: String = "restaurant_original_sequence"
+    static let PREF_KEY_REFRESH_TIMESTAMP = "refresh_timestamp"
     static let PREF_KEY_SEQUENCE: String = "restaurant_current_sequence"
     static let PREF_KEY_BOOKMARK: String = "bookmark_list"
+    static let PREF_KEY_CURRENT_APP_VERSION: String = "current_app_version"
+    static let PREF_KEY_LATEST_APP_VERSION: String = "latest_app_version"
+    
+    static let PREF_KEY_EMPTY_MENU_VISIBILITY = "empty_menu_visibility"
     
     static let preferences = NSUserDefaults.standardUserDefaults()
     

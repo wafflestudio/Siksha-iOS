@@ -18,6 +18,9 @@
 		550936A21B656F7B00651C76 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936831B656F7B00651C76 /* Menu.swift */; };
 		550936A31B656F7B00651C76 /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936841B656F7B00651C76 /* Preference.swift */; };
 		550936AD1B65F7FC00651C76 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550936AC1B65F7FC00651C76 /* AboutViewController.swift */; };
+		553A90D71B74559600E04B4E /* SequenceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553A90D61B74559600E04B4E /* SequenceTableViewController.swift */; };
+		553A90D91B748FAE00E04B4E /* SequenceTableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553A90D81B748FAE00E04B4E /* SequenceTableViewHeaderCell.swift */; };
+		553A90DB1B748FBA00E04B4E /* SequenceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553A90DA1B748FBA00E04B4E /* SequenceTableViewCell.swift */; };
 		55C9B6DB1B411C22001F3086 /* SikshaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C9B6DA1B411C22001F3086 /* SikshaTests.swift */; };
 		55E9C3EB1B65FB7900A8DDBA /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C3EA1B65FB7900A8DDBA /* XMLParser.swift */; };
 		55E9C3F71B6784B400A8DDBA /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C3F61B6784B400A8DDBA /* SettingTableViewController.swift */; };
@@ -94,6 +97,9 @@
 		550936831B656F7B00651C76 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		550936841B656F7B00651C76 /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
 		550936AC1B65F7FC00651C76 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = Siksha/AboutViewController.swift; sourceTree = SOURCE_ROOT; };
+		553A90D61B74559600E04B4E /* SequenceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SequenceTableViewController.swift; path = Siksha/SequenceTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		553A90D81B748FAE00E04B4E /* SequenceTableViewHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceTableViewHeaderCell.swift; sourceTree = "<group>"; };
+		553A90DA1B748FBA00E04B4E /* SequenceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceTableViewCell.swift; sourceTree = "<group>"; };
 		555297811B720A9B00F6B80B /* Siksha.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Siksha.entitlements; sourceTree = "<group>"; };
 		55C9B6BF1B411C22001F3086 /* Siksha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Siksha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C9B6D41B411C22001F3086 /* SikshaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SikshaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,6 +215,9 @@
 				55E9C4301B67D4E900A8DDBA /* TabBarController.swift */,
 				550936AC1B65F7FC00651C76 /* AboutViewController.swift */,
 				55E9C3F61B6784B400A8DDBA /* SettingTableViewController.swift */,
+				553A90D61B74559600E04B4E /* SequenceTableViewController.swift */,
+				553A90D81B748FAE00E04B4E /* SequenceTableViewHeaderCell.swift */,
+				553A90DA1B748FBA00E04B4E /* SequenceTableViewCell.swift */,
 				55E9C3F81B67855400A8DDBA /* VersionViewController.swift */,
 				55E9C3FA1B67855F00A8DDBA /* DeveloperViewController.swift */,
 				550936771B656F7B00651C76 /* MenuDictionary.swift */,
@@ -476,9 +485,11 @@
 				550936A31B656F7B00651C76 /* Preference.swift in Sources */,
 				55E9C3FB1B67855F00A8DDBA /* DeveloperViewController.swift in Sources */,
 				55E9C4221B67D04100A8DDBA /* DinnerBookmarkTableViewController.swift in Sources */,
+				553A90DB1B748FBA00E04B4E /* SequenceTableViewCell.swift in Sources */,
 				55E9C40D1B67D03200A8DDBA /* DinnerTableViewController.swift in Sources */,
 				55E9C3F91B67855400A8DDBA /* VersionViewController.swift in Sources */,
 				55E9C4111B67D03200A8DDBA /* TableViewEmptyCell.swift in Sources */,
+				553A90D91B748FAE00E04B4E /* SequenceTableViewHeaderCell.swift in Sources */,
 				5509369D1B656F7B00651C76 /* JSONDownloader.swift in Sources */,
 				55E9C40E1B67D03200A8DDBA /* LunchTableViewController.swift in Sources */,
 				55E9C4311B67D4E900A8DDBA /* TabBarController.swift in Sources */,
@@ -486,6 +497,7 @@
 				55E9C41D1B67D04100A8DDBA /* BookmarkTableViewController.swift in Sources */,
 				550936961B656F7B00651C76 /* MenuDictionary.swift in Sources */,
 				55E9C3EB1B65FB7900A8DDBA /* XMLParser.swift in Sources */,
+				553A90D71B74559600E04B4E /* SequenceTableViewController.swift in Sources */,
 				55E9C4201B67D04100A8DDBA /* BookmarkViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -630,7 +642,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Siksha/Siksha.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Gyu Kang (7AAZR5Z9C8)";
 				INFOPLIST_FILE = Siksha/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -646,7 +658,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Siksha/Siksha.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Gyu Kang (587SS7X3DQ)";
 				INFOPLIST_FILE = Siksha/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -10,15 +10,15 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    let restaurants: [String] = ["학생회관 식당", "농생대 3식당", "919동 기숙사 식당", "자하연 식당", "302동 식당",
-        "솔밭 간이 식당", "동원관 식당", "감골 식당", "사범대 4식당", "두레미담",
-        "301동 식당", "예술계복합연구동 식당", "공대 간이 식당", "상아회관 식당", "220동 식당",
-        "대학원 기숙사 식당", "85동 수의대 식당", "소담마루", "샤반"]
+    var restaurants: [String] = []
     
     var pageIndex = 0
     
     var dictionary: [String: Menu] = [:]
     var dataArray = [Menu]()
+    var restaurantCount: Int = 0
+    
+    var emptyMenuVisibility = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +28,30 @@ class TableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    
-        for restaurant in restaurants {
-            dataArray.append(dictionary[restaurant]!)
-        }
     }
     
     override func viewDidAppear(animated: Bool) {
+        restaurants = (Preference.load(Preference.PREF_KEY_SEQUENCE) as! String).componentsSeparatedByString("/")
+        
+        dataArray = []
+        restaurantCount = 0
+        
+        emptyMenuVisibility = Preference.load(Preference.PREF_KEY_EMPTY_MENU_VISIBILITY) as! String
+        if emptyMenuVisibility == "" || emptyMenuVisibility == "visible" {
+            for restaurant in restaurants {
+                dataArray.append(dictionary[restaurant]!)
+            }
+            restaurantCount = restaurants.count
+        }
+        else {
+            for restaurant in restaurants {
+                if !dictionary[restaurant]!.isEmpty {
+                    dataArray.append(dictionary[restaurant]!)
+                    restaurantCount++
+                }
+            }
+        }
+        
         self.tableView.reloadData()
     }
 
@@ -54,7 +71,7 @@ class TableViewController: UITableViewController {
         var recordedBookmarks = Preference.load(Preference.PREF_KEY_BOOKMARK) as! String
         
         /* 북마크 되어있으면 텅빈 별로 바꾸고, 되어있지 않으면 꽉찬 별로 바꾼다. */
-        if isBookmarked(restaurants[rowIndex]) {
+        if isBookmarked(dataArray[rowIndex].restaurant) {
             let star = UIImage(named: "ic_star")
             bookmarkButton.setImage(star, forState: .Normal)
         }
@@ -65,17 +82,17 @@ class TableViewController: UITableViewController {
         
         /* 북마크 정보를 Preference에 기록한다. */
         if recordedBookmarks == "" {
-            Preference.save(restaurants[rowIndex], key: Preference.PREF_KEY_BOOKMARK)
+            Preference.save(dataArray[rowIndex].restaurant, key: Preference.PREF_KEY_BOOKMARK)
         }
-        else if !isBookmarked(restaurants[rowIndex]) {
-            Preference.save("\(recordedBookmarks)/\(restaurants[rowIndex])", key: Preference.PREF_KEY_BOOKMARK)
+        else if !isBookmarked(dataArray[rowIndex].restaurant) {
+            Preference.save("\(recordedBookmarks)/\(dataArray[rowIndex].restaurant)", key: Preference.PREF_KEY_BOOKMARK)
         }
         else {
             var newBookmarkString: String = ""
             let bookmarks = recordedBookmarks.componentsSeparatedByString("/")
                 
             for bookmark in bookmarks {
-                if bookmark != restaurants[rowIndex] {
+                if bookmark != dataArray[rowIndex].restaurant {
                     if newBookmarkString == "" {
                         newBookmarkString = bookmark
                     }
@@ -108,7 +125,7 @@ class TableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return restaurants.count
+        return restaurantCount
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -117,18 +134,11 @@ class TableViewController: UITableViewController {
         
         var menu: Menu = dataArray[section]
         
-        if menu.menus.count == 0 {
-            menu.isEmpty = true
-            return 1
-        }
-        else {
-            menu.isEmpty = false
-            return menu.menus.count
-        }
+        return menu.menus.count == 0 ? 1 : menu.menus.count
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40.0
+        return 50.0
     }
     
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -190,10 +200,10 @@ class TableViewController: UITableViewController {
         if segue.identifier == "ShowInformations" {
             let aboutViewController = segue.destinationViewController as! AboutViewController
             
-            let rowIndex = sender!.tag
-            aboutViewController.restaurantName = dataArray[rowIndex].restaurant
-            aboutViewController.operatingHour = (XMLParser.sharedInstance.informations["operating_hours"]!)[rowIndex].stringByReplacingOccurrencesOfString("\\n", withString: "\n")
-            aboutViewController.location = (XMLParser.sharedInstance.informations["locations"]!)[rowIndex].stringByReplacingOccurrencesOfString("\\n", withString: "\n")
+            let rowIndex = find(XMLParser.sharedInstance.informations["restaurants"]!, dataArray[sender!.tag].restaurant)
+            aboutViewController.restaurantName = (XMLParser.sharedInstance.informations["restaurants"]!)[rowIndex!]
+            aboutViewController.operatingHour = (XMLParser.sharedInstance.informations["operating_hours"]!)[rowIndex!].stringByReplacingOccurrencesOfString("\\n", withString: "\n")
+            aboutViewController.location = (XMLParser.sharedInstance.informations["locations"]!)[rowIndex!].stringByReplacingOccurrencesOfString("\\n", withString: "\n")
         }
     }
 

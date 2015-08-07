@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let DOWNLOAD_NOTIFICATION_KEY = "download_notification"
-    let todayTimeStamp: String = NSDate().getTodayTimeStamp()
+    let BUNDLE_IDENTIFIER = NSBundle.mainBundle().bundleIdentifier
     
     var JSONData: NSArray?
     
@@ -25,9 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDownloadFinished", name: DOWNLOAD_NOTIFICATION_KEY, object: nil)
         
         checkLocalJSONStatus()
+        checkLatestAppVersion()
         
         // 운영 시간, 위치 등의 정보가 담긴 data.xml을 파싱하여 객체에 저장한다.
         XMLParser.sharedInstance.parseXMLFile("data")
+        
+        // 초기 식당 목록 순서를 결정한다.
+        setInitialSequence()
         
         return true
     }
@@ -54,11 +58,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    private func checkLocalJSONStatus() {
-        if JSONDownloader.isJSONUpdated(todayTimeStamp) {
+    private func checkLocalJSONStatus() -> Void {
+        let todayTimestamp: String = NSDate().getTodayTimestamp()
+        
+        if JSONDownloader.isJSONUpdated(todayTimestamp) {
             println("JSON is already updated.")
             
-            if !JSONDownloader.isVetDataUpdated(todayTimeStamp) && Calendar.isVetDataUpdateTime() {
+            if !JSONDownloader.isVetDataUpdated(todayTimestamp) && Calendar.isVetDataUpdateTime() {
                 JSONDownloader().startDownloadService()
             }
             else {
@@ -72,15 +78,68 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    func onDownloadFinished() {
+    func onDownloadFinished() -> Void {
+        println("onDownloadFinished()")
+        
         JSONData = JSONParser.getLocalJSON()
         MenuDictionary.sharedInstance.initialize(JSONData)
         
         // 즐겨찾기 목록 유무에 따라서 시작 탭을 나눈다.
         setInitialTab()
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: DOWNLOAD_NOTIFICATION_KEY, object: nil)
     }
     
-    private func setInitialTab() {
+    private func checkLatestAppVersion() -> Void {
+        var version: String = ""
+        
+        let BASE_APP_PAGE_URL = "http://itunes.apple.com/kr/lookup?bundleId="
+        let request = NSURLRequest(URL: NSURL(string: BASE_APP_PAGE_URL + BUNDLE_IDENTIFIER!)!)
+        
+        var response: AutoreleasingUnsafeMutablePointer<NSURLResponse?> = nil
+        var error: NSError?
+        
+        let data = NSURLConnection.sendSynchronousRequest(request, returningResponse: response, error: &error)
+        
+        if error != nil {
+            // error handling
+            println("Fail to check latest version!")
+            version = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
+        }
+        else {
+            let JSON = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: &error) as! NSDictionary
+            let results: NSArray = JSON.objectForKey("results") as! NSArray
+
+            if results.count != 0 {
+                version = (results.objectAtIndex(0).objectForKey("version") as? String)!
+            }
+            else {
+                version = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
+            }
+        }
+        
+        Preference.save(version, key: Preference.PREF_KEY_LATEST_APP_VERSION)
+    }
+    
+    private func setInitialSequence() {
+        if (Preference.load(Preference.PREF_KEY_SEQUENCE) as! String) == "" {
+            let restaurants = XMLParser.sharedInstance.informations["restaurants"]
+            var sequenceString: String = ""
+            
+            for restaurant in restaurants! {
+                if sequenceString == "" {
+                    sequenceString = restaurant
+                }
+                else {
+                    sequenceString = "\(sequenceString)/\(restaurant)"
+                }
+            }
+            
+            Preference.save(sequenceString, key: Preference.PREF_KEY_SEQUENCE)
+        }
+    }
+    
+    private func setInitialTab() -> Void {
         var rootViewController = self.window!.rootViewController as! TabBarController
         
         if Preference.load(Preference.PREF_KEY_BOOKMARK) as! String == "" {

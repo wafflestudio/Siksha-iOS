@@ -33,7 +33,7 @@ class BookmarkTableViewController: UITableViewController {
         alertController.view.tintColor = UIColor(red: 0.99, green: 0.65, blue: 0.66, alpha: 1.0)
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
         let bookmarks = Preference.load(Preference.PREF_KEY_BOOKMARK) as! String
         
         if bookmarks != "" {

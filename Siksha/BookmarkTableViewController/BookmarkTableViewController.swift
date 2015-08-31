@@ -80,7 +80,10 @@ class BookmarkTableViewController: UITableViewController {
         }
         
         Preference.save(newBookmarkString, key: Preference.PREF_KEY_BOOKMARK)
-        println("Current bookmark string : \(Preference.load(Preference.PREF_KEY_BOOKMARK))")
+        SharedData.save(newBookmarkString, key: SharedData.SHARED_KEY_BOOKMARK)
+        
+        println("Current bookmark string(Preference) : \(Preference.load(Preference.PREF_KEY_BOOKMARK))")
+        println("Current bookmark string(SharedData) : \(SharedData.load(SharedData.SHARED_KEY_BOOKMARK))")
         
         self.viewDidAppear(false)
         

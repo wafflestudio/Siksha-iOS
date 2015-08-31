@@ -11,25 +11,24 @@ import Foundation
 class MenuDictionary {
     static let sharedInstance = MenuDictionary()
     
-    var breakfastMenuDictionary: [String: Menu]
-    var lunchMenuDictionary: [String: Menu]
-    var dinnerMenuDictionary: [String: Menu]
-    
-    private init() {
-        breakfastMenuDictionary = [String: Menu]()
-        lunchMenuDictionary = [String: Menu]()
-        dinnerMenuDictionary = [String: Menu]()
-    }
+    var dictionaries: [[String: Menu]] = []
     
     func initialize(JSON: NSArray?) -> Bool {
         if JSON == nil {
             return false
         }
         
+        dictionaries = []
+        
+        var breakfastDictionary = [String: Menu]()
+        var lunchDictionary = [String: Menu]()
+        var dinnerDictionary = [String: Menu]()
+        
+        /* dictionary 생성 */
         for data in JSON! {
-            var breakfastMenuObject: Menu = Menu()
-            var lunchMenuObject: Menu = Menu()
-            var dinnerMenuObject: Menu = Menu()
+            let breakfastObject: Menu = Menu()
+            let lunchObject: Menu = Menu()
+            let dinnerObject: Menu = Menu()
             
             var breakfastMenus = [AnyObject]()
             var lunchMenus = [AnyObject]()
@@ -48,23 +47,29 @@ class MenuDictionary {
                     }
                 }
                 
-                breakfastMenuObject.restaurant = dictionary["restaurant"] as! String
-                lunchMenuObject.restaurant = dictionary["restaurant"] as! String
-                dinnerMenuObject.restaurant = dictionary["restaurant"] as! String
+                breakfastObject.restaurant = dictionary["restaurant"] as! String
+                lunchObject.restaurant = dictionary["restaurant"] as! String
+                dinnerObject.restaurant = dictionary["restaurant"] as! String
             }
             
-            breakfastMenuObject.isEmpty = breakfastMenus.count == 0
-            lunchMenuObject.isEmpty = lunchMenus.count == 0
-            dinnerMenuObject.isEmpty = dinnerMenus.count == 0
+            breakfastObject.isEmpty = breakfastMenus.count == 0
+            lunchObject.isEmpty = lunchMenus.count == 0
+            dinnerObject.isEmpty = dinnerMenus.count == 0
             
-            breakfastMenuObject.menus = breakfastMenus
-            lunchMenuObject.menus = lunchMenus
-            dinnerMenuObject.menus = dinnerMenus
+            breakfastObject.menus = breakfastMenus
+            lunchObject.menus = lunchMenus
+            dinnerObject.menus = dinnerMenus
             
-            breakfastMenuDictionary[breakfastMenuObject.restaurant] = breakfastMenuObject
-            lunchMenuDictionary[lunchMenuObject.restaurant] = lunchMenuObject
-            dinnerMenuDictionary[dinnerMenuObject.restaurant] = dinnerMenuObject
+            breakfastDictionary[breakfastObject.restaurant] = breakfastObject
+            lunchDictionary[lunchObject.restaurant] = lunchObject
+            dinnerDictionary[dinnerObject.restaurant] = dinnerObject
         }
+        
+        dictionaries.append(breakfastDictionary)
+        dictionaries.append(lunchDictionary)
+        dictionaries.append(dinnerDictionary)
+        
+        SharedData.save(dictionaries, key: SharedData.SHARED_KEY_DICTIONARIES)
         
         return true
     }

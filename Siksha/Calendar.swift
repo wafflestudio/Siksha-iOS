@@ -102,7 +102,12 @@ extension NSDate {
 class Calendar {
     
     static func getDateLabelTimestamp(index: Int) -> String {
-        let date = NSDate()
+        var date = NSDate()
+
+        if date.getHour() >= 21 {
+            date = date.dateByAddingTimeInterval(24 * 60 * 60)
+        }
+        
         let month: Int = date.getMonth()
         let day: Int = date.getDay()
         let dayOfWeek: String = date.getDayOfWeek()

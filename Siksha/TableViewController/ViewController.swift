@@ -16,21 +16,21 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
     let pageCount: Int = 3
     var currentPageIndex: Int = 0
     
-    private func viewControllerAtIndex(index: Int) -> TableViewController? {
+    private func viewControllerAtIndex(index: Int) -> UIViewController? {
         var pageItemController: TableViewController?
         
         switch index {
         case 0:
             pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("BreakfastTableViewController") as! BreakfastTableViewController
-            pageItemController!.dictionary = MenuDictionary.sharedInstance.breakfastMenuDictionary
+            pageItemController!.dictionary = MenuDictionary.sharedInstance.dictionaries[index]
             pageItemController!.pageIndex = index
         case 1:
             pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("LunchTableViewController") as! LunchTableViewController
-            pageItemController!.dictionary = MenuDictionary.sharedInstance.lunchMenuDictionary
+            pageItemController!.dictionary = MenuDictionary.sharedInstance.dictionaries[index]
             pageItemController!.pageIndex = index
         case 2:
             pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("DinnerTableViewController") as! DinnerTableViewController
-            pageItemController!.dictionary = MenuDictionary.sharedInstance.dinnerMenuDictionary
+            pageItemController!.dictionary = MenuDictionary.sharedInstance.dictionaries[index]
             pageItemController!.pageIndex = index
         default:
             pageItemController = nil
@@ -82,15 +82,16 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
         self.dateLabel.text = Calendar.getDateLabelTimestamp(currentPageIndex)
         
         let pageViewController = self.storyboard!.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
-        let viewControllers: [AnyObject] = [viewControllerAtIndex(currentPageIndex)!]
+        let startingVC = viewControllerAtIndex(currentPageIndex)
         let screenBounds: CGRect = UIScreen.mainScreen().bounds
         
         pageViewController.dataSource = self
         pageViewController.delegate = self
         
+        var viewControllers = [startingVC!]
         pageViewController.setViewControllers(viewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
         pageViewController.view.frame = CGRect(x: 0, y: 125, width: screenBounds.width, height: screenBounds.height - 175)
-        
+    
         self.addChildViewController(pageViewController)
         self.view.addSubview(pageViewController.view)
         pageViewController.didMoveToParentViewController(self)
@@ -105,6 +106,19 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
         logoView.contentMode = .ScaleAspectFit
         logoView.image = UIImage(named: "ic_launcher")
         self.navigationItem.titleView = logoView
+        
+        setPageViewController()
+    }
+    
+    func refresh() {
+        let childViewControllers = self.childViewControllers
+        
+        for childViewController in childViewControllers {
+            if let viewController = childViewController as? UIPageViewController {
+                viewController.view.removeFromSuperview()
+                viewController.removeFromParentViewController()
+            }
+        }
         
         setPageViewController()
     }

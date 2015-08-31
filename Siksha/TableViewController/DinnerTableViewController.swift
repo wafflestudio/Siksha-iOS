@@ -9,7 +9,7 @@
 import UIKit
 
 class DinnerTableViewController: TableViewController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -22,8 +22,13 @@ class JSONDownloader {
     let OPTION_CACHED_TODAY: Int = 1
     let OPTION_CACHED_TOMORROW: Int = 2
     
-    let DOWNLOAD_NOTIFICATION_KEY = "download_notification"
-    let REFRESH_NOTIFICATION_KEY = "refresh_notification"
+    let NORMAL_NOTIFICATION_KEY: String = "normal_notification"
+    let DATA_UPDATE_NOTIFICATION_KEY: String = "data_update_notification"
+    let REFRESH_NOTIFICATION_KEY: String = "refresh_notification"
+    
+    static let TYPE_NORMAL = 0
+    static let TYPE_DATA_UPDATE = 1
+    static let TYPE_REFRESH = 2
     
     static func isJSONUpdated(downloadDate: String) -> Bool {
         let recordedDate = Preference.load(Preference.PREF_KEY_JSON) as! String
@@ -133,23 +138,32 @@ class JSONDownloader {
         }
     }
     
-    private func notifyDownloadQuitted() -> Void {
-        NSNotificationCenter.defaultCenter().postNotificationName(DOWNLOAD_NOTIFICATION_KEY, object: self)
-        NSNotificationCenter.defaultCenter().postNotificationName(REFRESH_NOTIFICATION_KEY, object: self)
+    private func notifyDownloadQuitted(downloadType: Int) -> Void {
+        if downloadType == 0 {
+            NSNotificationCenter.defaultCenter().postNotificationName(NORMAL_NOTIFICATION_KEY, object: self)
+            NSNotificationCenter.defaultCenter().postNotificationName(REFRESH_NOTIFICATION_KEY, object: self)
+        }
+        else if downloadType == 1 {
+            NSNotificationCenter.defaultCenter().postNotificationName(DATA_UPDATE_NOTIFICATION_KEY, object: self)
+            NSNotificationCenter.defaultCenter().postNotificationName(REFRESH_NOTIFICATION_KEY, object: self)
+        }
+        else {
+            NSNotificationCenter.defaultCenter().postNotificationName(REFRESH_NOTIFICATION_KEY, object: self)
+        }
     }
     
-    func startDownloadService() -> Void {
+    func startDownloadService(downloadType: Int) -> Void {
         let downloadOption: Int = getDownloadOption()
         let downloadDate: String = getDownloadDate(downloadOption)
         let isSuccess: Bool = writeJSONToInternalStorage(fetchJSON(downloadOption))
         
-        println("onStartDownloadService() / isSuccess : \(isSuccess) downloadDate : \(downloadDate) downloadOption : \(downloadOption)")
+        println("onStartDownloadService() / isSuccess : \(isSuccess) / downloadDate : \(downloadDate) / downloadOption : \(downloadOption)")
         
         if isSuccess {
             saveDownloadDateToPreference(downloadDate)
         }
         
-        notifyDownloadQuitted()
+        notifyDownloadQuitted(downloadType)
     }
     
 }

@@ -64,7 +64,7 @@ class SettingTableViewController: UITableViewController {
     }
     
     override func viewWillDisappear(animated: Bool) {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: REFRESH_NOTIFICATION_KEY, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -155,7 +155,7 @@ class SettingTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 0 && indexPath.row == 1 {
-            JSONDownloader().startDownloadService()
+            JSONDownloader().startDownloadService(JSONDownloader.TYPE_REFRESH)
         }
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)

@@ -22,15 +22,15 @@ class BookmarkViewController: UIViewController, UIPageViewControllerDataSource, 
         switch index {
         case 0:
             pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("BreakfastBookmarkTableViewController") as! BreakfastBookmarkTableViewController
-            pageItemController!.dictionary = MenuDictionary.sharedInstance.breakfastMenuDictionary
+            pageItemController!.dictionary = MenuDictionary.sharedInstance.dictionaries[index]
             pageItemController!.pageIndex = index
         case 1:
             pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("LunchBookmarkTableViewController") as! LunchBookmarkTableViewController
-            pageItemController!.dictionary = MenuDictionary.sharedInstance.lunchMenuDictionary
+            pageItemController!.dictionary = MenuDictionary.sharedInstance.dictionaries[index]
             pageItemController!.pageIndex = index
         case 2:
             pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("DinnerBookmarkTableViewController") as! DinnerBookmarkTableViewController
-            pageItemController!.dictionary = MenuDictionary.sharedInstance.dinnerMenuDictionary
+            pageItemController!.dictionary = MenuDictionary.sharedInstance.dictionaries[index]
             pageItemController!.pageIndex = index
         default:
             pageItemController = nil
@@ -108,7 +108,20 @@ class BookmarkViewController: UIViewController, UIPageViewControllerDataSource, 
         
         setPageViewController()
     }
-
+    
+    func refresh() {
+        let childViewControllers = self.childViewControllers
+        
+        for childViewController in childViewControllers {
+            if let viewController = childViewController as? UIPageViewController {
+                viewController.view.removeFromSuperview()
+                viewController.removeFromParentViewController()
+            }
+        }
+        
+        setPageViewController()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

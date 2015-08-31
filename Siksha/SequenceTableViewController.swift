@@ -60,9 +60,11 @@ class SequenceTableViewController: UITableViewController {
             
             if segueType == 0 {
                 Preference.save(sequenceString, key: Preference.PREF_KEY_BOOKMARK)
+                SharedData.save(sequenceString, key: SharedData.SHARED_KEY_BOOKMARK)
             }
             else {
                 Preference.save(sequenceString, key: Preference.PREF_KEY_SEQUENCE)
+                SharedData.save(sequenceString, key: SharedData.SHARED_KEY_SEQUENCE)
             }
         }
         

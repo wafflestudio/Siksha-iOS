@@ -11,7 +11,8 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    let DOWNLOAD_NOTIFICATION_KEY = "download_notification"
+    let NORMAL_NOTIFICATION_KEY = "normal_notification"
+    let DATA_UPDATE_NOTIFICATION_KEY: String = "data_update_notification"
     let BUNDLE_IDENTIFIER = NSBundle.mainBundle().bundleIdentifier
     
     var JSONData: NSArray?
@@ -20,11 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-
-        // 초기 JSON 메뉴 다운로드에 관한 Download Receiver를 설정한다.
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDownloadFinished", name: DOWNLOAD_NOTIFICATION_KEY, object: nil)
         
-        checkLocalJSONStatus()
+        let storyboard = self.getSuitStoryboard()
+        self.window?.rootViewController = storyboard!.instantiateInitialViewController() as? UIViewController
+        
+        // 초기 JSON 메뉴 다운로드에 관한 Download Receiver를 설정한다.
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDownloadFinished", name: NORMAL_NOTIFICATION_KEY, object: nil)
+        
+        checkLocalJSONStatus(JSONDownloader.TYPE_NORMAL)
         checkLatestAppVersion()
         
         // 운영 시간, 위치 등의 정보가 담긴 data.xml을 파싱하여 객체에 저장한다.
@@ -37,8 +41,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillResignActive(application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
+        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMSe message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: DATA_UPDATE_NOTIFICATION_KEY, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: NORMAL_NOTIFICATION_KEY, object: nil)
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
@@ -48,6 +55,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDownloadFinished", name: NORMAL_NOTIFICATION_KEY, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDataUpdated", name: DATA_UPDATE_NOTIFICATION_KEY, object: nil)
+        checkLocalJSONStatus(JSONDownloader.TYPE_DATA_UPDATE)
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
@@ -56,16 +67,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: NORMAL_NOTIFICATION_KEY, object: nil)
     }
     
-    private func checkLocalJSONStatus() -> Void {
-        let todayTimestamp: String = NSDate().getTodayTimestamp()
+    private func checkLocalJSONStatus(downloadType: Int) -> Void {
+        let date = NSDate()
+        var timestamp: String
         
-        if JSONDownloader.isJSONUpdated(todayTimestamp) {
+        if date.getHour() >= 21 {
+            timestamp = date.getTomorrowTimestamp()
+        }
+        else {
+            timestamp = date.getTodayTimestamp()
+        }
+        
+        if JSONDownloader.isJSONUpdated(timestamp) {
             println("JSON is already updated.")
             
-            if !JSONDownloader.isVetDataUpdated(todayTimestamp) && Calendar.isVetDataUpdateTime() {
-                JSONDownloader().startDownloadService()
+            if !JSONDownloader.isVetDataUpdated(timestamp) && Calendar.isVetDataUpdateTime() {
+                JSONDownloader().startDownloadService(downloadType)
             }
             else {
                 onDownloadFinished()
@@ -74,7 +95,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         else {
             println("JSON is not updated!")
             
-            JSONDownloader().startDownloadService()
+            JSONDownloader().startDownloadService(downloadType)
         }
     }
     
@@ -85,9 +106,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         MenuDictionary.sharedInstance.initialize(JSONData)
         
         // 즐겨찾기 목록 유무에 따라서 시작 탭을 나눈다.
-        setInitialTab()
+        setInitialTab(true)
+    }
+    
+    func onDataUpdated() -> Void {
+        println("onDataUpdated()")
         
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: DOWNLOAD_NOTIFICATION_KEY, object: nil)
+        JSONData = JSONParser.getLocalJSON()
+        MenuDictionary.sharedInstance.initialize(JSONData)
+        
+        // 즐겨찾기 목록 유무에 따라서 시작 탭을 나눈다.
+        setInitialTab(false)
     }
     
     private func checkLatestAppVersion() -> Void {
@@ -139,15 +168,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    private func setInitialTab() -> Void {
+    private func setInitialTab(isNormalDownload: Bool) -> Void {
         var rootViewController = self.window!.rootViewController as! TabBarController
         
         if Preference.load(Preference.PREF_KEY_BOOKMARK) as! String == "" {
             rootViewController.selectedIndex = 1 // 식단 탭
+            
+            if !isNormalDownload {
+                (rootViewController.selectedViewController!.childViewControllers[0] as! ViewController).refresh()
+            }
         }
         else {
             rootViewController.selectedIndex = 0 // 즐겨찾기 탭
+            
+            if !isNormalDownload {
+                (rootViewController.selectedViewController!.childViewControllers[0] as! BookmarkViewController).refresh()
+            }
         }
+    }
+    
+    func getSuitStoryboard() -> UIStoryboard? {
+        let height = UIScreen.mainScreen().bounds.size.height
+        var storyboard: UIStoryboard? = nil
+        
+        if height == 480 {
+            storyboard = UIStoryboard(name: "Main_3.5_inch", bundle: nil)        }
+        else if height == 568 {
+            storyboard = UIStoryboard(name: "Main_4.0_inch", bundle: nil)
+        }
+        else if height == 667 {
+            storyboard = UIStoryboard(name: "Main", bundle: nil)
+        }
+        else if height == 736 {
+            storyboard = UIStoryboard(name: "Main_5.5_inch", bundle: nil)
+        }
+        else {
+            storyboard = UIStoryboard(name: "Main_5.5_inch", bundle: nil)
+        }
+        
+        return storyboard
     }
 
 }

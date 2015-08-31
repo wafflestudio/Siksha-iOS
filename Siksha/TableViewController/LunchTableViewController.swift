@@ -9,7 +9,7 @@
 import UIKit
 
 class LunchTableViewController: TableViewController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

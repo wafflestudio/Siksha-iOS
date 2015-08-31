@@ -80,12 +80,14 @@ class TableViewController: UITableViewController {
             bookmarkButton.setImage(starFilled, forState: .Normal)
         }
         
-        /* 북마크 정보를 Preference에 기록한다. */
+        /* 북마크 정보를 Preference, SharedData에 기록한다. */
         if recordedBookmarks == "" {
             Preference.save(dataArray[rowIndex].restaurant, key: Preference.PREF_KEY_BOOKMARK)
+            SharedData.save(dataArray[rowIndex].restaurant, key: SharedData.SHARED_KEY_BOOKMARK)
         }
         else if !isBookmarked(dataArray[rowIndex].restaurant) {
             Preference.save("\(recordedBookmarks)/\(dataArray[rowIndex].restaurant)", key: Preference.PREF_KEY_BOOKMARK)
+            SharedData.save("\(recordedBookmarks)/\(dataArray[rowIndex].restaurant)", key: SharedData.SHARED_KEY_BOOKMARK)
         }
         else {
             var newBookmarkString: String = ""
@@ -103,9 +105,11 @@ class TableViewController: UITableViewController {
             }
                 
             Preference.save(newBookmarkString, key: Preference.PREF_KEY_BOOKMARK)
+            SharedData.save(newBookmarkString, key: SharedData.SHARED_KEY_BOOKMARK)
         }
         
-        println("Current bookmark string : \(Preference.load(Preference.PREF_KEY_BOOKMARK))")
+        println("Current bookmark string(Preference) : \(Preference.load(Preference.PREF_KEY_BOOKMARK))")
+        println("Current bookmark string(SharedData) : \(SharedData.load(SharedData.SHARED_KEY_BOOKMARK))")
     }
     
     func isBookmarked(name: String) -> Bool {

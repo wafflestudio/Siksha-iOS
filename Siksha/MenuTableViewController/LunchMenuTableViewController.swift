@@ -1,5 +1,5 @@
 //
-//  LunchTableViewController.swift
+//  MenuLunchTableViewController.swift
 //  Siksha
 //
 //  Created by 강규 on 2015. 7. 18..
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LunchTableViewController: TableViewController {
+class LunchMenuTableViewController: MenuTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +45,7 @@ class LunchTableViewController: TableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if dataArray[indexPath.section].isEmpty {
-            var cell: TableViewEmptyCell = tableView.dequeueReusableCellWithIdentifier("LunchTableViewEmptyCell", forIndexPath: indexPath) as! TableViewEmptyCell
+            var cell: MenuTableViewEmptyCell = tableView.dequeueReusableCellWithIdentifier("LunchMenuTableViewEmptyCell", forIndexPath: indexPath) as! MenuTableViewEmptyCell
             
             // Configure the cell...
             cell.emptyMessageLabel!.text = "메뉴가 없습니다."
@@ -53,7 +53,7 @@ class LunchTableViewController: TableViewController {
             return cell
         }
         else {
-            var cell: TableViewCell = tableView.dequeueReusableCellWithIdentifier("LunchTableViewCell", forIndexPath: indexPath) as! TableViewCell
+            var cell: MenuTableViewCell = tableView.dequeueReusableCellWithIdentifier("LunchMenuTableViewCell", forIndexPath: indexPath) as! MenuTableViewCell
             
             // Configure the cell...
             cell.nameLabel!.text = dataArray[indexPath.section].menus[indexPath.row]["name"] as? String
@@ -64,7 +64,7 @@ class LunchTableViewController: TableViewController {
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        var headerCell = tableView.dequeueReusableCellWithIdentifier("LunchTableViewHeaderCell") as! TableViewHeaderCell
+        var headerCell = tableView.dequeueReusableCellWithIdentifier("LunchMenuTableViewHeaderCell") as! MenuTableViewHeaderCell
         
         headerCell.nameLabel!.text = dataArray[section].restaurant
         headerCell.bookmarkButton!.tag = section

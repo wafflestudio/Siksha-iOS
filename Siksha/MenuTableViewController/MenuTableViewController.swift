@@ -1,5 +1,5 @@
 //
-//  TableViewController.swift
+//  MenuTableViewController.swift
 //  Siksha
 //
 //  Created by 강규 on 2015. 7. 18..
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class MenuTableViewController: UITableViewController {
     
     var restaurants: [String] = []
     
@@ -31,6 +31,15 @@ class TableViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        resetData()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func resetData() {
         restaurants = (Preference.load(Preference.PREF_KEY_SEQUENCE) as! String).componentsSeparatedByString("/")
         
         dataArray = []
@@ -53,11 +62,6 @@ class TableViewController: UITableViewController {
         }
         
         self.tableView.reloadData()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     @IBAction func aboutButtonClicked(sender: AnyObject) {

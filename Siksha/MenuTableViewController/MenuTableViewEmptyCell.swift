@@ -1,5 +1,5 @@
 //
-//  TableViewEmptyCell.swift
+//  MenuTableViewEmptyCell.swift
 //  Siksha
 //
 //  Created by 강규 on 2015. 7. 25..
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewEmptyCell: UITableViewCell {
+class MenuTableViewEmptyCell: UITableViewCell {
 
     @IBOutlet weak var emptyMessageLabel: UILabel!
     

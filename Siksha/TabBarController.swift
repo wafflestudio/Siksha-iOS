@@ -20,7 +20,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         self.delegate = self
         
         alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-        alertController.view.tintColor = UIColor(red: 0.99, green: 0.65, blue: 0.66, alpha: 1.0)
+        alertController.view.tintColor = UIColor(red: 0.96, green: 0.55, blue: 0.36, alpha: 0.55)
     }
 
     override func didReceiveMemoryWarning() {

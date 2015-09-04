@@ -14,9 +14,8 @@ class VersionViewController: UIViewController {
     @IBOutlet weak var messageButton: UIButton!
     @IBOutlet weak var statusImageView: UIImageView!
     
-    let pastelPink = UIColor(red: 1.00, green: 0.82, blue: 0.83, alpha: 1.0)
-    let checkImage = UIImage(named: "ic_check")
-    let updateImage = UIImage(named: "ic_update")
+    var checkImage = UIImage(named: "ic_check")
+    var updateImage = UIImage(named: "ic_update")
     
     var currentAppVersion: String = ""
     var latestAppVersion: String = ""
@@ -29,20 +28,11 @@ class VersionViewController: UIViewController {
         
         currentVersionLabel.text = "현재 버전 : \(currentAppVersion)"
         messageButton.layer.cornerRadius = 10
-        messageButton.layer.backgroundColor = UIColor.whiteColor().CGColor
-        messageButton.layer.borderColor = pastelPink.CGColor
-        messageButton.layer.borderWidth = 2
-        statusImageView.layer.cornerRadius = 10
-        statusImageView.layer.backgroundColor = pastelPink.CGColor
+        messageButton.layer.borderColor = UIColor.orangeColor().CGColor
+        messageButton.layer.borderWidth = 1
         
-        if isLatest {
-            messageButton.setTitle("최신 버전을 이용하고 있습니다.", forState: .Normal)
-            statusImageView.image = checkImage
-        }
-        else {
-            messageButton.setTitle("업데이트를 하려면 터치하세요.", forState: .Normal)
-            statusImageView.image = updateImage
-        }
+        checkLatest()
+        switchAlertMessage()
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,8 +42,29 @@ class VersionViewController: UIViewController {
 
     @IBAction func messageButtonClicked(sender: AnyObject) {
         if !isLatest {
-            // After version 1.1
+            let APP_STORE_URL = NSURL(string: "itms-apps://geo.itunes.apple.com/kr/app/sigsya-seouldaehaggyo-sigdan/id1032700617?mt=8")
+            if UIApplication.sharedApplication().canOpenURL(APP_STORE_URL!) == true {
+                UIApplication.sharedApplication().openURL(APP_STORE_URL!)
+            }
         }
+    }
+    
+    func checkLatest() {
+        isLatest = currentAppVersion == latestAppVersion ? true : false
+        println("currentAppVersion : \(currentAppVersion) / latestAppVersion : \(latestAppVersion)")
+    }
+    
+    func switchAlertMessage() {
+        if isLatest {
+            messageButton.setTitle("최신 버전을 이용하고 있습니다.", forState: .Normal)
+            statusImageView.image = checkImage
+        }
+        else {
+            messageButton.setTitle("앱을 업데이트를 하려면 터치하세요.", forState: .Normal)
+            statusImageView.image = updateImage
+        }
+        
+        statusImageView.layer.contentsScale = 0.85
     }
     
     /*

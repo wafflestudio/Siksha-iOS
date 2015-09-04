@@ -22,9 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        let storyboard = self.getSuitStoryboard()
-        self.window?.rootViewController = storyboard!.instantiateInitialViewController() as? UIViewController
-        
         // 초기 JSON 메뉴 다운로드에 관한 Download Receiver를 설정한다.
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDownloadFinished", name: NORMAL_NOTIFICATION_KEY, object: nil)
         
@@ -175,7 +172,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             rootViewController.selectedIndex = 1 // 식단 탭
             
             if !isNormalDownload {
-                (rootViewController.selectedViewController!.childViewControllers[0] as! ViewController).refresh()
+                (rootViewController.selectedViewController!.childViewControllers[0] as! MenuViewController).refresh()
             }
         }
         else {
@@ -185,28 +182,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 (rootViewController.selectedViewController!.childViewControllers[0] as! BookmarkViewController).refresh()
             }
         }
-    }
-    
-    func getSuitStoryboard() -> UIStoryboard? {
-        let height = UIScreen.mainScreen().bounds.size.height
-        var storyboard: UIStoryboard? = nil
-        
-        if height == 480 {
-            storyboard = UIStoryboard(name: "Main_3.5_inch", bundle: nil)        }
-        else if height == 568 {
-            storyboard = UIStoryboard(name: "Main_4.0_inch", bundle: nil)
-        }
-        else if height == 667 {
-            storyboard = UIStoryboard(name: "Main", bundle: nil)
-        }
-        else if height == 736 {
-            storyboard = UIStoryboard(name: "Main_5.5_inch", bundle: nil)
-        }
-        else {
-            storyboard = UIStoryboard(name: "Main_5.5_inch", bundle: nil)
-        }
-        
-        return storyboard
     }
 
 }

@@ -30,10 +30,19 @@ class BookmarkTableViewController: UITableViewController {
         
         alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { Void in
             self.tabBarController!.selectedIndex = 1 }))
-        alertController.view.tintColor = UIColor(red: 0.99, green: 0.65, blue: 0.66, alpha: 1.0)
+        alertController.view.tintColor = UIColor(red: 0.96, green: 0.55, blue: 0.36, alpha: 0.55)
     }
 
     override func viewWillAppear(animated: Bool) {
+        resetData()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func resetData() {
         let bookmarks = Preference.load(Preference.PREF_KEY_BOOKMARK) as! String
         
         if bookmarks != "" {
@@ -49,11 +58,6 @@ class BookmarkTableViewController: UITableViewController {
         }
         
         self.tableView.reloadData()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func aboutButtonClicked(sender: AnyObject) {
@@ -85,7 +89,7 @@ class BookmarkTableViewController: UITableViewController {
         println("Current bookmark string(Preference) : \(Preference.load(Preference.PREF_KEY_BOOKMARK))")
         println("Current bookmark string(SharedData) : \(SharedData.load(SharedData.SHARED_KEY_BOOKMARK))")
         
-        self.viewDidAppear(false)
+        resetData()
         
         if Preference.load(Preference.PREF_KEY_BOOKMARK) as! String == "" {
             self.presentViewController(alertController, animated: true, completion: nil)

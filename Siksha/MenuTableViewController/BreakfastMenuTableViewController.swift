@@ -1,5 +1,5 @@
 //
-//  DinnerTableViewController.swift
+//  MenuBreakfastTableViewController.swift
 //  Siksha
 //
 //  Created by 강규 on 2015. 7. 18..
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DinnerTableViewController: TableViewController {
+class BreakfastMenuTableViewController: MenuTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class DinnerTableViewController: TableViewController {
         return 0
     }
     */
-    
+
     /*
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
@@ -45,7 +45,7 @@ class DinnerTableViewController: TableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if dataArray[indexPath.section].isEmpty {
-            var cell: TableViewEmptyCell = tableView.dequeueReusableCellWithIdentifier("DinnerTableViewEmptyCell", forIndexPath: indexPath) as! TableViewEmptyCell
+            var cell: MenuTableViewEmptyCell = tableView.dequeueReusableCellWithIdentifier("BreakfastMenuTableViewEmptyCell", forIndexPath: indexPath) as! MenuTableViewEmptyCell
             
             // Configure the cell...
             cell.emptyMessageLabel!.text = "메뉴가 없습니다."
@@ -53,7 +53,7 @@ class DinnerTableViewController: TableViewController {
             return cell
         }
         else {
-            var cell: TableViewCell = tableView.dequeueReusableCellWithIdentifier("DinnerTableViewCell", forIndexPath: indexPath) as! TableViewCell
+            var cell: MenuTableViewCell = tableView.dequeueReusableCellWithIdentifier("BreakfastMenuTableViewCell", forIndexPath: indexPath) as! MenuTableViewCell
             
             // Configure the cell...
             cell.nameLabel!.text = dataArray[indexPath.section].menus[indexPath.row]["name"] as? String
@@ -64,7 +64,7 @@ class DinnerTableViewController: TableViewController {
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        var headerCell = tableView.dequeueReusableCellWithIdentifier("DinnerTableViewHeaderCell") as! TableViewHeaderCell
+        var headerCell = tableView.dequeueReusableCellWithIdentifier("BreakfastMenuTableViewHeaderCell") as! MenuTableViewHeaderCell
         
         headerCell.nameLabel!.text = dataArray[section].restaurant
         headerCell.bookmarkButton!.tag = section
@@ -103,15 +103,15 @@ class DinnerTableViewController: TableViewController {
     /*
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    
     }
     */
-
+    
     /*
     // Override to support conditional rearranging of the table view.
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
+    // Return NO if you do not want the item to be re-orderable.
+    return true
     }
     */
 
@@ -124,4 +124,5 @@ class DinnerTableViewController: TableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
 }

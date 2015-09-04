@@ -1,5 +1,5 @@
 //
-//  TableViewHeaderCell.swift
+//  MenuTableViewHeaderCell.swift
 //  Siksha
 //
 //  Created by 강규 on 2015. 7. 22..
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewHeaderCell: UITableViewCell {
+class MenuTableViewHeaderCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var bookmarkButton: UIButton!

@@ -9,7 +9,8 @@
 import UIKit
 
 class AboutViewController: UIViewController {
-
+    
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var operatingHourLabel: UILabel!
     @IBOutlet weak var operatingHourTextView: UITextView!
@@ -27,6 +28,13 @@ class AboutViewController: UIViewController {
         nameLabel.text = restaurantName
         operatingHourTextView.text = operatingHour
         locationTextView.text = location
+    }
+    
+    override func viewDidLayoutSubviews() {
+        let contentSize = self.operatingHourTextView.sizeThatFits(self.operatingHourTextView.bounds.size)
+        var frame = self.operatingHourTextView.frame
+        frame.size.height = contentSize.height
+        self.operatingHourTextView.frame = frame
     }
 
     override func didReceiveMemoryWarning() {

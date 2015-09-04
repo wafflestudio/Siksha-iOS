@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MenuViewController.swift
 //  Siksha
 //
 //  Created by 강규 on 2015. 7. 18..
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+class MenuViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var dateLabel: UILabel!
@@ -17,19 +17,19 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
     var currentPageIndex: Int = 0
     
     private func viewControllerAtIndex(index: Int) -> UIViewController? {
-        var pageItemController: TableViewController?
+        var pageItemController: MenuTableViewController?
         
         switch index {
         case 0:
-            pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("BreakfastTableViewController") as! BreakfastTableViewController
+            pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("BreakfastMenuTableViewController") as! BreakfastMenuTableViewController
             pageItemController!.dictionary = MenuDictionary.sharedInstance.dictionaries[index]
             pageItemController!.pageIndex = index
         case 1:
-            pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("LunchTableViewController") as! LunchTableViewController
+            pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("LunchMenuTableViewController") as! LunchMenuTableViewController
             pageItemController!.dictionary = MenuDictionary.sharedInstance.dictionaries[index]
             pageItemController!.pageIndex = index
         case 2:
-            pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("DinnerTableViewController") as! DinnerTableViewController
+            pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("DinnerMenuTableViewController") as! DinnerMenuTableViewController
             pageItemController!.dictionary = MenuDictionary.sharedInstance.dictionaries[index]
             pageItemController!.pageIndex = index
         default:
@@ -41,7 +41,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        let beforeViewController = viewController as! TableViewController
+        let beforeViewController = viewController as! MenuTableViewController
         var index: Int = beforeViewController.pageIndex
         
         if index == 0 {
@@ -54,7 +54,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        let afterViewController = viewController as! TableViewController
+        let afterViewController = viewController as! MenuTableViewController
         var index: Int = afterViewController.pageIndex
         
         index = index + 1
@@ -68,7 +68,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
     
     func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject], transitionCompleted completed: Bool) {
         if completed {
-            currentPageIndex = (pageViewController.viewControllers[0] as! TableViewController).pageIndex
+            currentPageIndex = (pageViewController.viewControllers[0] as! MenuTableViewController).pageIndex
             pageControl.currentPage = currentPageIndex
             dateLabel.text = Calendar.getDateLabelTimestamp(currentPageIndex)
         }

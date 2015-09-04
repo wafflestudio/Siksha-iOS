@@ -1,5 +1,5 @@
 //
-//  TableViewCell.swift
+//  MenuTableViewCell.swift
 //  Siksha
 //
 //  Created by 강규 on 2015. 7. 18..
@@ -8,18 +8,16 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class MenuTableViewCell: UITableViewCell {
     
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
-    
-    let pastelPink = UIColor(red: 1.00, green: 0.82, blue: 0.83, alpha: 1.0)
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
-        setPriceLabelAttributes()
+        self.setPriceLabelAttributes()
     }
     
     override func setHighlighted(highlighted: Bool, animated: Bool) {
@@ -34,9 +32,9 @@ class TableViewCell: UITableViewCell {
     }
 
     private func setPriceLabelAttributes() {
+        let orange = UIColor(red: 0.96, green: 0.55, blue: 0.36, alpha: 0.55)
+        
         priceLabel!.layer.cornerRadius = 5
-        priceLabel!.layer.borderWidth = 1
-        priceLabel!.layer.borderColor = pastelPink.CGColor
-        priceLabel!.layer.backgroundColor = pastelPink.CGColor
+        priceLabel!.layer.backgroundColor = orange.CGColor
     }
 }

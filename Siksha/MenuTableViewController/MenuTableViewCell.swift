@@ -9,32 +9,32 @@
 import UIKit
 
 class MenuTableViewCell: UITableViewCell {
+  
+  @IBOutlet weak var priceLabel: UILabel!
+  @IBOutlet weak var nameLabel: UILabel!
+  
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    // Initialization code
     
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
+    self.setPriceLabelAttributes()
+  }
+  
+  override func setHighlighted(highlighted: Bool, animated: Bool) {
+    setPriceLabelAttributes()
+  }
+  
+  override func setSelected(selected: Bool, animated: Bool) {
+    super.setSelected(selected, animated: animated)
+    // Configure the view for the selected state
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        
-        self.setPriceLabelAttributes()
-    }
+    setPriceLabelAttributes()
+  }
+  
+  private func setPriceLabelAttributes() {
+    let orange = UIColor(red: 0.96, green: 0.55, blue: 0.36, alpha: 0.55)
     
-    override func setHighlighted(highlighted: Bool, animated: Bool) {
-        setPriceLabelAttributes()
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
-        
-        setPriceLabelAttributes()
-    }
-
-    private func setPriceLabelAttributes() {
-        let orange = UIColor(red: 0.96, green: 0.55, blue: 0.36, alpha: 0.55)
-        
-        priceLabel!.layer.cornerRadius = 5
-        priceLabel!.layer.backgroundColor = orange.CGColor
-    }
+    priceLabel!.layer.cornerRadius = 5
+    priceLabel!.layer.backgroundColor = orange.CGColor
+  }
 }

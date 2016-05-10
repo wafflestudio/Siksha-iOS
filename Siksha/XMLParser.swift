@@ -9,64 +9,64 @@
 import Foundation
 
 class XMLParser: NSObject, NSXMLParserDelegate {
-    static let sharedInstance = XMLParser()
+  static let sharedInstance = XMLParser()
+  
+  var informations: [String: [String]]
+  var attribute: String
+  var datas: [String]
+  
+  var count: Int
+  var currentElement: String
+  var isInItem: Bool
+  var sentence: String
+  
+  private override init() {
+    informations = Dictionary<String, [String]>()
+    attribute = String()
+    datas = []
     
-    var informations: [String: [String]]
-    var attribute: String
-    var datas: [String]
+    count = 0
+    currentElement = String()
+    isInItem = false
+    sentence = String()
+  }
+  
+  func parseXMLFile(fileName: String) {
+    let parser = NSXMLParser(contentsOfURL: NSBundle.mainBundle().URLForResource(fileName, withExtension: "xml")!)
     
-    var count: Int
-    var currentElement: String
-    var isInItem: Bool
-    var sentence: String
+    parser!.delegate = self
+    parser!.parse()
+  }
+  
+  /* delegate functions */
+  func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName: String?, attributes attributeDict: [String: String]) {
+    self.currentElement = elementName
     
-    private override init() {
-        informations = Dictionary<String, [String]>()
-        attribute = String()
-        datas = []
-        
-        count = 0
-        currentElement = String()
-        isInItem = false
-        sentence = String()
+    if elementName == "string-array" {
+      attribute = attributeDict["name"]!
+      datas = []
     }
-    
-    func parseXMLFile(fileName: String) {
-        let parser = NSXMLParser(contentsOfURL: NSBundle.mainBundle().URLForResource(fileName, withExtension: "xml"))
-        
-        parser!.delegate = self
-        parser!.parse()
+    else if elementName == "item" {
+      isInItem = true
+      sentence = ""
     }
-    
-    /* delegate functions */
-    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName: String?, attributes attributeDict: [NSObject: AnyObject]) {
-        self.currentElement = elementName
-        
-        if elementName == "string-array" {
-            attribute = attributeDict["name"] as! String
-            datas = []
-        }
-        else if elementName == "item" {
-            isInItem = true
-            sentence = ""
-        }
+  }
+  
+  func parser(parser: NSXMLParser, foundCharacters string: String) {
+    if currentElement == "item" && isInItem {
+      sentence += string
     }
-    
-    func parser(parser: NSXMLParser, foundCharacters string: String?) {
-        if currentElement == "item" && isInItem {
-            sentence += string!
-        }
+  }
+  
+  func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName: String?) {
+    if elementName == "string-array" {
+      count += 1
     }
-    
-    func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName: String?) {
-        if elementName == "string-array" {
-            count += 1
-        }
-        else if elementName == "item" {
-            isInItem = false
-            datas.append(sentence.stringByReplacingOccurrencesOfString("\\'", withString: "'"))
-            informations[attribute] = datas
-        }
+    else if elementName == "item" {
+      isInItem = false
+      datas.append(sentence.stringByReplacingOccurrencesOfString("\\'", withString: "'"))
+      informations[attribute] = datas
     }
-    /* end */
+  }
+  /* end */
 }

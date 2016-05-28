@@ -8,45 +8,44 @@
 
 import UIKit
 
-@available(iOS 8.0, *)
 class TabBarController: UITabBarController, UITabBarControllerDelegate {
-  
-  var alertController: UIAlertController = UIAlertController(title: "즐겨찾는 식당이 없습니다!", message: "별 모양 아이콘을 눌러 즐겨찾는 식당을 추가해보세요.", preferredStyle: .Alert)
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
     
-    // Do any additional setup after loading the view.
+    var alertController: UIAlertController = UIAlertController(title: "즐겨찾는 식당이 없습니다!", message: "별 모양 아이콘을 눌러 즐겨찾는 식당을 추가해보세요.", preferredStyle: .Alert)
     
-    self.delegate = self
-    
-    alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-    alertController.view.tintColor = UIColor(red: 0.96, green: 0.55, blue: 0.36, alpha: 0.55)
-  }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-  
-  func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
-    if tabBarController.selectedIndex == 0 {
-      if Preference.load(Preference.PREF_KEY_BOOKMARK) as! String == "" {
-        tabBarController.selectedIndex = 1 // 식단 탭
-        self.presentViewController(alertController, animated: true, completion: nil)
-      }
-      
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        
+        self.delegate = self
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        alertController.view.tintColor = UIColor(red: 0.96, green: 0.55, blue: 0.36, alpha: 0.55)
     }
-  }
-  
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
-  
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
+        if tabBarController.selectedIndex == 0 {
+            if Preference.load(Preference.PREF_KEY_BOOKMARK) as! String == "" {
+                tabBarController.selectedIndex = 1 // 식단 탭
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+            
+        }
+    }
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

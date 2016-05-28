@@ -28,10 +28,9 @@
 		553A90D71B74559600E04B4E /* SequenceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553A90D61B74559600E04B4E /* SequenceTableViewController.swift */; };
 		553A90D91B748FAE00E04B4E /* SequenceTableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553A90D81B748FAE00E04B4E /* SequenceTableViewHeaderCell.swift */; };
 		553A90DB1B748FBA00E04B4E /* SequenceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553A90DA1B748FBA00E04B4E /* SequenceTableViewCell.swift */; };
-		553A90FD1B750E1F00E04B4E /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553A90FC1B750E1F00E04B4E /* SharedData.swift */; };
+		553A90FD1B750E1F00E04B4E /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553A90FC1B750E1F00E04B4E /* AppData.swift */; };
 		556ACE521B86FA0B00159D1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556ACE511B86FA0B00159D1B /* AppDelegate.swift */; };
 		55C9B6DB1B411C22001F3086 /* SikshaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C9B6DA1B411C22001F3086 /* SikshaTests.swift */; };
-		55E9C3EB1B65FB7900A8DDBA /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C3EA1B65FB7900A8DDBA /* XMLParser.swift */; };
 		55E9C3F71B6784B400A8DDBA /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C3F61B6784B400A8DDBA /* SettingTableViewController.swift */; };
 		55E9C3F91B67855400A8DDBA /* VersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C3F81B67855400A8DDBA /* VersionViewController.swift */; };
 		55E9C3FB1B67855F00A8DDBA /* DeveloperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C3FA1B67855F00A8DDBA /* DeveloperViewController.swift */; };
@@ -43,11 +42,11 @@
 		55E9C4211B67D04100A8DDBA /* BreakfastBookmarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C4191B67D04100A8DDBA /* BreakfastBookmarkTableViewController.swift */; };
 		55E9C4221B67D04100A8DDBA /* DinnerBookmarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C41A1B67D04100A8DDBA /* DinnerBookmarkTableViewController.swift */; };
 		55E9C4231B67D04100A8DDBA /* LunchBookmarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C41B1B67D04100A8DDBA /* LunchBookmarkTableViewController.swift */; };
-		55E9C4281B67D19700A8DDBA /* data.xml in Resources */ = {isa = PBXBuildFile; fileRef = 55E9C4271B67D19700A8DDBA /* data.xml */; };
 		55E9C42D1B67D3CA00A8DDBA /* Arita-Dotum-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 55E9C4291B67D1BC00A8DDBA /* Arita-Dotum-Medium.otf */; };
 		55E9C42E1B67D3CA00A8DDBA /* BM-Hanna.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55E9C42A1B67D1BC00A8DDBA /* BM-Hanna.ttf */; };
 		55E9C42F1B67D3CA00A8DDBA /* BM-Jua.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55E9C42B1B67D1BC00A8DDBA /* BM-Jua.ttf */; };
 		55E9C4311B67D4E900A8DDBA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E9C4301B67D4E900A8DDBA /* TabBarController.swift */; };
+		951E6BE2C28C9939993E950E /* Pods_Siksha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC5A0ADBB106053CDCB9B32 /* Pods_Siksha.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,14 +95,13 @@
 		553A90D61B74559600E04B4E /* SequenceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SequenceTableViewController.swift; path = Siksha/SequenceTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		553A90D81B748FAE00E04B4E /* SequenceTableViewHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceTableViewHeaderCell.swift; sourceTree = "<group>"; };
 		553A90DA1B748FBA00E04B4E /* SequenceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceTableViewCell.swift; sourceTree = "<group>"; };
-		553A90FC1B750E1F00E04B4E /* SharedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
+		553A90FC1B750E1F00E04B4E /* AppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		555297811B720A9B00F6B80B /* Siksha.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Siksha.entitlements; sourceTree = "<group>"; };
 		556ACE511B86FA0B00159D1B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55C9B6BF1B411C22001F3086 /* Siksha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Siksha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C9B6D41B411C22001F3086 /* SikshaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SikshaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C9B6D91B411C22001F3086 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55C9B6DA1B411C22001F3086 /* SikshaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SikshaTests.swift; sourceTree = "<group>"; };
-		55E9C3EA1B65FB7900A8DDBA /* XMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 		55E9C3F61B6784B400A8DDBA /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		55E9C3F81B67855400A8DDBA /* VersionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionViewController.swift; sourceTree = "<group>"; };
 		55E9C3FA1B67855F00A8DDBA /* DeveloperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperViewController.swift; sourceTree = "<group>"; };
@@ -115,13 +113,15 @@
 		55E9C4191B67D04100A8DDBA /* BreakfastBookmarkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BreakfastBookmarkTableViewController.swift; path = BookmarkTableViewController/BreakfastBookmarkTableViewController.swift; sourceTree = "<group>"; };
 		55E9C41A1B67D04100A8DDBA /* DinnerBookmarkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DinnerBookmarkTableViewController.swift; path = BookmarkTableViewController/DinnerBookmarkTableViewController.swift; sourceTree = "<group>"; };
 		55E9C41B1B67D04100A8DDBA /* LunchBookmarkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LunchBookmarkTableViewController.swift; path = BookmarkTableViewController/LunchBookmarkTableViewController.swift; sourceTree = "<group>"; };
-		55E9C4271B67D19700A8DDBA /* data.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = data.xml; path = Resources/data.xml; sourceTree = "<group>"; };
 		55E9C4291B67D1BC00A8DDBA /* Arita-Dotum-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Arita-Dotum-Medium.otf"; path = "Resources/Fonts/Arita-Dotum-Medium.otf"; sourceTree = "<group>"; };
 		55E9C42A1B67D1BC00A8DDBA /* BM-Hanna.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "BM-Hanna.ttf"; path = "Resources/Fonts/BM-Hanna.ttf"; sourceTree = "<group>"; };
 		55E9C42B1B67D1BC00A8DDBA /* BM-Jua.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "BM-Jua.ttf"; path = "Resources/Fonts/BM-Jua.ttf"; sourceTree = "<group>"; };
 		55E9C42C1B67D2E500A8DDBA /* Siksha-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Siksha-Bridging-Header.h"; sourceTree = "<group>"; };
 		55E9C4301B67D4E900A8DDBA /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		55E9C4381B71F2CE00A8DDBA /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		81611FDD0DAFFA8067F53722 /* Pods-Siksha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Siksha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Siksha/Pods-Siksha.debug.xcconfig"; sourceTree = "<group>"; };
+		B3C23AD412D50A983ACC180D /* Pods-Siksha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Siksha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Siksha/Pods-Siksha.release.xcconfig"; sourceTree = "<group>"; };
+		BAC5A0ADBB106053CDCB9B32 /* Pods_Siksha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Siksha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				951E6BE2C28C9939993E950E /* Pods_Siksha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +168,7 @@
 				55C9B6D71B411C22001F3086 /* SikshaTests */,
 				55E9C4371B71F2CE00A8DDBA /* Frameworks */,
 				55C9B6C01B411C22001F3086 /* Products */,
+				939BB14468A07E9660B7F479 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -201,10 +203,9 @@
 				550936781B656F7B00651C76 /* Calendar.swift */,
 				5509367E1B656F7B00651C76 /* JSONDownloader.swift */,
 				5509367F1B656F7B00651C76 /* JSONParser.swift */,
-				55E9C3EA1B65FB7900A8DDBA /* XMLParser.swift */,
 				550936831B656F7B00651C76 /* Menu.swift */,
 				550936841B656F7B00651C76 /* Preference.swift */,
-				553A90FC1B750E1F00E04B4E /* SharedData.swift */,
+				553A90FC1B750E1F00E04B4E /* AppData.swift */,
 				5509367B1B656F7B00651C76 /* Images.xcassets */,
 				550936A81B656FA500651C76 /* Supporting Files */,
 			);
@@ -261,7 +262,6 @@
 		55E9C4021B67C75B00A8DDBA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				55E9C4271B67D19700A8DDBA /* data.xml */,
 				55E9C4031B67C77100A8DDBA /* Fonts */,
 			);
 			name = Resources;
@@ -281,8 +281,18 @@
 			isa = PBXGroup;
 			children = (
 				55E9C4381B71F2CE00A8DDBA /* NotificationCenter.framework */,
+				BAC5A0ADBB106053CDCB9B32 /* Pods_Siksha.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		939BB14468A07E9660B7F479 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				81611FDD0DAFFA8067F53722 /* Pods-Siksha.debug.xcconfig */,
+				B3C23AD412D50A983ACC180D /* Pods-Siksha.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,10 +302,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55C9B6DE1B411C22001F3086 /* Build configuration list for PBXNativeTarget "Siksha" */;
 			buildPhases = (
+				756F59E42F478E722D1B1E12 /* Check Pods Manifest.lock */,
 				55C9B6BB1B411C22001F3086 /* Sources */,
 				55C9B6BC1B411C22001F3086 /* Frameworks */,
 				55C9B6BD1B411C22001F3086 /* Resources */,
 				55E9C4471B71F2CF00A8DDBA /* Embed App Extensions */,
+				30F7D634F6B38F9F18F8B4D8 /* Embed Pods Frameworks */,
+				548EB06A78DFB045BEA8CB87 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -379,7 +392,6 @@
 				55E9C42D1B67D3CA00A8DDBA /* Arita-Dotum-Medium.otf in Resources */,
 				55E9C42E1B67D3CA00A8DDBA /* BM-Hanna.ttf in Resources */,
 				55E9C42F1B67D3CA00A8DDBA /* BM-Jua.ttf in Resources */,
-				55E9C4281B67D19700A8DDBA /* data.xml in Resources */,
 				551928AB1B9872F700C2C03B /* LaunchScreen.xib in Resources */,
 				5509369A1B656F7B00651C76 /* Images.xcassets in Resources */,
 			);
@@ -393,6 +405,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		30F7D634F6B38F9F18F8B4D8 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Siksha/Pods-Siksha-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		548EB06A78DFB045BEA8CB87 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Siksha/Pods-Siksha-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		756F59E42F478E722D1B1E12 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		55C9B6BB1B411C22001F3086 /* Sources */ = {
@@ -415,7 +475,7 @@
 				550936A31B656F7B00651C76 /* Preference.swift in Sources */,
 				55E9C3FB1B67855F00A8DDBA /* DeveloperViewController.swift in Sources */,
 				55E9C4221B67D04100A8DDBA /* DinnerBookmarkTableViewController.swift in Sources */,
-				553A90FD1B750E1F00E04B4E /* SharedData.swift in Sources */,
+				553A90FD1B750E1F00E04B4E /* AppData.swift in Sources */,
 				553A90DB1B748FBA00E04B4E /* SequenceTableViewCell.swift in Sources */,
 				5519289B1B951E3F00C2C03B /* MenuTableViewController.swift in Sources */,
 				55E9C3F91B67855400A8DDBA /* VersionViewController.swift in Sources */,
@@ -427,7 +487,6 @@
 				55E9C41D1B67D04100A8DDBA /* BookmarkTableViewController.swift in Sources */,
 				550936961B656F7B00651C76 /* MenuDictionary.swift in Sources */,
 				5519289A1B951E3F00C2C03B /* MenuTableViewCell.swift in Sources */,
-				55E9C3EB1B65FB7900A8DDBA /* XMLParser.swift in Sources */,
 				553A90D71B74559600E04B4E /* SequenceTableViewController.swift in Sources */,
 				551928971B951E3F00C2C03B /* BreakfastMenuTableViewController.swift in Sources */,
 				55E9C4201B67D04100A8DDBA /* BookmarkViewController.swift in Sources */,
@@ -518,7 +577,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "armv7 armv7s arm64";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -560,50 +619,52 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv7 armv7s arm64";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};
 		55C9B6DF1B411C22001F3086 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81611FDD0DAFFA8067F53722 /* Pods-Siksha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Gyu Kang (7AAZR5Z9C8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gyu Kang (7AAZR5Z9C8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Siksha/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wafflestudio.siksha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "112475b1-1917-464a-b709-c87d11cf7955";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Siksha/Siksha-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "armv7 armv7s arm64";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
 		55C9B6E01B411C22001F3086 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3C23AD412D50A983ACC180D /* Pods-Siksha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Gyu Kang (587SS7X3DQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Gyu Kang (587SS7X3DQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Siksha/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wafflestudio.siksha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "12d1ae15-20c0-43a9-a7c8-8cfcff617f01";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Siksha/Siksha-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "armv7 armv7s arm64";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};

@@ -9,29 +9,23 @@
 import Foundation
 
 class JSONParser {
-  
-  static func getLocalJSON() -> [String: AnyObject]? {
-    let fileManager = NSFileManager()
-    let filePath = NSTemporaryDirectory() + "restaurants.json"
     
-    if !fileManager.fileExistsAtPath(filePath) {
-      print("JSON file doesn't exist.")
+    static func getLocalJSON() -> [String: AnyObject]? {
+        let filePath = NSTemporaryDirectory() + "menus.json"
+        
+        let fileHandle = NSFileHandle(forReadingAtPath: filePath)
+        let data = fileHandle!.readDataToEndOfFile()
+        fileHandle!.closeFile()
+        
+        do {
+            let JSON = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)
+            return JSON as? [String: AnyObject]
+        } catch (let e as NSError) {
+            // If there is an error parsing JSON, print it to the console.
+            print("JSON Serialization Error \(e.localizedDescription)")
+        }
+        
+        return nil
     }
     
-    let fileHandle = NSFileHandle(forReadingAtPath: filePath)
-    let data = fileHandle!.readDataToEndOfFile()
-    fileHandle!.closeFile()
-    
-    do {
-      if let JSON = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as? [String: AnyObject] {
-        return JSON
-      }
-    } catch (let e as NSError) {
-      // If there is an error parsing JSON, print it to the console.
-      print("JSON Serialization Error \(e.localizedDescription)")
-    }
-    
-    return nil
-  }
-  
 }

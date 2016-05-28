@@ -9,17 +9,17 @@
 import UIKit
 
 class BookmarkTableViewEmptyCell: UITableViewCell {
-  
-  @IBOutlet weak var emptyMessageLabel: UILabel!
-  
-  override func awakeFromNib() {
-    super.awakeFromNib()
-    // Initialization code
-  }
-  
-  override func setSelected(selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-    // Configure the view for the selected state
-  }
-  
+    
+    @IBOutlet weak var emptyMessageLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        // Configure the view for the selected state
+    }
+    
 }

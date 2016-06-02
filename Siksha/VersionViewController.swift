@@ -11,7 +11,7 @@ import UIKit
 class VersionViewController: UIViewController {
     
     @IBOutlet weak var currentVersionLabel: UILabel!
-    @IBOutlet weak var messageButton: UIButton!
+    @IBOutlet weak var messageLabel: UILabel!
     
     var currentAppVersion: String = ""
     var latestAppVersion: String = ""
@@ -23,9 +23,9 @@ class VersionViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         currentVersionLabel.text = "현재 버전 : \(currentAppVersion)"
-        messageButton.layer.cornerRadius = 10
-        messageButton.layer.borderColor = UIColor.orangeColor().CGColor
-        messageButton.layer.borderWidth = 1
+        messageLabel.layer.cornerRadius = 10
+        messageLabel.layer.borderColor = UIColor.orangeColor().CGColor
+        messageLabel.layer.borderWidth = 1
         
         checkLatest()
         switchAlertMessage()
@@ -36,15 +36,6 @@ class VersionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func messageButtonClicked(sender: AnyObject) {
-        if !isLatest {
-            let APP_STORE_URL = NSURL(string: "itms-apps://geo.itunes.apple.com/kr/app/sigsya-seouldaehaggyo-sigdan/id1032700617?mt=8")
-            if UIApplication.sharedApplication().canOpenURL(APP_STORE_URL!) == true {
-                UIApplication.sharedApplication().openURL(APP_STORE_URL!)
-            }
-        }
-    }
-    
     func checkLatest() {
         isLatest = currentAppVersion == latestAppVersion ? true : false
         print("currentAppVersion : \(currentAppVersion) / latestAppVersion : \(latestAppVersion)")
@@ -52,10 +43,10 @@ class VersionViewController: UIViewController {
     
     func switchAlertMessage() {
         if isLatest {
-            messageButton.setTitle("최신 버전을 이용하고 있습니다.", forState: .Normal)
+            messageLabel.text = "최신 버전을 이용하고 있습니다."
         }
         else {
-            messageButton.setTitle("앱을 업데이트를 하려면 터치하세요.", forState: .Normal)
+            messageLabel.text = "앱 스토어에서 앱을 업데이트해주세요."
         }
     }
     

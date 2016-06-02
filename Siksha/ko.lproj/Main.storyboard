@@ -886,17 +886,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="버전 정보" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZF-id-Wyn">
-                                                    <rect key="frame" x="14" y="11" width="150" height="21"/>
+                                                    <rect key="frame" x="14" y="11" width="100" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="150" id="bOf-pK-RrJ"/>
+                                                        <constraint firstAttribute="width" constant="100" id="bOf-pK-RrJ"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVC-bg-Ntc">
-                                                    <rect key="frame" x="177" y="11" width="165" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Arita-dotum-Medium_OTF" family="Arita-dotum(OTF)" pointSize="15"/>
+                                                    <rect key="frame" x="122" y="11" width="220" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Arita-dotum-Medium_OTF" family="Arita-dotum(OTF)" pointSize="14"/>
                                                     <color key="textColor" red="0.95686274510000002" green="0.53725490200000003" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -905,7 +905,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="wVC-bg-Ntc" secondAttribute="trailing" id="1Qg-io-m6O"/>
                                                 <constraint firstItem="wVC-bg-Ntc" firstAttribute="bottom" secondItem="DZF-id-Wyn" secondAttribute="bottom" id="4jK-8o-pWB"/>
                                                 <constraint firstItem="wVC-bg-Ntc" firstAttribute="top" secondItem="DZF-id-Wyn" secondAttribute="top" id="AQJ-lY-9Fl"/>
-                                                <constraint firstItem="wVC-bg-Ntc" firstAttribute="leading" secondItem="DZF-id-Wyn" secondAttribute="trailing" constant="13" id="Kmq-4V-DjC"/>
+                                                <constraint firstItem="wVC-bg-Ntc" firstAttribute="leading" secondItem="DZF-id-Wyn" secondAttribute="trailing" constant="8" id="Kmq-4V-DjC"/>
                                                 <constraint firstItem="DZF-id-Wyn" firstAttribute="centerY" secondItem="eUD-WS-uwT" secondAttribute="centerY" id="SGd-Wd-ACu"/>
                                                 <constraint firstItem="DZF-id-Wyn" firstAttribute="top" secondItem="eUD-WS-uwT" secondAttribute="topMargin" constant="3" id="f4Y-bO-y4W"/>
                                                 <constraint firstItem="DZF-id-Wyn" firstAttribute="leading" secondItem="eUD-WS-uwT" secondAttribute="leadingMargin" constant="6" id="wdx-pQ-YJH"/>
@@ -1114,75 +1114,71 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2by-yq-eVW">
-                                <rect key="frame" x="35" y="99" width="250" height="297"/>
+                                <rect key="frame" x="35" y="92" width="250" height="297"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="현재 버전" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wq9-9f-c04">
-                                        <rect key="frame" x="70" y="169" width="111" height="14"/>
+                                        <rect key="frame" x="70" y="159" width="111" height="14"/>
                                         <fontDescription key="fontDescription" name="Arita-dotum-Medium_OTF" family="Arita-dotum(OTF)" pointSize="14"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="식샤" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWP-SM-xgB">
-                                        <rect key="frame" x="106" y="138" width="37" height="23"/>
+                                        <rect key="frame" x="106" y="128" width="37" height="23"/>
                                         <fontDescription key="fontDescription" name="BMJUA" family="BM JUA_TTF" pointSize="23"/>
                                         <color key="textColor" red="0.95686274510000002" green="0.53725490200000003" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_launcher" translatesAutoresizingMaskIntoConstraints="NO" id="Kfg-TY-ebs">
-                                        <rect key="frame" x="77" y="39" width="96" height="96"/>
+                                        <rect key="frame" x="77" y="29" width="96" height="96"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="7zg-dN-xgJ">
-                                        <rect key="frame" x="0.0" y="199" width="250" height="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgm-KZ-ZRy">
+                                        <rect key="frame" x="0.0" y="229" width="250" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="M3j-Lj-dld"/>
-                                            <constraint firstAttribute="width" constant="250" id="dok-Vw-dqe"/>
+                                            <constraint firstAttribute="width" constant="250" id="55t-xV-H9f"/>
+                                            <constraint firstAttribute="height" constant="40" id="Oqn-9t-Vwf"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Arita-dotum-Medium_OTF" family="Arita-dotum(OTF)" pointSize="15"/>
-                                        <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
-                                        <state key="normal" title="Message">
-                                            <color key="titleColor" red="0.95686274509803926" green="0.53725490196078429" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="messageButtonClicked:" destination="ErT-aC-TgX" eventType="touchUpInside" id="aFK-mE-UJ4"/>
-                                        </connections>
-                                    </button>
+                                        <color key="textColor" red="0.95686274510000002" green="0.53725490200000003" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="Wq9-9f-c04" firstAttribute="leading" secondItem="2by-yq-eVW" secondAttribute="leading" constant="70" id="68F-6J-qSK"/>
                                     <constraint firstItem="Kfg-TY-ebs" firstAttribute="centerX" secondItem="2by-yq-eVW" secondAttribute="centerX" id="8gn-ax-4xM"/>
+                                    <constraint firstItem="Cgm-KZ-ZRy" firstAttribute="centerX" secondItem="Wq9-9f-c04" secondAttribute="centerX" id="9NJ-pD-Fma"/>
                                     <constraint firstItem="pWP-SM-xgB" firstAttribute="centerX" secondItem="Wq9-9f-c04" secondAttribute="centerX" constant="-1" id="9aC-Ga-UQt"/>
-                                    <constraint firstItem="Wq9-9f-c04" firstAttribute="centerX" secondItem="7zg-dN-xgJ" secondAttribute="centerX" id="Edu-pw-nCr"/>
                                     <constraint firstItem="Wq9-9f-c04" firstAttribute="top" secondItem="pWP-SM-xgB" secondAttribute="bottom" constant="8" id="LWT-4j-tps"/>
+                                    <constraint firstAttribute="width" constant="250" id="ZAZ-vn-MuW"/>
                                     <constraint firstItem="pWP-SM-xgB" firstAttribute="top" secondItem="Kfg-TY-ebs" secondAttribute="bottom" constant="3" id="d5K-rb-fMp"/>
-                                    <constraint firstItem="7zg-dN-xgJ" firstAttribute="leading" secondItem="2by-yq-eVW" secondAttribute="leading" constant="16" id="hdu-Pr-T9b"/>
-                                    <constraint firstAttribute="bottom" secondItem="7zg-dN-xgJ" secondAttribute="bottom" constant="58" id="hgd-Hu-tsH"/>
+                                    <constraint firstAttribute="height" constant="297" id="gu5-7n-4n4"/>
+                                    <constraint firstAttribute="bottom" secondItem="Cgm-KZ-ZRy" secondAttribute="bottom" constant="28" id="j9w-cI-ux6"/>
                                     <constraint firstItem="Kfg-TY-ebs" firstAttribute="centerX" secondItem="pWP-SM-xgB" secondAttribute="centerX" id="jZh-0R-9s2"/>
-                                    <constraint firstItem="Wq9-9f-c04" firstAttribute="centerX" secondItem="Kfg-TY-ebs" secondAttribute="centerX" id="khb-Su-SOx"/>
-                                    <constraint firstItem="Kfg-TY-ebs" firstAttribute="top" secondItem="2by-yq-eVW" secondAttribute="top" constant="39" id="t4t-0X-D51"/>
+                                    <constraint firstItem="Kfg-TY-ebs" firstAttribute="top" secondItem="2by-yq-eVW" secondAttribute="top" constant="29" id="t4t-0X-D51"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="khb-Su-SOx"/>
-                                        <exclude reference="hdu-Pr-T9b"/>
-                                    </mask>
-                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2by-yq-eVW" firstAttribute="top" secondItem="lJ7-y6-qLq" secondAttribute="bottom" constant="35" id="NYG-4f-0vU"/>
                             <constraint firstItem="gg6-Rv-MzC" firstAttribute="top" secondItem="2by-yq-eVW" secondAttribute="bottom" constant="35" id="S8l-eq-Rob"/>
+                            <constraint firstItem="2by-yq-eVW" firstAttribute="centerY" secondItem="nWP-KZ-b52" secondAttribute="centerY" id="aHn-bo-5Cy"/>
                             <constraint firstItem="2by-yq-eVW" firstAttribute="centerX" secondItem="nWP-KZ-b52" secondAttribute="centerX" id="i8p-Xr-dh8"/>
                             <constraint firstItem="2by-yq-eVW" firstAttribute="leading" secondItem="nWP-KZ-b52" secondAttribute="leadingMargin" constant="19" id="xVa-SI-uR4"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="NYG-4f-0vU"/>
+                                <exclude reference="xVa-SI-uR4"/>
+                                <exclude reference="S8l-eq-Rob"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="버전 정보" id="PA9-Fr-UFt"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="currentVersionLabel" destination="Wq9-9f-c04" id="eDK-EP-ZfF"/>
-                        <outlet property="messageButton" destination="7zg-dN-xgJ" id="UFj-zh-xsc"/>
+                        <outlet property="messageLabel" destination="Cgm-KZ-ZRy" id="ybg-3X-xke"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2kn-Ly-45l" userLabel="First Responder" sceneMemberID="firstResponder"/>

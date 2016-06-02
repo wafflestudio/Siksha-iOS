@@ -73,12 +73,7 @@ class SettingTableViewController: UITableViewController {
     }
     
     private func isCurrentAppVersionLatest() -> Bool {
-        if currentAppVersion == latestAppVersion {
-            return true
-        }
-        else {
-            return currentAppVersion < latestAppVersion ? false : true
-        }
+        return currentAppVersion == latestAppVersion
     }
     
     @IBAction func emptyMenuVisibilitySwitched(sender: AnyObject) {
